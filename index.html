@@ -6,25 +6,25 @@
     <title>Zuba International - Premium Home Decor</title>
     <link rel="stylesheet" href="style.css">
     <!-- Premium Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="display: flex; flex-direction: column; min-height: 100vh; margin: 0;">
 
     <header>
         <div class="nav-container">
             <div class="logo">ZUBA INTERNATIONAL</div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" style="flex: 1;">
         <!-- Background Video -->
         <video autoplay loop muted playsinline class="back-video">
             <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
@@ -33,31 +33,11 @@
         <div class="hero-content">
             <h1>Elevating Spaces Globally</h1>
             <p>Premium Import-Export of Exclusive Interior & Exterior Home Decor Products.</p>
-            <a href="#" class="btn">Explore Catalog</a>
+            <a href="products.html" class="btn">Explore Catalog</a>
         </div>
     </section>
 
-    <section class="about">
-        <div class="container">
-            <h2>About Zuba International</h2>
-            <p style="margin-bottom: 20px;">
-                Zuba International Private Limited is a dynamic and reliable player in the global import-export sector, 
-                specializing in premium interior and exterior home decor solutions. We bridge the gap between 
-                high-quality craftsmanship and global market demands, ensuring excellence in every transaction.
-            </p>
-            <div style="text-align: left; max-width: 700px; margin: auto; line-height: 2;">
-                <p><strong>Why Partner With Us?</strong></p>
-                <ul>
-                    <li><strong>Quality Assurance:</strong> Rigorous quality checks to ensure our products meet international standards.</li>
-                    <li><strong>Global Sourcing:</strong> Seamless supply chain management to deliver excellence across borders.</li>
-                    <li><strong>Transparency:</strong> Operating as a registered private limited entity, we value integrity and long-term business partnerships.</li>
-                    <li><strong>Commitment:</strong> Your project timelines are our priority. We ensure reliable and efficient delivery.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <footer>
+    <footer style="background: #0a2540; color: white; text-align: center; padding: 25px 20px;">
         <p>&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
         <p style="margin-top: 10px; font-size: 13px; color: #c0a16b; line-height: 1.8;">
             CIN: U46693UP2026PTC243112 | GST: 09AACCZ8945N1ZC<br>
@@ -66,8 +46,8 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat" class="whatsapp-icon">
+    <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat" style="width: 55px; height: 55px;">
     </a>
 
 </body>
