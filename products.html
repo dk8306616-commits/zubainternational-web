@@ -1,4 +1,7 @@
-<div id="product-list"></div>
+<div style="max-width: 800px; margin: 50px auto; padding: 40px; text-align: center; background: #fdfbf7; border: 1px solid #e3dec3; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+  <h2 style="font-family: 'Playfair Display', serif; color: #1a1a1a; font-size: 28px; margin-bottom: 15px;">Global Catalog Launching Soon</h2>
+  <div id="product-list" style="margin-top: 20px;"></div>
+</div>
 
 <script>
   fetch('products.json')
@@ -8,14 +11,14 @@
       let html = '';
       products.forEach(product => {
         html += `
-          <div class="product-card" style="border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 5px;">
-            <h3>${product.title}</h3>
-            <p><strong>Category:</strong> ${product.category}</p>
-            <p>${product.description}</p>
+          <p style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 10px;"><strong>Category:</strong> ${product.category}</p>
+          <p style="color: #666; font-size: 15px; line-height: 1.6;">${product.description}</p>
+          <div style="margin-top: 25px;">
+            <a href="contact.html" style="background: #1a1a1a; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-size: 14px; letter-spacing: 1px;">INQUIRE FOR SOURCING</a>
           </div>
         `;
       });
       container.innerHTML = html;
     })
-    .catch(error => console.error('Error loading products:', error));
+    .catch(error => console.error('Error loading catalog:', error));
 </script>
