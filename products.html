@@ -1,46 +1,170 @@
-<style>
-    body {
-        font-family: 'Montserrat', sans-serif;
-        background: linear-gradient(135deg, #fdfbf7 0%, #f4f0ea 100%);
-        color: #2c2c2c;
-        margin: 0;
-        padding: 0;
-    }
-    .product-card {
-        background: #ffffff;
-        border: 1px solid #e6dec5;
-        padding: 35px;
-        border-radius: 8px;
-        box-shadow: 0 12px 35px rgba(26,26,26,0.04);
-        transition: all 0.35s ease;
-    }
-    .product-card:hover {
-        transform: translateY(-6px);
-        border-color: #c5a880;
-        box-shadow: 0 20px 40px rgba(197,168,128,0.12);
-    }
-    .product-category {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 2.5px;
-        color: #c5a880;
-        font-weight: 600;
-        margin-bottom: 12px;
-    }
-    .inquire-btn {
-        display: inline-block;
-        background: #1a1a1a;
-        color: #fdfbf7;
-        padding: 13px 24px;
-        text-decoration: none;
-        border-radius: 4px;
-        font-size: 12px;
-        letter-spacing: 2px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-    }
-    .inquire-btn:hover {
-        background: #c5a880;
-        color: #1a1a1a;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Zuba International</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #fdfbf7 0%, #f4f0ea 100%);
+            color: #2c2c2c;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .catalog-header {
+            text-align: center;
+            padding: 60px 20px 20px 20px;
+        }
+        .catalog-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .catalog-header p {
+            color: #666;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .product-grid {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            flex: 1;
+        }
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #e6dec5;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 12px 35px rgba(26,26,26,0.04);
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: #c5a880;
+            box-shadow: 0 20px 40px rgba(197,168,128,0.12);
+        }
+        .product-category {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: #c5a880;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        .product-desc {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .inquire-btn {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #fdfbf7;
+            padding: 13px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .inquire-btn:hover {
+            background: #c5a880;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation With Icons -->
+    <header style="background: #0a2540; padding: 20px; color: white; border-bottom: 3px solid #c0a16b;">
+        <div class="nav-container" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            
+            <div class="logo" style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 2px;">
+                ZUBA <span style="color: #c0a16b;">INTERNATIONAL</span>
+            </div>
+
+            <nav>
+                <ul style="list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; align-items: center;">
+                    <li><a href="index.html" style="color: white; text-decoration: none; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 1px; transition: color 0.3s;"><i class="fa-solid fa-house" style="margin-right: 6px; color: #c0a16b;"></i> Home</a></li>
+                    <li><a href="products.html" style="color: #c0a16b; text-decoration: none; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 1px;"><i class="fa-solid fa-box-open" style="margin-right: 6px;"></i> Products</a></li>
+                    <li><a href="about.html" style="color: white; text-decoration: none; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 1px; transition: color 0.3s;"><i class="fa-solid fa-circle-info" style="margin-right: 6px; color: #c0a16b;"></i> About Us</a></li>
+                    <li><a href="contact.html" style="color: white; text-decoration: none; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 1px; transition: color 0.3s;"><i class="fa-solid fa-envelope" style="margin-right: 6px; color: #c0a16b;"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Catalog Header -->
+    <div class="catalog-header">
+        <h1>Global Collection</h1>
+        <p>Curating exceptional interior and exterior elements sourced for high-end international architectural spaces.</p>
+    </div>
+
+    <!-- Dynamic Products Grid -->
+    <div id="product-list" class="product-grid"></div>
+
+    <!-- Footer -->
+    <footer style="background: #0a2540; color: white; text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px;">
+        <p style="font-family: 'Montserrat', sans-serif; font-weight: 600; margin-bottom: 15px;">&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
+        <p style="font-size: 13px; color: #c0a16b; line-height: 1.8; font-family: 'Open Sans', sans-serif; letter-spacing: 0.5px;">
+            CIN: U46693UP2026PTC243112 | GST: 09AACCZ8945N1ZC<br>
+            IEC: AACCZ8945N | Udyam Reg: UDYAM-UP-07-0104617
+        </p>
+    </footer>
+
+    <!-- Script to Load Products dynamically -->
+    <script>
+        fetch('products.json')
+            .then(response => response.json())
+            .then(products => {
+                const container = document.getElementById('product-list');
+                let html = '';
+                products.forEach(product => {
+                    html += `
+                        <div class="product-card">
+                            <div>
+                                <div class="product-category">${product.category}</div>
+                                <h3 class="product-title">${product.title}</h3>
+                                <p class="product-desc">${product.description}</p>
+                            </div>
+                            <div>
+                                <a href="contact.html" class="inquire-btn">INQUIRE FOR SOURCING</a>
+                            </div>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+            })
+            .catch(error => console.error('Error loading catalog:', error));
+    </script>
+
+</body>
+</html>
