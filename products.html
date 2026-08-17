@@ -1,24 +1,130 @@
-<div style="max-width: 800px; margin: 50px auto; padding: 40px; text-align: center; background: #fdfbf7; border: 1px solid #e3dec3; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-  <h2 style="font-family: 'Playfair Display', serif; color: #1a1a1a; font-size: 28px; margin-bottom: 15px;">Global Catalog Launching Soon</h2>
-  <div id="product-list" style="margin-top: 20px;"></div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Zuba International</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fcfbf9;
+            color: #2c2c2c;
+            margin: 0;
+            padding: 0;
+        }
+        .catalog-header {
+            text-align: center;
+            padding: 60px 20px 20px 20px;
+        }
+        .catalog-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .catalog-header p {
+            color: #666;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .product-grid {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #eae5d9;
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+        }
+        .product-category {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #bfa15f;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        .product-desc {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .inquire-btn {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-align: center;
+            transition: background 0.2s ease;
+        }
+        .inquire-btn:hover {
+            background: #bfa15f;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
 
-<script>
-  fetch('products.json')
-    .then(response => response.json())
-    .then(products => {
-      const container = document.getElementById('product-list');
-      let html = '';
-      products.forEach(product => {
-        html += `
-          <p style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 10px;"><strong>Category:</strong> ${product.category}</p>
-          <p style="color: #666; font-size: 15px; line-height: 1.6;">${product.description}</p>
-          <div style="margin-top: 25px;">
-            <a href="contact.html" style="background: #1a1a1a; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 4px; font-size: 14px; letter-spacing: 1px;">INQUIRE FOR SOURCING</a>
-          </div>
-        `;
-      });
-      container.innerHTML = html;
-    })
-    .catch(error => console.error('Error loading catalog:', error));
-</script>
+    <div class="catalog-header">
+        <h1>Global Collection</h1>
+        <p>Curating exceptional interior and exterior elements sourced for high-end international architectural spaces.</p>
+    </div>
+
+    <div id="product-list" class="product-grid"></div>
+
+    <script>
+        fetch('products.json')
+            .then(response => response.json())
+            .then(products => {
+                const container = document.getElementById('product-list');
+                let html = '';
+                products.forEach(product => {
+                    html += `
+                        <div class="product-card">
+                            <div>
+                                <div class="product-category">${product.category}</div>
+                                <h3 class="product-title">${product.title}</h3>
+                                <p class="product-desc">${product.description}</p>
+                            </div>
+                            <div>
+                                <a href="contact.html" class="inquire-btn">INQUIRE FOR SOURCING</a>
+                            </div>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+            })
+            .catch(error => console.error('Error loading catalog:', error));
+    </script>
+
+</body>
+</html>
