@@ -72,13 +72,35 @@
         .feature-card { background: white; padding: 35px; border-radius: 8px; border-top: 4px solid #c0a16b; box-shadow: 0 12px 35px rgba(26,26,26,0.04); }
         .feature-card h3 { font-family: 'Playfair Display', serif; color: #0a2540; font-size: 20px; margin-bottom: 12px; }
         .feature-card p { color: #555; font-size: 14px; line-height: 1.6; font-family: 'Open Sans', sans-serif; margin: 0; }
+
+        /* Floating WhatsApp Button CSS */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="nav-container">
-            <!-- Text-based Premium Logo -->
             <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
             
             <div id="menu-btn"><i class="fa-solid fa-bars"></i></div>
@@ -128,6 +150,11 @@
             IEC: AACCZ8945N | Udyam Reg: UDYAM-UP-07-0104617
         </p>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <script>
         document.getElementById('menu-btn').addEventListener('click', () => {
