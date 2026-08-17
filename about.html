@@ -6,38 +6,42 @@
     <title>About Us - Zuba International</title>
     <link rel="stylesheet" href="style.css">
     <!-- Premium Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body style="display: flex; flex-direction: column; min-height: 100vh;">
+<body style="display: flex; flex-direction: column; min-height: 100vh; margin: 0; background: linear-gradient(135deg, #fdfbf7 0%, #f4f0ea 100%);">
 
-    <!-- Navigation Bar -->
-    <header>
-        <div class="nav-container">
-            <div class="logo">ZUBA INTERNATIONAL</div>
+    <!-- Navigation Bar With Icons -->
+    <header style="background: #0a2540; padding: 20px; color: white; border-bottom: 3px solid #c0a16b;">
+        <div class="nav-container" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div class="logo" style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: 2px;">
+                ZUBA <span style="color: #c0a16b;">INTERNATIONAL</span>
+            </div>
             <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                <ul style="list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; align-items: center;">
+                    <li><a href="index.html" style="color: white; text-decoration: none; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 1px; transition: color 0.3s;"><i class="fa-solid fa-house" style="margin-right: 6px; color: #c0a16b;"></i> Home</a></li>
+                    <li><a href="products.html" style="color: white; text-decoration: none; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 1px; transition: color 0.3s;"><i class="fa-solid fa-box-open" style="margin-right: 6px; color: #c0a16b;"></i> Products</a></li>
+                    <li><a href="about.html" style="color: #c0a16b; text-decoration: none; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 1px;"><i class="fa-solid fa-circle-info" style="margin-right: 6px;"></i> About Us</a></li>
+                    <li><a href="contact.html" style="color: white; text-decoration: none; font-weight: 600; font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 1px; transition: color 0.3s;"><i class="fa-solid fa-envelope" style="margin-right: 6px; color: #c0a16b;"></i> Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Main About Content -->
-    <section class="about" style="flex: 1; padding: 60px 20px; background-color: #f8f9fa;">
-        <div class="container" style="text-align: center;">
-            <h1 style="color: #0a2540; margin-bottom: 25px; font-family: 'Montserrat', sans-serif;">About Zuba International</h1>
-            <p style="margin-bottom: 30px; font-size: 1.1em; color: #444; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <section class="about" style="flex: 1; padding: 60px 20px;">
+        <div class="container" style="text-align: center; max-width: 900px; margin: 0 auto;">
+            <h1 style="color: #0a2540; margin-bottom: 25px; font-family: 'Playfair Display', serif; font-size: 40px; letter-spacing: 1px;">About Zuba International</h1>
+            <p style="margin-bottom: 40px; font-size: 1.15em; color: #444; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8; font-family: 'Open Sans', sans-serif;">
                 Zuba International Private Limited is a dynamic and reliable player in the global import-export sector, 
                 specializing in premium interior and exterior home decor solutions. We bridge the gap between 
                 high-quality craftsmanship and global market demands, ensuring excellence in every transaction.
             </p>
             
-            <div style="text-align: left; max-width: 750px; margin: 0 auto; background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                <h2 style="color: #c0a16b; margin-bottom: 20px; font-family: 'Montserrat', sans-serif;">Why Partner With Us?</h2>
-                <ul style="line-height: 2; color: #333; font-size: 1.05em; padding-left: 20px;">
+            <div style="text-align: left; max-width: 750px; margin: 0 auto; background: white; padding: 45px; border-radius: 8px; border-top: 4px solid #c0a16b; box-shadow: 0 12px 35px rgba(26,26,26,0.04);">
+                <h2 style="color: #0a2540; margin-bottom: 20px; font-family: 'Playfair Display', serif; font-size: 28px;">Why Partner With Us?</h2>
+                <ul style="line-height: 2.2; color: #333; font-size: 1.05em; padding-left: 20px; font-family: 'Open Sans', sans-serif;">
                     <li><strong>Quality Assurance:</strong> Rigorous quality checks to ensure our products meet international standards.</li>
                     <li><strong>Global Sourcing:</strong> Seamless supply chain management to deliver excellence across borders.</li>
                     <li><strong>Transparency:</strong> Operating as a registered private limited entity, we value integrity and long-term business partnerships.</li>
@@ -48,17 +52,17 @@
     </section>
 
     <!-- Footer -->
-    <footer style="background: #0a2540; color: white; text-align: center; padding: 25px 20px;">
-        <p>&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
-        <p style="margin-top: 10px; font-size: 13px; color: #c0a16b; line-height: 1.8;">
+    <footer style="background: #0a2540; color: white; text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="font-family: 'Montserrat', sans-serif; font-weight: 600; margin-bottom: 15px;">&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
+        <p style="font-size: 13px; color: #c0a16b; line-height: 1.8; font-family: 'Open Sans', sans-serif; letter-spacing: 0.5px;">
             CIN: U46693UP2026PTC243112 | GST: 09AACCZ8945N1ZC<br>
             IEC: AACCZ8945N | Udyam Reg: UDYAM-UP-07-0104617
         </p>
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat" style="width: 55px; height: 55px;">
+    <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" style="position: fixed; bottom: 25px; right: 25px; z-index: 1000; transition: transform 0.3s;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat" style="width: 60px; height: 60px;">
     </a>
 
 </body>
