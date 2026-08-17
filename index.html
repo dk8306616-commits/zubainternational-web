@@ -12,14 +12,14 @@
         body { margin: 0; font-family: 'Montserrat', sans-serif; background: #fdfbf7; color: #2c2c2c; }
         
         /* Navbar */
-        header { background: #0a2540; padding: 20px 25px; color: white; border-bottom: 3px solid #c0a16b; position: relative; }
+        header { background: #0a2540; padding: 20px 25px; color: white; border-bottom: 3px solid #c0a16b; position: relative; z-index: 1000; }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: 800; font-size: 22px; letter-spacing: 2px; }
         .logo span { color: #c0a16b; }
         
         #menu-btn { cursor: pointer; font-size: 24px; color: #c0a16b; display: none; }
         
-        .nav-menu { display: flex; gap: 25px; }
+        .nav-menu { display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; }
         .nav-menu a { color: white; text-decoration: none; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px; }
         .nav-menu a i { color: #c0a16b; }
 
@@ -29,21 +29,63 @@
             .nav-menu { 
                 display: none; position: absolute; top: 100%; left: 0; width: 100%; 
                 background: #0a2540; flex-direction: column; padding: 20px 0; 
-                border-bottom: 3px solid #c0a16b; z-index: 1000;
+                border-bottom: 3px solid #c0a16b; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
             }
             .nav-menu.active { display: flex; }
             .nav-menu a { padding: 15px 25px; border-bottom: 1px solid rgba(255,255,255,0.1); }
         }
 
+        /* Hero Video Section */
+        .hero-section {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            opacity: 0.85;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 37, 64, 0.65);
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding: 0 20px;
+        }
+
         /* Why Choose Us */
-        .why-choose { padding: 80px 20px; text-align: center; }
-        .why-choose h2 { font-family: 'Playfair Display', serif; font-size: 38px; color: #0a2540; margin-bottom: 40px; }
+        .why-choose { padding: 80px 20px; text-align: center; background: #fdfbf7; }
+        .why-choose h2 { font-family: 'Playfair Display', serif; font-size: 38px; color: #0a2540; margin-bottom: 15px; }
+        .why-choose p.subtitle { color: #666; font-size: 16px; margin-bottom: 40px; font-family: 'Open Sans', sans-serif; }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; text-align: left; }
         .feature-card { background: white; padding: 35px; border-radius: 8px; border-top: 4px solid #c0a16b; box-shadow: 0 12px 35px rgba(26,26,26,0.04); }
+        .feature-card h3 { font-family: 'Playfair Display', serif; color: #0a2540; font-size: 20px; margin-bottom: 12px; }
+        .feature-card p { color: #555; font-size: 14px; line-height: 1.6; font-family: 'Open Sans', sans-serif; margin: 0; }
     </style>
 </head>
 <body>
 
+    <!-- Navigation -->
     <header>
         <div class="nav-container">
             <div class="logo">ZUBA <span>INTERNATIONAL</span></div>
@@ -57,23 +99,49 @@
         </div>
     </header>
 
-    <section style="height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; background: #0a2540; color: white;">
-        <div>
-            <h1 style="font-family: 'Playfair Display', serif; font-size: 44px;">Elevating Spaces Globally</h1>
-            <a href="products.html" style="background: #c0a16b; color: #1a1a1a; padding: 12px 30px; text-decoration: none; font-weight: 600; border-radius: 4px;">EXPLORE CATALOG</a>
+    <!-- Hero Section with Updated Video -->
+    <section class="hero-section">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-luxury-apartment-with-modern-interior-design-41982-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 44px; margin-bottom: 20px; letter-spacing: 1px;">Elevating Spaces Globally</h1>
+            <p style="font-size: 16px; max-width: 650px; margin: 0 auto 30px auto; color: #e0e0e0; font-family: 'Open Sans', sans-serif;">Sourcing world-class interior and exterior decor solutions for luxury architectural projects worldwide.</p>
+            <a href="products.html" style="background: #c0a16b; color: #1a1a1a; padding: 14px 32px; text-decoration: none; font-weight: 600; border-radius: 4px; display: inline-block; letter-spacing: 1.5px; font-size: 13px;">EXPLORE CATALOG</a>
         </div>
     </section>
 
+    <!-- Why Choose Us Section -->
     <section class="why-choose">
         <h2>Why Partner With Zuba International</h2>
+        <p class="subtitle">Excellence and integrity in global import-export trade.</p>
         <div class="features-grid">
-            <div class="feature-card"><h3>Global Standards</h3><p>Quality decor meeting international requirements.</p></div>
-            <div class="feature-card"><h3>Seamless Logistics</h3><p>Secure, trackable cross-border shipments.</p></div>
-            <div class="feature-card"><h3>Corporate Integrity</h3><p>Verified, transparent import-export operations.</p>
+            <div class="feature-card">
+                <h3>Global Standards</h3>
+                <p>Rigorous quality vetting to ensure every interior and exterior decor piece complies with international export requirements.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Seamless Logistics</h3>
+                <p>End-to-end supply chain coordination ensuring secure, timely, and trackable cross-border shipments.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Corporate Integrity</h3>
+                <p>Operating transparently as a registered private limited entity with verified statutory compliances and documentation.</p>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer style="background: #0a2540; color: white; text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="font-family: 'Montserrat', sans-serif; font-weight: 600; margin-bottom: 15px;">&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
+        <p style="font-size: 13px; color: #c0a16b; line-height: 1.8; font-family: 'Open Sans', sans-serif; letter-spacing: 0.5px;">
+            CIN: U46693UP2026PTC243112 | GST: 09AACCZ8945N1ZC<br>
+            IEC: AACCZ8945N | Udyam Reg: UDYAM-UP-07-0104617
+        </p>
+    </footer>
+
+    <!-- Script for Toggle Menu -->
     <script>
         document.getElementById('menu-btn').addEventListener('click', () => {
             document.getElementById('navbar').classList.toggle('active');
