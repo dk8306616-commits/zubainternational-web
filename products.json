@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Luxury Brass Artifact",
+    "category": "Interior Decor",
+    "image": "images/product1.jpg",
+    "description": "Handcrafted premium brass artifact for modern living spaces."
+  },
+  {
+    "id": 2,
+    "title": "Exotic Wooden Wall Panel",
+    "category": "Exterior Decor",
+    "image": "images/product2.jpg",
+    "description": "Weather-resistant carved wooden panel for upscale exteriors."
+  }
+]
