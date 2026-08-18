@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Zuba International</title>
+    <title>Zuba International - Premium Home Decor</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <!-- FontAwesome -->
@@ -14,56 +14,87 @@
         /* Navbar */
         header { background: #0a2540; padding: 20px 25px; color: white; border-bottom: 3px solid #c0a16b; position: relative; z-index: 1000; }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        
+        /* Text Logo Style */
         .logo { font-weight: 800; font-size: 22px; letter-spacing: 2px; color: white; text-decoration: none; }
         .logo span { color: #c0a16b; }
-        #menu-btn { cursor: pointer; font-size: 24px; color: #c0a16b; display: none; }
-        .nav-menu { display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; }
-        .nav-menu a { color: white; text-decoration: none; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px; transition: color 0.3s; }
-        .nav-menu a:hover { color: #c0a16b; }
-        .nav-menu a i { color: #c0a16b; }
         
+        #menu-btn { cursor: pointer; font-size: 24px; color: #c0a16b; display: none; }
+        
+        .nav-menu { display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; }
+        .nav-menu a { color: white; text-decoration: none; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+        .nav-menu a i { color: #c0a16b; }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             #menu-btn { display: block; }
-            .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: #0a2540; flex-direction: column; padding: 20px 0; border-bottom: 3px solid #c0a16b; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+            .nav-menu { 
+                display: none; position: absolute; top: 100%; left: 0; width: 100%; 
+                background: #0a2540; flex-direction: column; padding: 20px 0; 
+                border-bottom: 3px solid #c0a16b; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            }
             .nav-menu.active { display: flex; }
             .nav-menu a { padding: 15px 25px; border-bottom: 1px solid rgba(255,255,255,0.1); }
         }
 
-        /* Page Header */
-        .page-header { background: linear-gradient(135deg, #0a2540 0%, #133b63 100%); padding: 60px 20px; text-align: center; color: white; }
-        .page-header h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin: 0 0 10px 0; letter-spacing: 1px; }
-        .page-header p { color: #c0a16b; font-size: 16px; margin: 0; font-family: 'Open Sans', sans-serif; letter-spacing: 0.5px; }
-
-        /* Contact Container */
-        .contact-container { max-width: 1100px; margin: 60px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; }
+        /* Hero Luxury Background Section */
+        .hero-section {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #0a2540;
+            overflow: hidden;
+        }
         
-        /* Contact Info */
-        .contact-info { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 4px solid #0a2540; }
-        .contact-info h3 { font-family: 'Playfair Display', serif; color: #0a2540; font-size: 24px; margin-top: 0; margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        .info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
-        .info-item i { color: #c0a16b; font-size: 20px; margin-top: 3px; }
-        .info-text h4 { margin: 0 0 5px 0; color: #0a2540; font-size: 16px; }
-        .info-text p { margin: 0; color: #666; font-size: 14px; font-family: 'Open Sans', sans-serif; line-height: 1.6; }
+        .background-video {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: 0;
+        }
 
-        /* Contact Form */
-        .contact-form-section { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 4px solid #c0a16b; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-size: 12px; font-weight: 600; color: #0a2540; margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Open Sans', sans-serif; font-size: 14px; box-sizing: border-box; background: #fdfbf7; transition: border-color 0.3s; }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #c0a16b; background: white; }
-        .submit-btn { background: #0a2540; color: white; border: none; padding: 15px 30px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px; border-radius: 4px; cursor: pointer; width: 100%; transition: background 0.3s; }
-        .submit-btn:hover { background: #133b63; }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.5) 90%);
+            z-index: 1;
+        }
+        .hero-content { position: relative; z-index: 2; color: white; padding: 0 20px; }
 
-        @media (max-width: 800px) { .contact-container { grid-template-columns: 1fr; } }
+        /* Why Choose Us */
+        .why-choose { padding: 80px 20px; text-align: center; background: #fdfbf7; }
+        .why-choose h2 { font-family: 'Playfair Display', serif; font-size: 38px; color: #0a2540; margin-bottom: 15px; }
+        .why-choose p.subtitle { color: #666; font-size: 16px; margin-bottom: 40px; font-family: 'Open Sans', sans-serif; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; text-align: left; }
+        .feature-card { background: white; padding: 35px; border-radius: 8px; border-top: 4px solid #c0a16b; box-shadow: 0 12px 35px rgba(26,26,26,0.04); }
+        .feature-card h3 { font-family: 'Playfair Display', serif; color: #0a2540; font-size: 20px; margin-bottom: 12px; }
+        .feature-card p { color: #555; font-size: 14px; line-height: 1.6; font-family: 'Open Sans', sans-serif; margin: 0; }
 
-        /* Footer */
-        footer { background: #0a2540; color: white; text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px; }
-        footer p { font-family: 'Montserrat', sans-serif; font-weight: 600; margin: 0 0 15px 0; }
-        footer p.footer-details { font-size: 13px; color: #c0a16b; line-height: 1.8; font-family: 'Open Sans', sans-serif; font-weight: 400; margin: 0; }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50px; text-align: center; font-size: 32px; width: 60px; height: 60px; line-height: 60px; box-shadow: 2px 2px 15px rgba(0,0,0,0.15); z-index: 1000; transition: transform 0.3s ease; text-decoration: none; }
-        .whatsapp-float:hover { transform: scale(1.1); color: white; }
+        /* Floating WhatsApp Button CSS */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -71,6 +102,7 @@
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
+            
             <div id="menu-btn"><i class="fa-solid fa-bars"></i></div>
             <nav class="nav-menu" id="navbar">
                 <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
@@ -81,62 +113,45 @@
         </div>
     </header>
 
-    <div class="page-header">
-        <h1>Contact Us</h1>
-        <p>Get in touch for global B2B inquiries and premium home decor exports</p>
-    </div>
+    <section class="hero-section">
+        <video autoplay loop muted playsinline class="background-video">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 44px; margin-bottom: 20px; letter-spacing: 1px;">Elevating Spaces Globally</h1>
+            <p style="font-size: 16px; max-width: 650px; margin: 0 auto 30px auto; color: #e0e0e0; font-family: 'Open Sans', sans-serif;">Sourcing world-class interior and exterior decor solutions for luxury architectural projects worldwide.</p>
+            <a href="products.html" style="background: #c0a16b; color: #1a1a1a; padding: 14px 32px; text-decoration: none; font-weight: 600; border-radius: 4px; display: inline-block; letter-spacing: 1.5px; font-size: 13px;">EXPLORE CATALOG</a>
+        </div>
+    </section>
 
-    <div class="contact-container">
-        <div class="contact-info">
-            <h3>Corporate Office</h3>
-            <div class="info-item">
-                <i class="fa-solid fa-building"></i>
-                <div class="info-text">
-                    <h4>Zuba International Private Limited</h4>
-                    <p>Kotila, Azamgarh, Opposite Shalimar Dhaba and Family Restaurant, Uttar Pradesh, India</p>
-                </div>
+    <section class="why-choose">
+        <h2>Why Partner With Zuba International</h2>
+        <p class="subtitle">Excellence and integrity in global import-export trade.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Global Standards</h3>
+                <p>Rigorous quality vetting to ensure every interior and exterior decor piece complies with international export requirements.</p>
             </div>
-            <div class="info-item">
-                <i class="fa-solid fa-envelope"></i>
-                <div class="info-text">
-                    <h4>Email Us</h4>
-                    <p>info@zubainternational.com</p>
-                </div>
+            <div class="feature-card">
+                <h3>Seamless Logistics</h3>
+                <p>End-to-end supply chain coordination ensuring secure, timely, and trackable cross-border shipments.</p>
             </div>
-            <div class="info-item">
-                <i class="fa-solid fa-phone"></i>
-                <div class="info-text">
-                    <h4>Call Us</h4>
-                    <p>+91 92782 46138</p>
-                </div>
-            </div>
-            <div class="info-item">
-                <i class="fa-solid fa-clock"></i>
-                <div class="info-text">
-                    <h4>Business Hours</h4>
-                    <p>Monday - Saturday: 10:00 AM - 6:00 PM (IST)</p>
-                </div>
+            <div class="feature-card">
+                <h3>Corporate Integrity</h3>
+                <p>Operating transparently as a registered private limited entity with verified statutory compliances and documentation.</p>
             </div>
         </div>
+    </section>
 
-        <div class="contact-form-section">
-            <form action="https://formsubmit.co/info@zubainternational.com" method="POST">
-                <input type="hidden" name="_subject" value="New B2B Inquiry from Zuba International Website!">
-                <input type="hidden" name="_captcha" value="false">
-                <div class="form-group"><label>Full Name / Company Name</label><input type="text" name="name" placeholder="Enter your name" required></div>
-                <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="Enter your email" required></div>
-                <div class="form-group"><label>Inquiry Subject</label><input type="text" name="subject" placeholder="e.g. Export Quotation, Bulk Order" required></div>
-                <div class="form-group"><label>Message / Requirements</label><textarea name="message" rows="5" placeholder="Tell us about your requirements..." required></textarea></div>
-                <button type="submit" class="submit-btn">SEND INQUIRY</button>
-            </form>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
-        <p class="footer-details">CIN: U46693UP2026PTC243112 | GST: 09AACCZ8945N1ZC<br>IEC: AACCZ8945N | Udyam Reg: UDYAM-UP-07-0104617</p>
+    <footer style="background: #0a2540; color: white; text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="font-family: 'Montserrat', sans-serif; font-weight: 600; margin-bottom: 15px;">&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
+        <p style="font-size: 13px; color: #c0a16b; line-height: 1.8; font-family: 'Open Sans', sans-serif; letter-spacing: 0.5px;">
+            CIN: U46693UP2026PTC243112 | GST: 09AACCZ8945N1ZC<br>
+            IEC: AACCZ8945N | Udyam Reg: UDYAM-UP-07-0104617
+        </p>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
