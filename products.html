@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products - Zuba International</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <title>Premium Catalog - Zuba International</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { margin: 0; font-family: 'Montserrat', sans-serif; background: #fdfbf7; color: #2c2c2c; }
@@ -19,14 +19,15 @@
         .page-header h1 { font-family: 'Playfair Display', serif; font-size: 35px; color: #c0a16b; }
         
         .products-container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
-        .cat-group { margin-bottom: 50px; }
-        .cat-title { font-family: 'Playfair Display', serif; font-size: 24px; color: #0a2540; border-left: 5px solid #c0a16b; padding-left: 15px; margin-bottom: 30px; }
+        .cat-group { margin-bottom: 60px; }
+        .cat-title { font-family: 'Playfair Display', serif; font-size: 26px; color: #0a2540; border-bottom: 2px solid #c0a16b; display: inline-block; margin-bottom: 30px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee; text-align: center; }
-        .card i { font-size: 40px; color: #c0a16b; margin-bottom: 15px; }
-        .card h3 { font-size: 16px; color: #0a2540; margin-bottom: 10px; }
-        .btn-quote { display: inline-block; margin-top: 15px; padding: 8px 15px; border: 1px solid #0a2540; color: #0a2540; text-decoration: none; font-size: 12px; font-weight: 600; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 20px; text-align: center; }
+        .card h3 { font-size: 17px; color: #0a2540; margin-bottom: 10px; }
+        .btn-quote { display: block; margin-top: 15px; padding: 10px; background: #0a2540; color: white; text-decoration: none; font-size: 13px; font-weight: 600; border-radius: 4px; }
         
         .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50px; font-size: 32px; width: 60px; height: 60px; line-height: 60px; text-align: center; z-index: 1000; text-decoration: none; box-shadow: 2px 2px 15px rgba(0,0,0,0.2); }
     </style>
@@ -46,44 +47,50 @@
     </header>
 
     <div class="page-header">
-        <h1>Professional Import Catalog</h1>
-        <p style="color:white; opacity: 0.8;">High-quality interior and exterior solutions for the Indian market.</p>
+        <h1>Global Import Catalog</h1>
+        <p>Expertly curated interior & exterior solutions.</p>
     </div>
 
     <div class="products-container">
-        
+        <!-- Wall Panels Group -->
         <div class="cat-group">
-            <h2 class="cat-title">Wall Paneling Solutions</h2>
+            <h2 class="cat-title">Wall Paneling & Surfaces</h2>
             <div class="grid">
-                <div class="card"><i class="fa-solid fa-layer-group"></i><h3>Fluted Panels & Louvers</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
-                <div class="card"><i class="fa-solid fa-square-full"></i><h3>PS & WPC Wall Panels</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
-                <div class="card"><i class="fa-solid fa-gem"></i><h3>UV Marble Sheets</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
-                <div class="card"><i class="fa-solid fa-mountain"></i><h3>PU Stone & Flexible Stone</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1615873968403-89b0686ada92?auto=format&fit=crop&w=600" alt="Fluted Panels">
+                    <div class="card-content"><h3>Fluted Panels & Louvers</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600" alt="Marble Sheets">
+                    <div class="card-content"><h3>UV Marble Sheets</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1604014267807-051f22b22f0a?auto=format&fit=crop&w=600" alt="Stone Panels">
+                    <div class="card-content"><h3>PU Stone & Flexible Panels</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
+                </div>
             </div>
         </div>
 
-        <div class="cat-group">
-            <h2 class="cat-title">Wood & Surface Finishes</h2>
-            <div class="grid">
-                <div class="card"><i class="fa-solid fa-leaf"></i><h3>Bamboo Charcoal Veneer</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
-                <div class="card"><i class="fa-solid fa-door-open"></i><h3>WPC Doors & Frames</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
-                <div class="card"><i class="fa-solid fa-table-cells"></i><h3>Aluminum Honeycomb Panels</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
-                <div class="card"><i class="fa-solid fa-eye"></i><h3>Translucent Backlit Sheets</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
-            </div>
-        </div>
-
+        <!-- Flooring & Structural -->
         <div class="cat-group">
             <h2 class="cat-title">Flooring & Structural</h2>
             <div class="grid">
-                <div class="card"><i class="fa-solid fa-border-all"></i><h3>SPC Flooring & Panels</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
-                <div class="card"><i class="fa-solid fa-tree"></i><h3>WPC Outdoor Decking</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
-                <div class="card"><i class="fa-solid fa-volume-xmark"></i><h3>Acoustic Panels</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
-                <div class="card"><i class="fa-solid fa-grip"></i><h3>PVC/WPC Foam Boards</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600" alt="SPC Flooring">
+                    <div class="card-content"><h3>SPC Flooring & Decking</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=600" alt="Doors">
+                    <div class="card-content"><h3>WPC Doors & Frames</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1581472723648-909f4851d4ae?auto=format&fit=crop&w=600" alt="Acoustic">
+                    <div class="card-content"><h3>Acoustic Wall Panels</h3><a href="contact.html" class="btn-quote">GET QUOTE</a></div>
+                </div>
             </div>
         </div>
     </div>
 
     <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-
 </body>
 </html>
