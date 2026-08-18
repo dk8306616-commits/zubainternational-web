@@ -54,42 +54,20 @@
         .submit-btn { background: #0a2540; color: white; border: none; padding: 15px 30px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 1px; border-radius: 4px; cursor: pointer; width: 100%; transition: background 0.3s; }
         .submit-btn:hover { background: #133b63; }
 
-        @media (max-width: 800px) {
-            .contact-container { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 800px) { .contact-container { grid-template-columns: 1fr; } }
 
         /* Footer */
         footer { background: #0a2540; color: white; text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 60px; }
         footer p { font-family: 'Montserrat', sans-serif; font-weight: 600; margin: 0 0 15px 0; }
         footer p.footer-details { font-size: 13px; color: #c0a16b; line-height: 1.8; font-family: 'Open Sans', sans-serif; font-weight: 400; margin: 0; }
 
-        /* Floating WhatsApp Button CSS */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 32px;
-            width: 60px;
-            height: 60px;
-            line-height: 60px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.15);
-            z-index: 1000;
-            transition: transform 0.3s ease;
-            text-decoration: none;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            color: white;
-        }
+        /* Floating WhatsApp Button */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50px; text-align: center; font-size: 32px; width: 60px; height: 60px; line-height: 60px; box-shadow: 2px 2px 15px rgba(0,0,0,0.15); z-index: 1000; transition: transform 0.3s ease; text-decoration: none; }
+        .whatsapp-float:hover { transform: scale(1.1); color: white; }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
@@ -103,27 +81,21 @@
         </div>
     </header>
 
-    <!-- Page Header -->
     <div class="page-header">
         <h1>Contact Us</h1>
         <p>Get in touch for global B2B inquiries and premium home decor exports</p>
     </div>
 
-    <!-- Contact Section -->
     <div class="contact-container">
-        
-        <!-- Contact Info (Left) -->
         <div class="contact-info">
             <h3>Corporate Office</h3>
-            
             <div class="info-item">
                 <i class="fa-solid fa-building"></i>
                 <div class="info-text">
                     <h4>Zuba International Private Limited</h4>
-                    <p>Lucknow, Uttar Pradesh, India</p>
+                    <p>Kotila, Azamgarh, Opposite Shalimar Dhaba and Family Restaurant, Uttar Pradesh, India</p>
                 </div>
             </div>
-
             <div class="info-item">
                 <i class="fa-solid fa-envelope"></i>
                 <div class="info-text">
@@ -131,7 +103,6 @@
                     <p>info@zubainternational.com</p>
                 </div>
             </div>
-
             <div class="info-item">
                 <i class="fa-solid fa-phone"></i>
                 <div class="info-text">
@@ -139,7 +110,6 @@
                     <p>+91 92782 46138</p>
                 </div>
             </div>
-
             <div class="info-item">
                 <i class="fa-solid fa-clock"></i>
                 <div class="info-text">
@@ -149,56 +119,28 @@
             </div>
         </div>
 
-        <!-- Contact Form (Right) -->
         <div class="contact-form-section">
-            <!-- Updated Form Action with FormSubmit -->
             <form action="https://formsubmit.co/info@zubainternational.com" method="POST">
-                
-                <!-- Hidden inputs for better functionality -->
                 <input type="hidden" name="_subject" value="New B2B Inquiry from Zuba International Website!">
                 <input type="hidden" name="_captcha" value="false">
-                
-                <div class="form-group">
-                    <label>Full Name / Company Name</label>
-                    <input type="text" name="name" placeholder="Enter your name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" name="email" placeholder="Enter your email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Inquiry Subject</label>
-                    <input type="text" name="subject" placeholder="e.g. Export Quotation, Bulk Order" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Message / Requirements</label>
-                    <textarea name="message" rows="5" placeholder="Tell us about your requirements..." required></textarea>
-                </div>
-                
+                <div class="form-group"><label>Full Name / Company Name</label><input type="text" name="name" placeholder="Enter your name" required></div>
+                <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="Enter your email" required></div>
+                <div class="form-group"><label>Inquiry Subject</label><input type="text" name="subject" placeholder="e.g. Export Quotation, Bulk Order" required></div>
+                <div class="form-group"><label>Message / Requirements</label><textarea name="message" rows="5" placeholder="Tell us about your requirements..." required></textarea></div>
                 <button type="submit" class="submit-btn">SEND INQUIRY</button>
             </form>
         </div>
-
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
-        <p class="footer-details">
-            CIN: U46693UP2026PTC243112 | GST: 09AACCZ8945N1ZC<br>
-            IEC: AACCZ8945N | Udyam Reg: UDYAM-UP-07-0104617
-        </p>
+        <p class="footer-details">CIN: U46693UP2026PTC243112 | GST: 09AACCZ8945N1ZC<br>IEC: AACCZ8945N | Udyam Reg: UDYAM-UP-07-0104617</p>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Script for Toggle Menu -->
     <script>
         document.getElementById('menu-btn').addEventListener('click', () => {
             document.getElementById('navbar').classList.toggle('active');
