@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; }
+        
+        /* Body ka solid background hata diya taaki video dikhe */
         body, html { 
             margin: 0; padding: 0; width: 100%; 
             font-family: 'Montserrat', sans-serif; 
-            background: #0a2540; color: white;
+            color: white;
+            background: transparent;
         }
         
         /* Fixed Video Background */
@@ -32,18 +35,18 @@
         .logo { font-weight: 800; font-size: 20px; color: white; text-decoration: none; }
         .logo span { color: #c0a16b; }
         
-        .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+        .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; justify-content: center; }
         .nav-menu a { color: white; text-decoration: none; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
         .nav-menu a i { color: #c0a16b; }
 
-        /* Hero Section to fill screen */
+        /* Hero Section - halka dark tint taaki text saaf dikhe video ke upar */
         .hero { 
             height: 100vh; display: flex; flex-direction: column; 
             justify-content: center; align-items: center; text-align: center; 
-            padding: 0 20px; background: rgba(0,0,0,0.4); 
+            padding: 0 20px; background: rgba(10, 37, 64, 0.4); 
         }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin: 0; color: #fff; }
-        .hero p { font-size: 18px; color: #c0a16b; margin-top: 15px; letter-spacing: 2px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin: 0; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 18px; color: #c0a16b; margin-top: 15px; letter-spacing: 2px; font-weight: 600; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
 
         /* Scrollable Content Section below video */
         .content-section { 
@@ -59,6 +62,11 @@
             color: white; border-radius: 50%; font-size: 30px; width: 60px; 
             height: 60px; display: flex; justify-content: center; align-items: center; 
             text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 2000; 
+        }
+
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 28px; }
+            .hero p { font-size: 14px; }
         }
     </style>
 </head>
