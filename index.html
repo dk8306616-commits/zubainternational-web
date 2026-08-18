@@ -4,37 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zuba International | Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; }
-        body, html { margin: 0; padding: 0; width: 100%; font-family: 'Montserrat', sans-serif; background: transparent; }
-        
+        body, html { margin: 0; padding: 0; width: 100%; font-family: 'Montserrat', sans-serif; background: #0a2540; color: white; }
         #bg-video { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1; }
         
-        /* Header & Hamburger Menu */
         header { background: rgba(10, 37, 64, 0.95); padding: 15px 20px; border-bottom: 3px solid #c0a16b; position: sticky; top: 0; z-index: 1000; }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: 800; font-size: 20px; color: white; text-decoration: none; }
         .logo span { color: #c0a16b; }
-        
         #menu-toggle { display: none; color: white; font-size: 24px; cursor: pointer; }
-        .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-        .nav-menu a { color: white; text-decoration: none; font-size: 14px; font-weight: 600; }
+        .nav-menu { display: flex; gap: 20px; list-style: none; }
+        .nav-menu a { color: white; text-decoration: none; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 5px; }
 
-        /* Hero Text Shifted Down */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 150px; text-align: center; background: rgba(0,0,0,0.2); }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: #fff; margin: 0; }
-        .hero p { font-size: 16px; color: #c0a16b; margin-top: 10px; letter-spacing: 2px; }
+        /* Adjusted Hero Height */
+        .hero { height: 70vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 50px; text-align: center; background: rgba(0,0,0,0.3); }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 32px; color: #fff; margin: 0; }
+        .hero p { font-size: 14px; color: #c0a16b; margin-top: 10px; letter-spacing: 2px; }
 
-        .content-section { position: relative; background: #0a2540; padding: 60px 20px; text-align: center; z-index: 10; border-top: 3px solid #c0a16b; }
-        
+        /* Why Choose Section */
+        .why-choose { padding: 60px 20px; background: #fff; color: #0a2540; text-align: center; }
+        .why-choose h2 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 40px; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .feature-card i { font-size: 40px; color: #c0a16b; margin-bottom: 15px; }
+        .feature-card h3 { margin: 10px 0; }
+
         .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; border-radius: 50%; font-size: 30px; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; z-index: 2000; }
 
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             #menu-toggle { display: block; }
-            .nav-menu { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: #0a2540; padding: 20px; text-align: center; border-bottom: 3px solid #c0a16b; }
+            .nav-menu { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: #0a2540; padding: 20px; border-bottom: 3px solid #c0a16b; }
             .nav-menu.active { display: flex; }
         }
     </style>
@@ -50,10 +51,10 @@
             <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
             <div id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
             <nav class="nav-menu" id="nav-menu">
-                <a href="index.html">HOME</a>
-                <a href="products.html">PRODUCTS</a>
-                <a href="about.html">ABOUT</a>
-                <a href="contact.html">CONTACT</a>
+                <a href="index.html"><i class="fa-solid fa-house"></i> HOME</a>
+                <a href="products.html"><i class="fa-solid fa-box-open"></i> PRODUCTS</a>
+                <a href="about.html"><i class="fa-solid fa-circle-info"></i> ABOUT</a>
+                <a href="contact.html"><i class="fa-solid fa-envelope"></i> CONTACT</a>
             </nav>
         </div>
     </header>
@@ -63,10 +64,26 @@
         <p>PREMIUM INTERIOR & EXTERIOR SOLUTIONS</p>
     </div>
 
-    <div class="content-section">
-        <h2>Welcome to Zuba International</h2>
-        <p>We specialize in premium quality home decoration items, advanced wall paneling solutions, louvers, UV marble sheets, and modern architectural products.</p>
-    </div>
+    <section class="why-choose">
+        <h2>Why Choose Zuba International?</h2>
+        <div class="features">
+            <div class="feature-card">
+                <i class="fa-solid fa-award"></i>
+                <h3>Premium Quality</h3>
+                <p>Best in class interior & exterior materials globally sourced.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Fast Delivery</h3>
+                <p>Timely dispatch and secure logistics across all regions.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Dedicated team to assist you with every import/export need.</p>
+            </div>
+        </div>
+    </section>
 
     <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
