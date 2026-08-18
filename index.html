@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body, html { width: 100%; font-family: 'Montserrat', sans-serif; background: #050f1a; color: #ffffff; overflow-x: hidden; }
+        
+        /* Body transparent rakhi hai taaki fixed background video saaf dikhe */
+        body, html { width: 100%; font-family: 'Montserrat', sans-serif; background: transparent; color: #ffffff; overflow-x: hidden; }
         
         /* Video Background */
         #bg-video { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1; }
@@ -26,20 +28,20 @@
         .nav-menu a:hover { color: #c0a16b; }
 
         /* Hero Section */
-        .hero { height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: linear-gradient(to bottom, rgba(5,15,26,0.2), rgba(5,15,26,0.6)); }
+        .hero { height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: rgba(5, 15, 26, 0.35); }
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 48px; color: #fff; text-shadow: 0 4px 15px rgba(0,0,0,0.8); margin-bottom: 15px; letter-spacing: 1px; }
         .hero p { font-size: 16px; color: #c0a16b; letter-spacing: 4px; font-weight: 600; text-shadow: 0 2px 8px rgba(0,0,0,0.8); margin-bottom: 30px; }
         .hero-btn { background: #c0a16b; color: #050f1a; padding: 12px 30px; font-weight: 700; text-decoration: none; border-radius: 4px; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
         .hero-btn:hover { background: #d4b277; transform: translateY(-2px); }
 
-        /* Intro Welcome Block */
-        .intro-block { position: relative; background: #071628; padding: 70px 20px; text-align: center; z-index: 10; border-top: 2px solid #c0a16b; }
-        .intro-block max-w { max-width: 850px; margin: 0 auto; }
+        /* Intro Welcome Block - Broad & Luxurious */
+        .intro-block { position: relative; background: #071628; padding: 80px 20px; text-align: center; z-index: 10; border-top: 2px solid #c0a16b; }
+        .intro-block div { max-width: 850px; margin: 0 auto; }
         .intro-block h2 { font-family: 'Playfair Display', serif; font-size: 34px; color: #c0a16b; margin-bottom: 20px; }
         .intro-block p { font-size: 16px; color: #cbd5e1; line-height: 1.8; }
 
         /* Specialties / Why Choose Us Section */
-        .specialties { position: relative; background: #050f1a; padding: 80px 20px; text-align: center; z-index: 10; border-top: 1px solid rgba(192, 161, 107, 0.2); }
+        .specialties { position: relative; background: #050f1a; padding: 90px 20px; text-align: center; z-index: 10; border-top: 1px solid rgba(192, 161, 107, 0.2); }
         .specialties h2 { font-family: 'Playfair Display', serif; font-size: 36px; color: #c0a16b; margin-bottom: 15px; }
         .section-subtitle { color: #94a3b8; font-size: 15px; margin-bottom: 50px; letter-spacing: 1px; }
         
@@ -102,11 +104,11 @@
         <a href="products.html" class="hero-btn">EXPLORE COLLECTION</a>
     </div>
 
-    <!-- Welcome / Intro Block -->
+    <!-- Welcome / Intro Block (Broad & Luxury Focus) -->
     <section class="intro-block">
-        <div style="max-width: 850px; margin: 0 auto;">
+        <div>
             <h2>Welcome to Zuba International</h2>
-            <p>We specialize in premium quality home decoration items, advanced architectural wall paneling solutions, louvers, UV marble sheets, and modern lifestyle decor. Delivering world-class elegance and excellence globally from India.</p>
+            <p>We bridge global markets with elite craftsmanship, delivering world-class interior and exterior decoration solutions designed to transform ordinary spaces into breathtaking architectural masterpieces. Rooted in excellence and trust, we serve clients worldwide.</p>
         </div>
     </section>
 
@@ -123,7 +125,7 @@
             </div>
             <div class="card">
                 <i class="fa-solid fa-earth-americas"></i>
-                <h3>Global Export Standards</h3>
+                <h3>Global Export Excellence</h3>
                 <p>Seamless international trade operations, trusted compliance, and secure logistics ensuring flawless execution across borders.</p>
             </div>
             <div class="card">
