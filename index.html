@@ -3,83 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuba International | Global Import & Export</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <title>Zuba International | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { box-sizing: border-box; }
-        body, html { 
-            margin: 0; padding: 0; width: 100%; height: 100%; 
-            font-family: 'Montserrat', sans-serif; 
-            overflow-x: hidden; /* Ye page ko right side bhagne se rokega */
-        }
+        /* Basic Setup */
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Montserrat', sans-serif; overflow: hidden; }
         
-        /* Video Background Fix */
-        #bg-video { 
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
-            object-fit: cover; z-index: -1; 
-        }
+        /* Video Setup */
+        #bg-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
         
-        /* Header Fix */
-        header { 
-            background: rgba(10, 37, 64, 0.9); padding: 15px 20px; 
-            border-bottom: 3px solid #c0a16b; width: 100%;
-        }
-        
-        .nav-container { 
-            max-width: 1200px; margin: 0 auto; display: flex; 
-            justify-content: space-between; align-items: center; 
-        }
-        
-        .logo { font-weight: 800; font-size: 20px; color: white; text-decoration: none; letter-spacing: 1px; }
+        /* Header Setup */
+        header { background: rgba(10, 37, 64, 0.95); padding: 15px 20px; border-bottom: 3px solid #c0a16b; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo { font-weight: 800; font-size: 20px; color: white; text-decoration: none; }
         .logo span { color: #c0a16b; }
         
-        .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-        .nav-menu a { color: white; text-decoration: none; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+        /* Menu Setup */
+        .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; justify-content: center; }
+        .nav-menu a { color: white; text-decoration: none; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
         .nav-menu a i { color: #c0a16b; }
-
-        /* WhatsApp Button */
-        .whatsapp-float { 
-            position: fixed; bottom: 20px; right: 20px; background-color: #25d366; 
-            color: white; border-radius: 50%; font-size: 28px; width: 55px; 
-            height: 55px; line-height: 55px; text-align: center; z-index: 1000; 
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-        }
-
-        /* Mobile Screen Design - Ye sabse zaroori hissa hai */
-        @media (max-width: 768px) {
-            .nav-container { 
-                flex-direction: column; /* Logo aur menu ko upar niche karega */
-                gap: 12px; 
-            }
-            .nav-menu { 
-                flex-wrap: wrap; /* Menu ko screen ke andar hi fit rakhega */
-                justify-content: center; 
-                gap: 15px; 
-            }
-            .logo { font-size: 18px; }
-        }
+        
+        /* WhatsApp */
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; border-radius: 50%; font-size: 30px; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 100; }
     </style>
 </head>
 <body>
-
+    
+    <!-- Background Video -->
     <video autoplay muted loop playsinline id="bg-video">
         <source src="wap.mp4" type="video/mp4">
     </video>
 
+    <!-- Navigation Bar -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
             <nav class="nav-menu">
                 <a href="index.html"><i class="fa-solid fa-house"></i> HOME</a>
-                <a href="products.html"><i class="fa-solid fa-box-open"></i> PROD</a>
+                <a href="products.html"><i class="fa-solid fa-box-open"></i> PRODUCTS</a>
                 <a href="about.html"><i class="fa-solid fa-circle-info"></i> ABOUT</a>
                 <a href="contact.html"><i class="fa-solid fa-envelope"></i> CONTACT</a>
             </nav>
         </div>
     </header>
 
-    <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
