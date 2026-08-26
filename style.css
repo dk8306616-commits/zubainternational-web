@@ -305,3 +305,40 @@ nav ul li a:hover {
     color: #c0a16b;
     transform: translateY(-5px) scale(1.05);
 }
+/* ===== Floating Navigation Animation ===== */
+
+@keyframes navFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+nav ul li a {
+    display: inline-block;
+    animation: navFloat 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+/* Har menu item thoda alag time par move hoga */
+nav ul li:nth-child(1) a {
+    animation-delay: 0s;
+}
+
+nav ul li:nth-child(2) a {
+    animation-delay: 0.3s;
+}
+
+nav ul li:nth-child(3) a {
+    animation-delay: 0.6s;
+}
+
+nav ul li:nth-child(4) a {
+    animation-delay: 0.9s;
+}
+
+nav ul li a:hover {
+    transform: translateY(-7px) scale(1.06);
+}
