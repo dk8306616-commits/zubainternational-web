@@ -14,6 +14,10 @@
 
     <style>
 
+        /* =====================================================
+           RESET
+        ===================================================== */
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -29,30 +33,49 @@
             min-height: 100vh;
             font-family: 'Montserrat', sans-serif;
             background:
-                radial-gradient(circle at 20% 20%, rgba(192,161,107,0.08), transparent 30%),
-                radial-gradient(circle at 80% 60%, rgba(0,90,180,0.12), transparent 35%),
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(192,161,107,0.08),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 60%,
+                    rgba(0,90,180,0.12),
+                    transparent 35%
+                ),
                 #050f1a;
             color: #ffffff;
             overflow-x: hidden;
         }
 
-        /* ================= HEADER ================= */
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
 
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(5,15,26,0.88);
+
+            background: rgba(5,15,26,0.92);
+
             padding: 18px 30px;
-            border-bottom: 1px solid rgba(192,161,107,0.6);
+
+            border-bottom:
+                1px solid rgba(192,161,107,0.6);
+
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.25);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: auto;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -61,9 +84,12 @@
         .logo {
             color: #ffffff;
             text-decoration: none;
+
             font-size: 22px;
             font-weight: 700;
+
             letter-spacing: 1px;
+
             transition: 0.3s ease;
         }
 
@@ -73,42 +99,63 @@
 
         .logo:hover {
             transform: translateY(-2px);
-            text-shadow: 0 0 15px rgba(192,161,107,0.6);
+            text-shadow:
+                0 0 15px rgba(192,161,107,0.6);
         }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
 
         .nav-menu {
             display: flex;
             align-items: center;
             gap: 28px;
+
             list-style: none;
         }
 
         .nav-menu a {
             position: relative;
+
             color: #ffffff;
             text-decoration: none;
+
             font-size: 13px;
             font-weight: 600;
+
             letter-spacing: 1px;
+
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.35s ease;
+
+            transition:
+                color 0.35s ease,
+                transform 0.35s ease;
         }
 
         .nav-menu a i {
             color: #c0a16b;
-            transition: 0.35s ease;
+
+            transition:
+                transform 0.35s ease;
         }
 
         .nav-menu a::after {
             content: "";
+
             position: absolute;
+
             left: 0;
             bottom: -8px;
+
             width: 0;
             height: 2px;
+
             background: #c0a16b;
+
             transition: width 0.35s ease;
         }
 
@@ -125,124 +172,222 @@
             width: 100%;
         }
 
+
+        /* =====================================================
+           MOBILE MENU BUTTON
+        ===================================================== */
+
         #menu-toggle {
             display: none;
+
             color: #c0a16b;
             font-size: 25px;
+
             cursor: pointer;
+
+            transition: 0.3s;
         }
 
-        /* ================= BANNER ================= */
+        #menu-toggle:hover {
+            transform: scale(1.15);
+        }
+
+
+        /* =====================================================
+           PAGE BANNER
+        ===================================================== */
 
         .page-banner {
             position: relative;
+
             padding: 90px 20px 80px;
+
             text-align: center;
+
             overflow: hidden;
+
             background:
                 linear-gradient(
                     135deg,
                     rgba(5,15,26,0.95),
                     rgba(7,22,40,0.9)
                 );
-            border-bottom: 1px solid rgba(192,161,107,0.2);
+
+            border-bottom:
+                1px solid rgba(192,161,107,0.2);
         }
 
         .page-banner::before {
             content: "";
+
             position: absolute;
+
             width: 350px;
             height: 350px;
+
             border-radius: 50%;
-            background: rgba(192,161,107,0.08);
+
+            background:
+                rgba(192,161,107,0.08);
+
             filter: blur(60px);
+
             top: -150px;
             left: -100px;
-            animation: bannerGlow 6s ease-in-out infinite alternate;
+
+            animation:
+                bannerGlow 6s ease-in-out infinite alternate;
         }
 
         .page-banner::after {
             content: "";
+
             position: absolute;
+
             width: 350px;
             height: 350px;
+
             border-radius: 50%;
-            background: rgba(0,100,220,0.08);
+
+            background:
+                rgba(0,100,220,0.08);
+
             filter: blur(60px);
+
             right: -100px;
             bottom: -150px;
-            animation: bannerGlow 7s ease-in-out infinite alternate-reverse;
+
+            animation:
+                bannerGlow 7s ease-in-out infinite alternate-reverse;
         }
 
         @keyframes bannerGlow {
-            from { transform: translateY(0); }
-            to { transform: translateY(35px); }
+
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(35px);
+            }
         }
 
         .page-banner h1 {
             position: relative;
             z-index: 2;
+
             font-family: 'Playfair Display', serif;
-            font-size: clamp(32px, 5vw, 52px);
+
+            font-size:
+                clamp(32px,5vw,52px);
+
             color: #c0a16b;
+
             margin-bottom: 15px;
-            text-shadow: 0 0 25px rgba(192,161,107,0.25);
-            animation: titleFloat 4s ease-in-out infinite;
+
+            text-shadow:
+                0 0 25px rgba(192,161,107,0.25);
+
+            animation:
+                titleFloat 4s ease-in-out infinite;
         }
 
         @keyframes titleFloat {
-            0%,100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
         }
 
         .page-banner p {
             position: relative;
             z-index: 2;
+
             color: #94a3b8;
+
             font-size: 14px;
+
             letter-spacing: 2px;
+
             line-height: 1.7;
         }
 
-        /* ================= CATEGORY TITLES ================= */
 
-        .collection-title {
-            max-width: 1200px;
-            margin: 65px auto 25px;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .collection-title h2 {
-            font-family: 'Playfair Display', serif;
-            color: #c0a16b;
-            font-size: 30px;
-            margin-bottom: 8px;
-        }
-
-        .collection-title p {
-            color: #94a3b8;
-            font-size: 12px;
-            letter-spacing: 1.5px;
-        }
-
-        /* ================= PRODUCTS ================= */
+        /* =====================================================
+           PRODUCTS SECTION
+        ===================================================== */
 
         .products-section {
-            max-width: 1200px;
-            margin: 0 auto 50px;
+            max-width: 1250px;
+
+            margin: 70px auto;
+
             padding: 0 20px;
         }
 
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 35px;
+        .products-intro {
+            text-align: center;
+
+            max-width: 800px;
+
+            margin:
+                0 auto 45px;
         }
 
+        .products-intro h2 {
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size: 30px;
+
+            color: #ffffff;
+
+            margin-bottom: 12px;
+        }
+
+        .products-intro h2 span {
+            color: #c0a16b;
+        }
+
+        .products-intro p {
+            color: #94a3b8;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           PRODUCT GRID
+        ===================================================== */
+
+        .products-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 32px;
+        }
+
+
+        /* =====================================================
+           PRODUCT CARD
+        ===================================================== */
+
         .product-card {
+
             position: relative;
-            min-height: 470px;
+
+            min-height: 480px;
 
             background:
                 linear-gradient(
@@ -251,57 +396,119 @@
                     rgba(255,255,255,0.015)
                 );
 
-            border: 1px solid rgba(192,161,107,0.25);
+            border:
+                1px solid rgba(192,161,107,0.25);
+
             border-radius: 18px;
+
             overflow: hidden;
 
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
 
             transform-style: preserve-3d;
-            perspective: 1000px;
 
             transition:
                 transform 0.45s ease,
                 box-shadow 0.45s ease,
                 border-color 0.45s ease;
 
-            animation: cardFloat 5s ease-in-out infinite;
+            animation:
+                cardFloat 6s ease-in-out infinite;
         }
 
-        .product-card:nth-child(2) { animation-delay: -1s; }
-        .product-card:nth-child(3) { animation-delay: -2s; }
-        .product-card:nth-child(4) { animation-delay: -3s; }
-        .product-card:nth-child(5) { animation-delay: -4s; }
-        .product-card:nth-child(6) { animation-delay: -2.5s; }
-        .product-card:nth-child(7) { animation-delay: -1.5s; }
-        .product-card:nth-child(8) { animation-delay: -3.5s; }
-        .product-card:nth-child(9) { animation-delay: -2s; }
+
+        /* Different floating timing */
+
+        .product-card:nth-child(2) {
+            animation-delay: -1s;
+        }
+
+        .product-card:nth-child(3) {
+            animation-delay: -2s;
+        }
+
+        .product-card:nth-child(4) {
+            animation-delay: -3s;
+        }
+
+        .product-card:nth-child(5) {
+            animation-delay: -4s;
+        }
+
+        .product-card:nth-child(6) {
+            animation-delay: -5s;
+        }
+
+        .product-card:nth-child(7) {
+            animation-delay: -2.5s;
+        }
+
+        .product-card:nth-child(8) {
+            animation-delay: -1.5s;
+        }
+
+        .product-card:nth-child(9) {
+            animation-delay: -3.5s;
+        }
+
+        .product-card:nth-child(10) {
+            animation-delay: -4.5s;
+        }
+
+        .product-card:nth-child(11) {
+            animation-delay: -2s;
+        }
+
+        .product-card:nth-child(12) {
+            animation-delay: -5.5s;
+        }
+
 
         @keyframes cardFloat {
-            0%,100% {
-                transform: translateY(0);
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
             }
+
             50% {
-                transform: translateY(-8px);
+                transform:
+                    translateY(-7px);
             }
         }
 
+
+        /* =====================================================
+           CARD GLOW
+        ===================================================== */
+
         .product-card::before {
+
             content: "";
+
             position: absolute;
-            inset: -2px;
+
+            inset: 0;
+
             border-radius: 18px;
+
             background:
                 linear-gradient(
                     120deg,
-                    transparent,
-                    rgba(192,161,107,0.35),
-                    transparent
+                    transparent 20%,
+                    rgba(192,161,107,0.15),
+                    transparent 80%
                 );
+
             opacity: 0;
-            transition: opacity 0.4s ease;
+
+            transition:
+                opacity 0.4s ease;
+
             pointer-events: none;
+
             z-index: 3;
         }
 
@@ -310,53 +517,110 @@
         }
 
         .product-card:hover {
+
             animation-play-state: paused;
-            border-color: rgba(192,161,107,0.8);
+
+            border-color:
+                rgba(192,161,107,0.85);
 
             box-shadow:
                 0 25px 60px rgba(0,0,0,0.55),
-                0 0 35px rgba(192,161,107,0.12);
+                0 0 35px rgba(192,161,107,0.14);
 
             transform:
                 translateY(-15px)
-                scale(1.02)
-                rotateX(2deg);
+                scale(1.025);
         }
 
-        /* ================= PRODUCT IMAGE ================= */
+
+        /* =====================================================
+           PRODUCT IMAGE / ICON AREA
+        ===================================================== */
 
         .product-img {
+
             position: relative;
+
             width: 100%;
             height: 220px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             background:
                 radial-gradient(
                     circle at center,
-                    rgba(0,110,255,0.5),
-                    rgba(7,25,48,0.95) 65%
+                    rgba(0,110,255,0.55),
+                    rgba(7,25,48,0.96) 68%
                 );
 
-            border-bottom: 1px solid rgba(192,161,107,0.2);
+            border-bottom:
+                1px solid rgba(192,161,107,0.2);
+
             overflow: hidden;
-            transform: translateZ(25px);
         }
 
-        .product-img::before {
+
+        /* Decorative circles */
+
+        .product-img::after {
+
             content: "";
+
             position: absolute;
-            width: 120%;
-            height: 50px;
+
+            width: 140px;
+            height: 140px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 50px
+                rgba(0,150,255,0.15);
+
+            animation:
+                imagePulse 4s ease-in-out infinite;
+        }
+
+        @keyframes imagePulse {
+
+            0%,
+            100% {
+                transform:
+                    scale(0.9);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform:
+                    scale(1.12);
+                opacity: 1;
+            }
+        }
+
+
+        /* Light sweep */
+
+        .product-img::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 130%;
+            height: 55px;
 
             background:
                 linear-gradient(
                     90deg,
                     transparent,
-                    rgba(255,255,255,0.12),
+                    rgba(255,255,255,0.14),
                     transparent
                 );
 
@@ -364,108 +628,180 @@
                 rotate(-35deg)
                 translateX(-100%);
 
-            animation: shine 5s linear infinite;
+            animation:
+                shine 5s linear infinite;
         }
 
         @keyframes shine {
+
             0% {
-                transform: rotate(-35deg) translateX(-100%);
+                transform:
+                    rotate(-35deg)
+                    translateX(-100%);
             }
-            40%,100% {
-                transform: rotate(-35deg) translateX(100%);
+
+            40%,
+            100% {
+                transform:
+                    rotate(-35deg)
+                    translateX(100%);
             }
         }
 
+
+        /* Product Icon */
+
         .product-img i {
+
             position: relative;
-            z-index: 2;
-            font-size: 58px;
+
+            z-index: 5;
+
+            font-size: 60px;
+
             color: #ffffff;
 
             text-shadow:
-                0 0 15px rgba(255,255,255,0.4),
-                0 0 35px rgba(192,161,107,0.4);
+                0 0 15px rgba(255,255,255,0.45),
+                0 0 35px rgba(192,161,107,0.45);
 
             transition:
                 transform 0.5s ease,
                 color 0.5s ease;
         }
 
-        .product-card:hover .product-img i {
+        .product-card:hover
+        .product-img i {
+
             color: #c0a16b;
 
             transform:
-                translateZ(35px)
                 scale(1.18)
-                rotateY(10deg);
+                rotateY(12deg);
 
             text-shadow:
-                0 0 20px rgba(192,161,107,0.7),
-                0 0 45px rgba(192,161,107,0.4);
+                0 0 20px
+                rgba(192,161,107,0.8),
+
+                0 0 45px
+                rgba(192,161,107,0.45);
         }
 
-        /* ================= PRODUCT INFO ================= */
+
+        /* =====================================================
+           PRODUCT INFO
+        ===================================================== */
 
         .product-info {
+
             position: relative;
+
             padding: 25px;
-            min-height: 250px;
+
+            min-height: 260px;
 
             display: flex;
-            flex-direction: column;
 
-            transform-style: preserve-3d;
+            flex-direction: column;
+        }
+
+        .product-category {
+
+            display: inline-block;
+
+            width: fit-content;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+
+            color: #c0a16b;
+
+            margin-bottom: 10px;
+
+            text-transform: uppercase;
         }
 
         .product-info h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size: 21px;
+
             color: #ffffff;
+
             margin-bottom: 12px;
-            transform: translateZ(25px);
-            transition: 0.3s;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
         }
 
-        .product-card:hover .product-info h3 {
+        .product-card:hover
+        .product-info h3 {
+
             color: #c0a16b;
+
+            transform:
+                translateX(4px);
         }
 
         .product-info p {
-            font-size: 14px;
+
+            font-size: 13px;
+
             color: #cbd5e1;
-            line-height: 1.7;
+
+            line-height: 1.75;
+
             margin-bottom: 20px;
-            transform: translateZ(18px);
         }
 
-        /* ================= WHATSAPP BUTTON ================= */
+
+        /* =====================================================
+           WHATSAPP INQUIRE BUTTON
+        ===================================================== */
 
         .inquire-btn {
+
             display: inline-flex;
+
             align-items: center;
+
             justify-content: center;
+
             gap: 8px;
 
             width: fit-content;
+
             margin-top: auto;
 
-            background: rgba(192,161,107,0.03);
-            border: 1px solid #c0a16b;
+            background:
+                rgba(192,161,107,0.04);
+
+            border:
+                1px solid #c0a16b;
+
             color: #c0a16b;
 
             padding: 11px 18px;
 
             font-weight: 600;
-            font-size: 12px;
+
+            font-size: 11px;
 
             text-decoration: none;
+
             border-radius: 6px;
 
             letter-spacing: 0.8px;
 
-            transition: all 0.35s ease;
-
-            transform: translateZ(30px);
+            transition:
+                all 0.35s ease;
         }
 
         .inquire-btn i {
@@ -473,52 +809,80 @@
         }
 
         .inquire-btn:hover {
+
             background: #c0a16b;
+
             color: #050f1a;
 
             transform:
-                translateZ(45px)
-                translateY(-5px)
+                translateY(-4px)
                 scale(1.04);
 
             box-shadow:
-                0 12px 25px rgba(192,161,107,0.25);
+                0 12px 25px
+                rgba(192,161,107,0.25);
         }
 
-        /* ================= FOOTER ================= */
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
 
         footer {
+
             background: #030a12;
-            border-top: 1px solid rgba(192,161,107,0.2);
+
+            border-top:
+                1px solid
+                rgba(192,161,107,0.2);
+
             padding: 55px 20px;
+
             text-align: center;
+
             margin-top: 90px;
         }
 
         .footer-content {
+
             max-width: 900px;
+
             margin: auto;
+
             line-height: 1.8;
         }
 
         .copyright {
+
             color: #ffffff;
+
             font-weight: 600;
+
             margin-bottom: 15px;
+
             font-size: 14px;
+
             letter-spacing: 0.5px;
         }
 
         .company-details {
+
             color: #c0a16b;
+
             font-size: 12px;
+
             letter-spacing: 1px;
+
             line-height: 2;
         }
 
-        /* ================= FLOATING WHATSAPP ================= */
+
+        /* =====================================================
+           FLOATING WHATSAPP
+        ===================================================== */
 
         .whatsapp-float {
+
             position: fixed;
 
             bottom: 25px;
@@ -528,37 +892,50 @@
             height: 62px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             background: #25d366;
+
             color: #ffffff;
 
             border-radius: 50%;
+
             font-size: 30px;
 
             text-decoration: none;
+
             z-index: 2000;
 
             box-shadow:
-                0 5px 25px rgba(37,211,102,0.35);
+                0 5px 25px
+                rgba(37,211,102,0.35);
 
             animation:
-                whatsappFloat 2.5s ease-in-out infinite;
+                whatsappFloat
+                2.5s ease-in-out infinite;
 
-            transition: 0.3s ease;
+            transition:
+                0.3s ease;
         }
 
         @keyframes whatsappFloat {
-            0%,100% {
-                transform: translateY(0);
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
             }
+
             50% {
-                transform: translateY(-10px);
+                transform:
+                    translateY(-10px);
             }
         }
 
         .whatsapp-float:hover {
+
             animation-play-state: paused;
 
             transform:
@@ -566,18 +943,27 @@
                 rotate(8deg);
 
             box-shadow:
-                0 8px 35px rgba(37,211,102,0.55);
+                0 8px 35px
+                rgba(37,211,102,0.55);
         }
 
-        /* ================= TABLET ================= */
 
-        @media (max-width: 950px) {
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
             .products-grid {
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns:
+                    repeat(2,1fr);
             }
         }
 
-        /* ================= MOBILE ================= */
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
 
         @media (max-width: 768px) {
 
@@ -590,6 +976,7 @@
             }
 
             .nav-menu {
+
                 display: none;
 
                 position: absolute;
@@ -600,219 +987,7 @@
                 width: 100%;
 
                 flex-direction: column;
+
                 gap: 22px;
 
-                padding: 25px;
-
-                background: rgba(5,15,26,0.97);
-
-                border-bottom: 2px solid #c0a16b;
-
-                backdrop-filter: blur(15px);
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu a {
-                justify-content: center;
-            }
-
-            .page-banner {
-                padding: 70px 20px;
-            }
-
-            .page-banner p {
-                font-size: 12px;
-            }
-
-            .collection-title {
-                margin-top: 50px;
-            }
-
-            .collection-title h2 {
-                font-size: 26px;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .product-card {
-                min-height: 450px;
-            }
-
-            .whatsapp-float {
-                width: 58px;
-                height: 58px;
-                right: 18px;
-                bottom: 18px;
-            }
-        }
-
-        /* ================= SMALL MOBILE ================= */
-
-        @media (max-width: 420px) {
-
-            .logo {
-                font-size: 18px;
-            }
-
-            .product-img {
-                height: 200px;
-            }
-
-            .product-info {
-                padding: 22px;
-            }
-
-            .product-info h3 {
-                font-size: 20px;
-            }
-
-            .product-info p {
-                font-size: 13px;
-            }
-
-            .inquire-btn {
-                font-size: 11px;
-                padding: 10px 14px;
-            }
-        }
-
-        /* ================= REDUCED MOTION ================= */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation: none !important;
-                transition: none !important;
-            }
-        }
-
-    </style>
-</head>
-
-<body>
-
-<!-- ================= HEADER ================= -->
-
-<header>
-
-    <div class="nav-container">
-
-        <a href="index.html" class="logo">
-            ZUBA <span>INTERNATIONAL</span>
-        </a>
-
-        <div id="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-
-        <nav class="nav-menu" id="nav-menu">
-
-            <a href="index.html">
-                <i class="fa-solid fa-house"></i>
-                HOME
-            </a>
-
-            <a href="products.html">
-                <i class="fa-solid fa-box-open"></i>
-                PRODUCTS
-            </a>
-
-            <a href="about.html">
-                <i class="fa-solid fa-circle-info"></i>
-                ABOUT
-            </a>
-
-            <a href="contact.html">
-                <i class="fa-solid fa-envelope"></i>
-                CONTACT
-            </a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-<!-- ================= PAGE BANNER ================= -->
-
-<section class="page-banner">
-
-    <h1>Our Premium Collections</h1>
-
-    <p>
-        EXPLORE OUR EXQUISITE RANGE OF INTERIOR &amp; EXTERIOR SOLUTIONS
-    </p>
-
-</section>
-
-
-<!-- =================================================
-     INTERIOR COLLECTION
-================================================== -->
-
-<div class="collection-title">
-
-    <h2>Interior Collection</h2>
-
-    <p>
-        PREMIUM INTERIOR SURFACES, WALL FINISHES &amp; DECORATIVE SOLUTIONS
-    </p>
-
-</div>
-
-<section class="products-section">
-
-    <div class="products-grid">
-
-
-        <!-- 1 -->
-
-        <div class="product-card">
-
-            <div class="product-img">
-                <i class="fa-solid fa-border-all"></i>
-            </div>
-
-            <div class="product-info">
-
-                <h3>Architectural Wall Panels</h3>
-
-                <p>
-                    High-grade decorative wall panels offering a sophisticated look and elite finish for modern corporate and residential spaces.
-                </p>
-
-                <a class="inquire-btn"
-                   href="https://wa.me/919278246138?text=I%20want%20to%20inquire%20about%20Architectural%20Wall%20Panels"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    INQUIRE VIA WHATSAPP
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 2 -->
-
-        <div class="product-card">
-
-            <div class="product-img">
-                <i class="fa-solid fa-layer-group"></i>
-            </div>
-
-            <div class="product-info">
-
-                <h3>WPC Wall Panels</h3>
-
-                <p>
-                    Premium wood-plastic composite wall panels designed for elegant interiors with durability, easy maintenance and modern aest
+                padding: 2
