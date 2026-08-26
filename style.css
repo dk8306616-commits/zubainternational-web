@@ -246,3 +246,40 @@ footer {
         height: 30px;
     }
 }
+/* ===== Premium Floating Button Animation ===== */
+
+@keyframes premiumFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Main website buttons */
+.btn {
+    animation: premiumFloat 3s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover par animation rukegi aur button premium lift hoga */
+.btn:hover {
+    animation-play-state: paused;
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.22);
+}
+
+/* Mobile par thoda subtle effect */
+@media (max-width: 768px) {
+    .btn {
+        animation-duration: 4s;
+    }
+}
+
+/* Accessibility: agar visitor reduced motion prefer kare */
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        animation: none;
+    }
+}
