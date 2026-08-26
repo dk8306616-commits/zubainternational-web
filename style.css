@@ -283,3 +283,14 @@ footer {
         animation: none;
     }
 }
+/* ===== Premium Navigation Hover ===== */
+
+nav ul li a {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #c0a16b;
+    transform: translateY(-4px);
+}
