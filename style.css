@@ -1,26 +1,41 @@
-/* Reset & Fonts */
+/* =========================================================
+   ZUBA INTERNATIONAL - PREMIUM 3D STYLE
+   ========================================================= */
+
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f8f9fa;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: #f8f9fa;
     color: #333;
     overflow-x: hidden;
 }
 
-/* Premium Header */
+/* =========================================================
+   PREMIUM HEADER
+   ========================================================= */
+
 header {
-    background: #001f3f; /* Deep Navy Blue */
+    background: rgba(0, 31, 63, 0.96);
     color: #fff;
     padding: 20px 0;
     position: sticky;
     top: 0;
-    z-index: 100;
-    border-bottom: 3px solid #c0a16b; /* Gold Accent */
+    z-index: 1000;
+    border-bottom: 3px solid #c0a16b;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.18);
 }
 
 .nav-container {
@@ -30,82 +45,175 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
+/* ===== LOGO ===== */
+
 .logo {
+    display: inline-block;
     font-size: 24px;
     font-weight: 800;
     letter-spacing: 2px;
     color: #fff;
+    text-decoration: none;
+    transition: 0.35s ease;
 }
+
+.logo:hover {
+    color: #c0a16b;
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
+    align-items: center;
 }
 
-nav ul li a {
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a,
+.nav-menu a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
-    transition: color 0.3s ease;
+    letter-spacing: 0.5px;
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease,
+        text-shadow 0.35s ease;
+
+    animation: navFloat 3.5s ease-in-out infinite;
 }
 
-nav ul li a:hover {
+/* Individual floating timing */
+
+nav ul li:nth-child(1) a,
+.nav-menu a:nth-child(1) {
+    animation-delay: 0s;
+}
+
+nav ul li:nth-child(2) a,
+.nav-menu a:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+nav ul li:nth-child(3) a,
+.nav-menu a:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+nav ul li:nth-child(4) a,
+.nav-menu a:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+nav ul li a:hover,
+.nav-menu a:hover {
     color: #c0a16b;
+    transform: translateY(-7px) scale(1.06);
+    text-shadow: 0 5px 15px rgba(192, 161, 107, 0.35);
 }
 
-/* Hero Section with Video */
+/* =========================================================
+   NAVIGATION FLOAT ANIMATION
+   ========================================================= */
+
+@keyframes navFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
 .hero {
     position: relative;
     height: 80vh;
     min-height: 500px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
     color: #fff;
     overflow: hidden;
+    perspective: 1000px;
 }
 
 .back-video {
     position: absolute;
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
+
     min-width: 100%;
     min-height: 100%;
-    z-index: -1;
+
+    z-index: -2;
     object-fit: cover;
 }
 
 .hero::after {
     content: '';
+
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+
     width: 100%;
     height: 100%;
-    background: rgba(0, 31, 63, 0.65); /* Navy Blue Overlay */
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 31, 63, 0.78),
+            rgba(0, 31, 63, 0.45)
+        );
+
     z-index: 0;
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
+
     width: 90%;
     max-width: 800px;
+
+    animation: heroFloat 5s ease-in-out infinite;
 }
 
 .hero-content h1 {
     font-size: 52px;
     font-weight: 800;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+
+    text-shadow:
+        2px 2px 10px rgba(0, 0, 0, 0.6),
+        0 10px 35px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
@@ -114,28 +222,89 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
+/* Hero subtle floating */
+
+@keyframes heroFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* =========================================================
+   PREMIUM BUTTONS
+   ========================================================= */
+
 .btn {
     display: inline-block;
+
     background: #c0a16b;
     color: #001f3f;
+
     padding: 15px 35px;
+
     text-decoration: none;
+
     font-weight: 800;
     font-size: 16px;
+
     border-radius: 5px;
-    transition: background 0.3s ease, transform 0.2s ease;
+
+    border: 1px solid #c0a16b;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2),
+        0 0 0 rgba(192, 161, 107, 0);
+
+    animation: premiumFloat 3s ease-in-out infinite;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+@keyframes premiumFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
 }
 
 .btn:hover {
+    animation-play-state: paused;
+
     background: #a38757;
-    transform: translateY(-3px);
+    color: #001f3f;
+
+    transform: translateY(-9px) scale(1.05);
+
+    box-shadow:
+        0 18px 35px rgba(0, 0, 0, 0.3),
+        0 5px 20px rgba(192, 161, 107, 0.25);
 }
 
-/* About Section */
+/* =========================================================
+   ABOUT SECTION
+   ========================================================= */
+
 .about {
     padding: 80px 0;
     text-align: center;
     background: #fff;
+
+    position: relative;
 }
 
 .container {
@@ -148,6 +317,12 @@ nav ul li a:hover {
     font-size: 36px;
     color: #001f3f;
     margin-bottom: 20px;
+
+    transition: transform 0.4s ease;
+}
+
+.about h2:hover {
+    transform: translateY(-5px);
 }
 
 .about p {
@@ -156,37 +331,448 @@ nav ul li a:hover {
     line-height: 1.8;
 }
 
-/* Footer */
-footer {
-    background-color: #001f3f;
-    color: #fff;
-    text-align: center;
-    padding: 25px 0;
-    font-size: 14px;
-    line-height: 1.5;
+/* =========================================================
+   PRODUCTS - COMPLETE PREMIUM 3D SYSTEM
+   ========================================================= */
+
+/* Main section */
+
+.products-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 10px;
 }
 
-/* Floating WhatsApp Button */
+/* Grid */
+
+.products-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 35px;
+
+    perspective: 1400px;
+}
+
+/* ===== PRODUCT CARD ===== */
+
+.product-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border: 1px solid rgba(192, 161, 107, 0.3);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transform:
+        translateY(0)
+        rotateX(0deg)
+        rotateY(0deg)
+        scale(1);
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.55s ease,
+        border-color 0.4s ease;
+
+    will-change: transform;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+
+    isolation: isolate;
+}
+
+/* Premium light effect */
+
+.product-card::before {
+    content: '';
+
+    position: absolute;
+
+    top: -60%;
+    left: -80%;
+
+    width: 60%;
+    height: 220%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.16),
+            transparent
+        );
+
+    transform: rotate(25deg);
+
+    transition: left 0.8s ease;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+.product-card:hover::before {
+    left: 140%;
+}
+
+/* ===== CARD HOVER 3D ===== */
+
+.product-card:hover {
+    transform:
+        translateY(-18px)
+        rotateX(3deg)
+        rotateY(-3deg)
+        scale(1.025);
+
+    border-color: #c0a16b;
+
+    box-shadow:
+        0 35px 65px rgba(0, 0, 0, 0.4),
+        0 12px 30px rgba(192, 161, 107, 0.2);
+}
+
+/* ===== PRODUCT IMAGE ===== */
+
+.product-img {
+    position: relative;
+
+    width: 100%;
+    height: 220px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #123f72 0%,
+            #0b1d32 45%,
+            #071321 100%
+        );
+
+    color: #c0a16b;
+
+    font-size: 55px;
+
+    border-bottom:
+        1px solid rgba(192, 161, 107, 0.2);
+
+    overflow: hidden;
+
+    transform-style: preserve-3d;
+}
+
+/* Image shine */
+
+.product-img::after {
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            125deg,
+            transparent 25%,
+            rgba(255,255,255,0.12) 50%,
+            transparent 75%
+        );
+
+    transform: translateX(-100%);
+
+    transition: transform 0.8s ease;
+}
+
+.product-card:hover .product-img::after {
+    transform: translateX(100%);
+}
+
+/* Icon 3D */
+
+.product-card .product-img i {
+    position: relative;
+    z-index: 2;
+
+    transform:
+        translateZ(35px)
+        scale(1);
+
+    text-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+        color 0.4s ease,
+        text-shadow 0.4s ease;
+}
+
+.product-card:hover .product-img i {
+    transform:
+        translateZ(60px)
+        scale(1.22)
+        rotate(4deg);
+
+    color: #f0d08c;
+
+    text-shadow:
+        0 18px 35px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(192, 161, 107, 0.3);
+}
+
+/* ===== PRODUCT INFORMATION ===== */
+
+.product-info {
+    padding: 25px;
+
+    transform-style: preserve-3d;
+}
+
+.product-info h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 22px;
+
+    color: #001f3f;
+
+    margin-bottom: 12px;
+
+    transition:
+        transform 0.4s ease,
+        color 0.4s ease;
+}
+
+.product-card:hover .product-info h3 {
+    transform:
+        translateZ(20px)
+        translateX(3px);
+
+    color: #c0a16b;
+}
+
+.product-info p {
+    font-size: 14px;
+
+    color: #555;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.product-card:hover .product-info p {
+    transform: translateZ(10px);
+}
+
+/* ===== INQUIRE BUTTON ===== */
+
+.inquire-btn {
+    display: inline-block;
+
+    background: transparent;
+
+    border: 1px solid #c0a16b;
+
+    color: #c0a16b;
+
+    padding: 10px 20px;
+
+    font-weight: 600;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    letter-spacing: 1px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.inquire-btn:hover {
+    background: #c0a16b;
+
+    color: #001f3f;
+
+    transform:
+        translateY(-5px)
+        translateZ(20px)
+        scale(1.04);
+
+    box-shadow:
+        0 10px 25px rgba(192, 161, 107, 0.3);
+}
+
+/* =========================================================
+   PAGE BANNER
+   ========================================================= */
+
+.page-banner {
+    padding: 70px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #001f3f,
+            #06294d
+        );
+
+    border-bottom:
+        1px solid rgba(192, 161, 107, 0.25);
+}
+
+.page-banner h1 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 40px;
+
+    color: #c0a16b;
+
+    margin-bottom: 10px;
+
+    animation: premiumFloat 4s ease-in-out infinite;
+}
+
+.page-banner p {
+    color: #94a3b8;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    background-color: #001f3f;
+
+    color: #fff;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    border-top: 2px solid rgba(192, 161, 107, 0.35);
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.copyright {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.company-details {
+    color: #c0a16b;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   WHATSAPP FLOATING BUTTON
+   ========================================================= */
+
 .whatsapp-float {
     position: fixed;
+
     width: 60px;
     height: 60px;
-    bottom: 40px;
-    right: 40px;
+
+    bottom: 30px;
+    right: 30px;
+
     background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
+
+    color: #fff;
+
+    border-radius: 50%;
+
     text-align: center;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35);
+
+    z-index: 2000;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+
+    text-decoration: none;
+
+    animation: whatsappFloat 3s ease-in-out infinite;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+@keyframes whatsappFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1);
+    animation-play-state: paused;
+
+    transform:
+        translateY(-8px)
+        scale(1.12);
+
+    box-shadow:
+        0 15px 35px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-float i {
+    font-size: 32px;
 }
 
 .whatsapp-icon {
@@ -194,10 +780,14 @@ footer {
     height: 35px;
 }
 
-/* =========================================
-   📱 MOBILE RESPONSIVENESS
-   ========================================= */
+/* =========================================================
+   MOBILE RESPONSIVE
+   ========================================================= */
+
 @media (max-width: 768px) {
+
+    /* Header */
+
     .nav-container {
         flex-direction: column;
         text-align: center;
@@ -214,8 +804,16 @@ footer {
         gap: 15px;
     }
 
+    nav ul li a,
+    .nav-menu a {
+        font-size: 12px;
+    }
+
+    /* Hero */
+
     .hero {
         height: 65vh;
+        min-height: 450px;
     }
 
     .hero-content h1 {
@@ -225,20 +823,70 @@ footer {
     .hero-content p {
         font-size: 15px;
     }
-    
+
+    /* About */
+
     .about {
         padding: 60px 0;
     }
-    
+
     .about h2 {
         font-size: 28px;
     }
 
+    .about p {
+        font-size: 15px;
+    }
+
+    /* Products */
+
+    .products-section {
+        width: 94%;
+        margin: 40px auto;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .product-card:hover {
+        transform:
+            translateY(-9px)
+            scale(1.01);
+    }
+
+    .product-img {
+        height: 200px;
+    }
+
+    /* Page banner */
+
+    .page-banner {
+        padding: 50px 15px;
+    }
+
+    .page-banner h1 {
+        font-size: 30px;
+    }
+
+    .page-banner p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* WhatsApp */
+
     .whatsapp-float {
-        width: 50px;
-        height: 50px;
+        width: 52px;
+        height: 52px;
+
         bottom: 20px;
         right: 20px;
+    }
+
+    .whatsapp-float i {
+        font-size: 28px;
     }
 
     .whatsapp-icon {
@@ -246,165 +894,17 @@ footer {
         height: 30px;
     }
 }
-/* ===== Premium Floating Button Animation ===== */
 
-@keyframes premiumFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-6px);
-    }
-}
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
-/* Main website buttons */
-.btn {
-    animation: premiumFloat 3s ease-in-out infinite;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover par animation rukegi aur button premium lift hoga */
-.btn:hover {
-    animation-play-state: paused;
-    transform: translateY(-8px) scale(1.04);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.22);
-}
-
-/* Mobile par thoda subtle effect */
-@media (max-width: 768px) {
-    .btn {
-        animation-duration: 4s;
-    }
-}
-
-/* Accessibility: agar visitor reduced motion prefer kare */
 @media (prefers-reduced-motion: reduce) {
-    .btn {
-        animation: none;
-    }
-}
-/* ===== Premium Navigation Hover ===== */
 
-nav ul li a {
-    display: inline-block;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #c0a16b;
-    transform: translateY(-4px);
-}
-/* ===== Premium Navigation Hover ===== */
-
-nav ul li a {
-    display: inline-block;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #c0a16b;
-    transform: translateY(-5px) scale(1.05);
-}
-/* ===== Floating Navigation Animation ===== */
-
-@keyframes navFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-4px);
-    }
-}
-
-nav ul li a {
-    display: inline-block;
-    animation: navFloat 3s ease-in-out infinite;
-    transition: all 0.3s ease;
-}
-
-/* Har menu item thoda alag time par move hoga */
-nav ul li:nth-child(1) a {
-    animation-delay: 0s;
-}
-
-nav ul li:nth-child(2) a {
-    animation-delay: 0.3s;
-}
-
-nav ul li:nth-child(3) a {
-    animation-delay: 0.6s;
-}
-
-nav ul li:nth-child(4) a {
-    animation-delay: 0.9s;
-}
-
-nav ul li a:hover {
-    transform: translateY(-7px) scale(1.06);
-}
-/* ===== ZUBA PREMIUM 3D PRODUCT CARDS ===== */
-
-.product-card {
-    position: relative;
-    transform: translateY(0) scale(1);
-    transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
-    will-change: transform;
-}
-
-.product-card:hover {
-    transform: translateY(-14px) scale(1.025);
-    border-color: #c0a16b;
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.45),
-        0 8px 20px rgba(192, 161, 107, 0.18);
-}
-
-/* Product image par premium zoom */
-.product-card .product-img {
-    overflow: hidden;
-}
-
-.product-card .product-img i {
-    transition: transform 0.5s ease;
-}
-
-.product-card:hover .product-img i {
-    transform: scale(1.18) rotate(3deg);
-}
-
-/* Product title */
-.product-card .product-info h3 {
-    transition: transform 0.35s ease, color 0.35s ease;
-}
-
-.product-card:hover .product-info h3 {
-    transform: translateX(4px);
-    color: #c0a16b;
-}
-
-/* WhatsApp inquiry button */
-.product-card .inquire-btn {
-    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-}
-
-.product-card .inquire-btn:hover {
-    transform: translateY(-3px) scale(1.04);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .product-card:hover {
-        transform: translateY(-7px) scale(1.01);
-    }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    .product-card,
-    .product-card .product-img i,
-    .product-card .product-info h3,
-    .product-card .inquire-btn {
-        transition: none;
-        transform: none;
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
     }
 }
