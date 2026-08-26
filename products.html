@@ -3,1012 +3,296 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Zuba International | Our Products</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-
-/* =========================
-   RESET
-========================= */
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    width:100%;
-    min-height:100vh;
-    font-family:'Montserrat',sans-serif;
-    color:#fff;
-    background:
-    radial-gradient(circle at 20% 20%,rgba(192,161,107,.08),transparent 30%),
-    radial-gradient(circle at 80% 60%,rgba(0,90,180,.12),transparent 35%),
-    #050f1a;
-    overflow-x:hidden;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(5,15,26,.90);
-    padding:18px 30px;
-    border-bottom:1px solid rgba(192,161,107,.6);
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
-    box-shadow:0 10px 40px rgba(0,0,0,.25);
-}
-
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    color:#fff;
-    text-decoration:none;
-    font-size:22px;
-    font-weight:700;
-    letter-spacing:1px;
-}
-
-.logo span{
-    color:#c0a16b;
-}
-
-.nav-menu{
-    display:flex;
-    align-items:center;
-    gap:28px;
-    list-style:none;
-}
-
-.nav-menu a{
-    position:relative;
-    color:#fff;
-    text-decoration:none;
-    font-size:13px;
-    font-weight:600;
-    letter-spacing:1px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    transition:.35s ease;
-}
-
-.nav-menu a i{
-    color:#c0a16b;
-}
-
-.nav-menu a:hover{
-    color:#c0a16b;
-    transform:translateY(-3px);
-}
-
-.nav-menu a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-8px;
-    width:0;
-    height:2px;
-    background:#c0a16b;
-    transition:.35s;
-}
-
-.nav-menu a:hover::after{
-    width:100%;
-}
-
-#menu-toggle{
-    display:none;
-    color:#c0a16b;
-    font-size:25px;
-    cursor:pointer;
-}
-
-
-/* =========================
-   BANNER
-========================= */
-
-.page-banner{
-    position:relative;
-    padding:80px 20px 70px;
-    text-align:center;
-    overflow:hidden;
-    background:
-    linear-gradient(
-        135deg,
-        rgba(5,15,26,.96),
-        rgba(7,22,40,.92)
-    );
-    border-bottom:1px solid rgba(192,161,107,.2);
-}
-
-.page-banner::before{
-    content:"";
-    position:absolute;
-    width:350px;
-    height:350px;
-    border-radius:50%;
-    background:rgba(192,161,107,.08);
-    filter:blur(60px);
-    top:-150px;
-    left:-100px;
-    animation:glow 6s ease-in-out infinite alternate;
-}
-
-.page-banner::after{
-    content:"";
-    position:absolute;
-    width:350px;
-    height:350px;
-    border-radius:50%;
-    background:rgba(0,100,220,.08);
-    filter:blur(60px);
-    right:-100px;
-    bottom:-150px;
-    animation:glow 7s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes glow{
-    from{transform:translateY(0);}
-    to{transform:translateY(35px);}
-}
-
-.page-banner h1{
-    position:relative;
-    z-index:2;
-    font-family:'Playfair Display',serif;
-    font-size:clamp(32px,5vw,52px);
-    color:#c0a16b;
-    margin-bottom:15px;
-    text-shadow:0 0 25px rgba(192,161,107,.25);
-}
-
-.page-banner p{
-    position:relative;
-    z-index:2;
-    color:#94a3b8;
-    font-size:14px;
-    letter-spacing:2px;
-    line-height:1.7;
-}
-
-
-/* =========================
-   PRODUCTS
-========================= */
-
-.products-section{
-    max-width:1200px;
-    margin:65px auto;
-    padding:0 20px;
-}
-
-.products-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:35px;
-}
-
-
-/* =========================
-   PRODUCT CARD
-========================= */
-
-.product-card{
-    position:relative;
-    min-height:475px;
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,.07),
-        rgba(255,255,255,.015)
-    );
-
-    border:1px solid rgba(192,161,107,.25);
-    border-radius:18px;
-    overflow:hidden;
-
-    backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
-
-    transform-style:preserve-3d;
-
-    transition:
-    transform .45s ease,
-    box-shadow .45s ease,
-    border-color .45s ease;
-}
-
-.product-card:hover{
-    border-color:rgba(192,161,107,.85);
-
-    transform:
-    translateY(-15px)
-    scale(1.02);
-
-    box-shadow:
-    0 25px 60px rgba(0,0,0,.55),
-    0 0 35px rgba(192,161,107,.15);
-}
-
-
-/* =========================
-   PRODUCT IMAGE / ICON
-========================= */
-
-.product-img{
-    position:relative;
-    width:100%;
-    height:220px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-    radial-gradient(
-        circle at center,
-        rgba(0,110,255,.55),
-        rgba(7,25,48,.95) 65%
-    );
-
-    border-bottom:1px solid rgba(192,161,107,.2);
-    overflow:hidden;
-}
-
-.product-img::before{
-    content:"";
-    position:absolute;
-    width:130%;
-    height:55px;
-
-    background:
-    linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.15),
-        transparent
-    );
-
-    transform:rotate(-35deg) translateX(-100%);
-    animation:shine 5s linear infinite;
-}
-
-@keyframes shine{
-    0%{
-        transform:rotate(-35deg) translateX(-100%);
-    }
-
-    40%,100%{
-        transform:rotate(-35deg) translateX(100%);
-    }
-}
-
-.product-img i{
-    position:relative;
-    z-index:2;
-
-    font-size:60px;
-    color:#fff;
-
-    text-shadow:
-    0 0 15px rgba(255,255,255,.45),
-    0 0 35px rgba(192,161,107,.45);
-
-    transition:.5s ease;
-}
-
-.product-card:hover .product-img i{
-    color:#c0a16b;
-    transform:scale(1.18) rotateY(10deg);
-
-    text-shadow:
-    0 0 20px rgba(192,161,107,.7),
-    0 0 45px rgba(192,161,107,.4);
-}
-
-
-/* =========================
-   PRODUCT INFO
-========================= */
-
-.product-info{
-    padding:25px;
-    min-height:255px;
-
-    display:flex;
-    flex-direction:column;
-}
-
-.product-info h3{
-    font-family:'Playfair Display',serif;
-    font-size:21px;
-    color:#fff;
-    margin-bottom:12px;
-    transition:.3s;
-}
-
-.product-card:hover .product-info h3{
-    color:#c0a16b;
-}
-
-.product-info p{
-    font-size:13.5px;
-    color:#cbd5e1;
-    line-height:1.75;
-    margin-bottom:20px;
-}
-
-
-/* =========================
-   WHATSAPP BUTTON
-========================= */
-
-.inquire-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-
-    width:fit-content;
-    margin-top:auto;
-
-    background:rgba(192,161,107,.03);
-    border:1px solid #c0a16b;
-
-    color:#c0a16b;
-
-    padding:11px 18px;
-
-    font-weight:600;
-    font-size:11px;
-
-    text-decoration:none;
-    border-radius:6px;
-    letter-spacing:.8px;
-
-    transition:.35s ease;
-}
-
-.inquire-btn i{
-    font-size:15px;
-}
-
-.inquire-btn:hover{
-    background:#c0a16b;
-    color:#050f1a;
-
-    transform:
-    translateY(-5px)
-    scale(1.04);
-
-    box-shadow:
-    0 12px 25px rgba(192,161,107,.25);
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    background:#030a12;
-    border-top:1px solid rgba(192,161,107,.2);
-    padding:55px 20px;
-    text-align:center;
-    margin-top:90px;
-}
-
-.footer-content{
-    max-width:900px;
-    margin:auto;
-    line-height:1.8;
-}
-
-.copyright{
-    color:#fff;
-    font-weight:600;
-    margin-bottom:15px;
-    font-size:14px;
-}
-
-.company-details{
-    color:#c0a16b;
-    font-size:12px;
-    letter-spacing:1px;
-    line-height:2;
-}
-
-
-/* =========================
-   FLOATING WHATSAPP
-========================= */
-
-.whatsapp-float{
-    position:fixed;
-    bottom:25px;
-    right:25px;
-
-    width:62px;
-    height:62px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:#25d366;
-    color:#fff;
-
-    border-radius:50%;
-    font-size:30px;
-
-    text-decoration:none;
-    z-index:2000;
-
-    box-shadow:
-    0 5px 25px rgba(37,211,102,.35);
-
-    animation:whatsappFloat 2.5s ease-in-out infinite;
-}
-
-@keyframes whatsappFloat{
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-}
-
-.whatsapp-float:hover{
-    animation-play-state:paused;
-    transform:scale(1.12);
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media(max-width:950px){
-
-    .products-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:768px){
-
-    header{
-        padding:16px 20px;
-    }
-
-    #menu-toggle{
-        display:block;
-    }
-
-    .nav-menu{
-        display:none;
-
-        position:absolute;
-        top:68px;
-        left:0;
-
-        width:100%;
-
-        flex-direction:column;
-        gap:22px;
-
-        padding:25px;
-
-        background:rgba(5,15,26,.98);
-
-        border-bottom:2px solid #c0a16b;
-
-        backdrop-filter:blur(15px);
-    }
-
-    .nav-menu.active{
-        display:flex;
-    }
-
-    .nav-menu a{
-        justify-content:center;
-    }
-
-    .page-banner{
-        padding:65px 20px;
-    }
-
-    .page-banner p{
-        font-size:11px;
-    }
-
-    .products-grid{
-        grid-template-columns:1fr;
-    }
-
-    .product-card{
-        min-height:450px;
-    }
-
-    .whatsapp-float{
-        width:58px;
-        height:58px;
-        right:18px;
-        bottom:18px;
-    }
-}
-
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media(max-width:420px){
-
-    .logo{
-        font-size:18px;
-    }
-
-    .product-img{
-        height:200px;
-    }
-
-    .product-info{
-        padding:22px;
-    }
-
-    .product-info h3{
-        font-size:20px;
-    }
-
-    .product-info p{
-        font-size:13px;
-    }
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',sans-serif;background:radial-gradient(circle at 20% 20%,rgba(192,161,107,.08),transparent 30%),radial-gradient(circle at 80% 60%,rgba(0,90,180,.12),transparent 35%),#050f1a;color:#fff;overflow-x:hidden}
+header{position:sticky;top:0;z-index:1000;background:rgba(5,15,26,.9);padding:18px 30px;border-bottom:1px solid rgba(192,161,107,.65);backdrop-filter:blur(15px);box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.nav-container{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{color:#fff;text-decoration:none;font-size:22px;font-weight:700;letter-spacing:1px}.logo span{color:#c0a16b}
+.nav-menu{display:flex;align-items:center;gap:28px;list-style:none}.nav-menu a{color:#fff;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:1px;display:flex;align-items:center;gap:8px;transition:.35s}.nav-menu a i{color:#c0a16b}.nav-menu a:hover{color:#c0a16b;transform:translateY(-3px)}
+#menu-toggle{display:none;color:#c0a16b;font-size:25px;cursor:pointer}
+.page-banner{padding:85px 20px 75px;text-align:center;background:linear-gradient(135deg,rgba(5,15,26,.96),rgba(7,22,40,.9));border-bottom:1px solid rgba(192,161,107,.2)}
+.page-banner h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);color:#c0a16b;margin-bottom:15px;text-shadow:0 0 25px rgba(192,161,107,.25)}
+.page-banner p{color:#94a3b8;font-size:14px;letter-spacing:2px;line-height:1.7}
+.accessory-note{display:inline-flex;gap:10px;align-items:center;margin-top:24px;padding:12px 18px;border:1px solid rgba(192,161,107,.55);border-radius:8px;color:#c0a16b;background:rgba(192,161,107,.06);font-weight:700;font-size:12px;letter-spacing:1px}
+.products-section{max-width:1250px;margin:65px auto;padding:0 20px}.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.product-card{background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.015));border:1px solid rgba(192,161,107,.25);border-radius:18px;overflow:hidden;backdrop-filter:blur(15px);transition:transform .35s ease,box-shadow .4s ease,border-color .4s ease}
+.product-card:hover{border-color:rgba(192,161,107,.8);transform:translateY(-12px) scale(1.015);box-shadow:0 25px 55px rgba(0,0,0,.55),0 0 30px rgba(192,161,107,.12)}
+.product-img{height:230px;background:#071930;overflow:hidden;border-bottom:1px solid rgba(192,161,107,.2)}.product-img img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .55s ease,filter .45s ease}.product-card:hover .product-img img{transform:scale(1.08);filter:saturate(1.08)}
+.product-info{padding:24px;min-height:230px;display:flex;flex-direction:column}.product-info h3{font-family:'Playfair Display',serif;font-size:21px;color:#fff;margin-bottom:12px}.product-card:hover h3{color:#c0a16b}.product-info p{font-size:13px;color:#cbd5e1;line-height:1.7;margin-bottom:20px}
+.inquire-btn{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;width:fit-content;background:rgba(192,161,107,.04);border:1px solid #c0a16b;color:#c0a16b;padding:11px 17px;font-weight:700;font-size:11px;text-decoration:none;border-radius:6px;letter-spacing:.7px;transition:.3s}.inquire-btn:hover{background:#c0a16b;color:#050f1a;transform:translateY(-3px);box-shadow:0 10px 22px rgba(192,161,107,.25)}
+.accessories-banner{max-width:1000px;margin:0 auto 70px;padding:20px;text-align:center;border:1px solid rgba(192,161,107,.45);border-radius:10px;color:#c0a16b;background:rgba(192,161,107,.05);font-weight:700;letter-spacing:1px}
+footer{background:#030a12;border-top:1px solid rgba(192,161,107,.2);padding:45px 20px;text-align:center;margin-top:80px}.copyright{font-size:14px;font-weight:600;margin-bottom:12px}.company-details{color:#c0a16b;font-size:12px;letter-spacing:1px;line-height:1.9}
+.whatsapp-float{position:fixed;right:25px;bottom:25px;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#25d366;color:#fff;font-size:30px;text-decoration:none;z-index:2000;box-shadow:0 5px 25px rgba(37,211,102,.35);transition:.3s}.whatsapp-float:hover{transform:scale(1.1)}
+@media(max-width:950px){.products-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){header{padding:16px 20px}#menu-toggle{display:block}.nav-menu{display:none;position:absolute;top:68px;left:0;width:100%;flex-direction:column;gap:22px;padding:25px;background:rgba(5,15,26,.98);border-bottom:2px solid #c0a16b}.nav-menu.active{display:flex}.nav-menu a{justify-content:center}.products-grid{grid-template-columns:1fr}.page-banner{padding:65px 20px}.product-img{height:215px}.whatsapp-float{width:56px;height:56px;right:18px;bottom:18px}}
 </style>
 </head>
-
-
 <body>
-
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<header>
-
-<div class="nav-container">
-
-<a href="index.html" class="logo">
-ZUBA <span>INTERNATIONAL</span>
-</a>
-
-<div id="menu-toggle">
-<i class="fa-solid fa-bars"></i>
-</div>
-
+<header><div class="nav-container">
+<a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
+<div id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
 <nav class="nav-menu" id="nav-menu">
-
-<a href="index.html">
-<i class="fa-solid fa-house"></i>
-HOME
-</a>
-
-<a href="products.html">
-<i class="fa-solid fa-box-open"></i>
-PRODUCTS
-</a>
-
-<a href="about.html">
-<i class="fa-solid fa-circle-info"></i>
-ABOUT
-</a>
-
-<a href="contact.html">
-<i class="fa-solid fa-envelope"></i>
-CONTACT
-</a>
-
-</nav>
-
-</div>
-
-</header>
-
-
-<!-- =========================
-     BANNER
-========================= -->
-
+<a href="index.html"><i class="fa-solid fa-house"></i> HOME</a>
+<a href="products.html"><i class="fa-solid fa-box-open"></i> PRODUCTS</a>
+<a href="about.html"><i class="fa-solid fa-circle-info"></i> ABOUT</a>
+<a href="contact.html"><i class="fa-solid fa-envelope"></i> CONTACT</a>
+</nav></div></header>
 <section class="page-banner">
-
 <h1>Our Premium Collections</h1>
-
-<p>
-PREMIUM INTERIOR SURFACES, EXTERIOR FINISHES &amp; DECORATIVE SOLUTIONS
-</p>
-
+<p>PREMIUM INTERIOR SURFACES, EXTERIOR FINISHES &amp; DECORATIVE SOLUTIONS</p>
+<div class="accessory-note"><i class="fa-solid fa-gift"></i> ALL ACCESSORIES, TRIMS, BONDS &amp; INSTALLATION MATERIALS ALSO AVAILABLE</div>
 </section>
-
-
-<!-- =========================
-     PRODUCTS
-========================= -->
-
-<section class="products-section">
-
-<div class="products-grid">
-
-
-<!-- 1 -->
-
-<div class="product-card">
-
-<div class="product-img">
-<i class="fa-solid fa-border-all"></i>
-</div>
-
-<div class="product-info">
-
-<h3>Architectural Wall Panels</h3>
-
-<p>
-High-grade decorative wall panels designed to create sophisticated feature walls, corporate interiors and premium residential spaces.
-</p>
-
-<a class="inquire-btn"
-href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Architectural%20Wall%20Panels."
-target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-INQUIRE VIA WHATSAPP
-</a>
-
-</div>
-</div>
-
-
-<!-- 2 -->
-
-<div class="product-card">
-
-<div class="product-img">
-<i class="fa-solid fa-layer-group"></i>
-</div>
-
-<div class="product-info">
-
-<h3>WPC Wall Panels</h3>
-
-<p>
-Premium wood-plastic composite panels offering elegant interiors with durability, easy maintenance and a modern architectural appearance.
-</p>
-
-<a class="inquire-btn"
-href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20WPC%20Wall%20Panels."
-target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-INQUIRE VIA WHATSAPP
-</a>
-
-</div>
-</div>
-
-
-<!-- 3 -->
-
-<div class="product-card">
-
-<div class="product-img">
-<i class="fa-solid fa-grip-lines"></i>
-</div>
-
-<div class="product-info">
-
-<h3>Charcoal Fluted Panels</h3>
-
-<p>
-Modern fluted decorative panels for feature walls, TV units, offices, hotels and luxury residential interiors.
-</p>
-
-<a class="inquire-btn"
-href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Charcoal%20Fluted%20Panels."
-target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-INQUIRE VIA WHATSAPP
-</a>
-
-</div>
-</div>
-
-
-<!-- 4 -->
-
-<div class="product-card">
-
-<div class="product-img">
-<i class="fa-solid fa-sheet-plastic"></i>
-</div>
-
-<div class="product-info">
-
-<h3>Carbon Sheets</h3>
-
-<p>
-Premium decorative carbon sheets suitable for stylish wall applications, furniture surfaces, partitions and contemporary interiors.
-</p>
-
-<a class="inquire-btn"
-href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Carbon%20Sheets."
-target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-INQUIRE VIA WHATSAPP
-</a>
-
-</div>
-</div>
-
-
-<!-- 5 -->
-
-<div class="product-card">
-
-<div class="product-img">
-<i class="fa-solid fa-image"></i>
-</div>
-
-<div class="product-info">
-
-<h3>HD Wallpapers</h3>
-
-<p>
-High-definition decorative wallpapers available in premium textures and patterns for bedrooms, living rooms, offices and commercial spaces.
-</p>
-
-<a class="inquire-btn"
-href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20HD%20Wallpapers."
-target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-INQUIRE VIA WHATSAPP
-</a>
-
-</div>
-</div>
-
-
-<!-- 6 -->
-
-<div class="product-card">
-
-<div class="product-img">
-<i class="fa-solid fa-leaf"></i>
-</div>
-
-<div class="product-info">
-
-<h3>Artificial Grass</h3>
-
-<p>
-Premium artificial grass solutions for balconies, terraces, gardens, lawns, commercial landscapes and decorative outdoor areas.
-</p>
-
-<a class="inquire-btn"
-href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Artificial%20Grass."
-target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-INQUIRE VIA WHATSAPP
-</a>
-
-</div>
-</div>
-
-
-<!-- 7 -->
-
-<div class="product-card">
-
-<div class="product-img">
-<i class="fa-solid fa-building"></i>
-</div>
-
-<div class="product-info">
-
-<h3>Exterior Wall Cladding</h3>
-
-<p>
-Durable decorative cladding solutions designed to enhance exterior facades, commercial buildings, villas and modern architectural projects.
-</p>
-
-<a class="inquire-btn"
-href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Exterior%20Wall%20Cladding."
-target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-INQUIRE VIA WHATSAPP
-</a>
-
-</div>
-</div>
-
-
-<!-- 8 -->
-
-<div class="product-card">
-
-<div class="product-img">
-<i class="fa-solid fa-gem"></i>
-</div>
-
-<div class="product-info">
-
-<h3>PVC Marble Sheets</h3>
-
-<p>
-Elegant marble-finish sheets offering a premium stone appearance for walls, kitchens, bathrooms, feature areas and commercial interiors.
-</p>
-
-<a class="inquire-btn"
-href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20PVC%20Marble%20Sheets."
-target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-INQUIRE VIA WHATSAPP
-</a>
-
-</div>
-</div>
-
-
-<!-- 9 -->
-
-<div class="product-card">
-
-<div class="product-img">
-<i class="fa-solid fa-bars-staggered"></i>
-</div>
-
-<div class="product-info">
-
-<h3>Louvers &amp; Decorative Panels</h3>
-
-<p>
-Contemporary louvers and decorative panel systems for partitions, ceilings, feature walls, facades and premium interior styling.
-</p>
-
-<a class="inquire-btn"
-href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Louvers%20and%20Decorative%20Panels."
-target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-INQUIRE VIA WHATSAPP
-</a>
-
-</div>
-</div>
-
-
-<!-- 10 -->
-
-<div class="product-card">
-
-<div class="product-img">
-<i class="fa-solid fa-tree"></i>
-</div>
-
-<div class="product-info">
-
-<h3>Outdoor Decking</h3>
-
-<p>
-Premium decking solutions for terraces, balconies, gardens, poolside areas and outdoor commercial spaces with a refined modern finish.
-</p>
-
-<a class="inquire-btn"
-href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Outdoor%20Decking."
-target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-INQUIRE VIA WHATSAPP
-</a>
-
-</div>
-</div>
-
-
-</div>
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-<div class="footer-content">
-
-<p class="copyright">
-&copy; 2026 Zuba International Private Limited. All Rights Reserved.
-</p>
-
-<p class="company-details">
-
-CIN: U46693UP2026PTC243112
-&nbsp;|&nbsp;
-GST: 09AACCZ8945N1ZC
-
-<br>
-
-IEC: AACCZ8945N
-&nbsp;|&nbsp;
-Udyam Reg: UDYAM-UP-07-0104617
-
-</p>
-
-</div>
-
-</footer>
-
-
-<!-- =========================
-     FLOATING WHATSAPP
-========================= -->
-
-<a
-href="https://wa.me/919278246138"
-class="whatsapp-float"
-target="_blank"
-rel="noopener noreferrer">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
-
-<!-- =========================
-     MOBILE MENU
-========================= -->
-
+<section class="products-section"><div class="products-grid">
+<article class="product-card">
+  <div class="product-img"><img src="images/architectural-wall-panels.jpg" alt="Architectural Wall Panels" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Architectural Wall Panels</h3>
+    <p>High-grade decorative wall panels for sophisticated residential and commercial interiors.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Architectural%20Wall%20Panels" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/wpc-wall-panels.jpg" alt="WPC Wall Panels" loading="lazy"></div>
+  <div class="product-info">
+    <h3>WPC Wall Panels</h3>
+    <p>Premium wood-plastic composite panels offering elegance, durability and easy maintenance.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20WPC%20Wall%20Panels" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/carbon-crystal-panels.jpg" alt="Carbon Crystal / Carbon Panels" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Carbon Crystal / Carbon Panels</h3>
+    <p>Premium carbon crystal panels with modern textures for stylish interior applications.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Carbon%20Crystal%20/%20Carbon%20Panels" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/uv-marble-sheets.jpg" alt="UV Marble Sheets" loading="lazy"></div>
+  <div class="product-info">
+    <h3>UV Marble Sheets</h3>
+    <p>High-definition UV marble sheets with a natural stone appearance for feature walls and interiors.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20UV%20Marble%20Sheets" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/pvc-wall-panels.jpg" alt="PVC Wall Panels" loading="lazy"></div>
+  <div class="product-info">
+    <h3>PVC Wall Panels</h3>
+    <p>Stylish and lightweight PVC wall panels for modern, waterproof and easy-care interiors.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20PVC%20Wall%20Panels" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/charcoal-fluted-panels.jpg" alt="Charcoal Fluted Panels" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Charcoal Fluted Panels</h3>
+    <p>Modern fluted decorative panels for feature walls, TV units, offices and residences.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Charcoal%20Fluted%20Panels" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/acoustic-slat-panels.jpg" alt="Acoustic Slat Wall Panels" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Acoustic Slat Wall Panels</h3>
+    <p>Sound-absorbing slat panels combining improved acoustics with a premium contemporary look.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Acoustic%20Slat%20Wall%20Panels" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/pu-stone-panels.jpg" alt="PU Stone Wall Panels" loading="lazy"></div>
+  <div class="product-info">
+    <h3>PU Stone Wall Panels</h3>
+    <p>Lightweight PU stone panels designed to deliver a natural stone appearance with easier installation.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20PU%20Stone%20Wall%20Panels" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/outdoor-wpc-cladding.jpg" alt="Outdoor WPC Wall Cladding" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Outdoor WPC Wall Cladding</h3>
+    <p>Weather-resistant WPC cladding for exterior façades, boundary walls and outdoor applications.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Outdoor%20WPC%20Wall%20Cladding" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/pvc-ceiling-panels.jpg" alt="PVC Ceiling Panels" loading="lazy"></div>
+  <div class="product-info">
+    <h3>PVC Ceiling Panels</h3>
+    <p>Stylish PVC ceiling panels for modern interiors, lightweight, practical and easy to maintain.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20PVC%20Ceiling%20Panels" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/artificial-grass-green-wall.jpg" alt="Artificial Grass / Green Wall" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Artificial Grass / Green Wall</h3>
+    <p>High-quality artificial grass and green-wall solutions for gardens, balconies and commercial spaces.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Artificial%20Grass%20/%20Green%20Wall" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/hd-wallpapers.jpg" alt="HD Wallpapers" loading="lazy"></div>
+  <div class="product-info">
+    <h3>HD Wallpapers</h3>
+    <p>High-definition wallpapers in premium textures and patterns for elevated interior spaces.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20HD%20Wallpapers" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/u-l-profiles.jpg" alt="U & L Profiles" loading="lazy"></div>
+  <div class="product-info">
+    <h3>U & L Profiles</h3>
+    <p>Premium U and L profiles for finishing, edge protection and clean wall and ceiling installations.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20U%20&%20L%20Profiles" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/pvc-moulding.jpg" alt="PVC Moulding" loading="lazy"></div>
+  <div class="product-info">
+    <h3>PVC Moulding</h3>
+    <p>Decorative PVC mouldings for walls and ceilings to create a refined finishing touch.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20PVC%20Moulding" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/adhesives-sealants.jpg" alt="Adhesives & Sealants" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Adhesives & Sealants</h3>
+    <p>High-strength adhesives and sealants for strong, reliable and long-lasting installations.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Adhesives%20&%20Sealants" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/wall-panel-bond.jpg" alt="Wall & Panel Adhesive (Bond)" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Wall & Panel Adhesive (Bond)</h3>
+    <p>Specially selected bonding solutions for wall panels, WPC, PVC and marble sheets.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Wall%20&%20Panel%20Adhesive%20(Bond)" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/decorative-lights.jpg" alt="Decorative Lights" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Decorative Lights</h3>
+    <p>Modern decorative lighting solutions designed to enhance premium interiors.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Decorative%20Lights" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/led-strips-profiles.jpg" alt="LED Strips & Profiles" loading="lazy"></div>
+  <div class="product-info">
+    <h3>LED Strips & Profiles</h3>
+    <p>LED strips and aluminium profiles for clean, stylish architectural lighting.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20LED%20Strips%20&%20Profiles" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/screws-clips-install-kit.jpg" alt="Screws, Clips & Install Kit" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Screws, Clips & Install Kit</h3>
+    <p>Installation hardware for secure fitting and professional finishing.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Screws,%20Clips%20&%20Install%20Kit" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/all-accessories.jpg" alt="All Accessories Available" loading="lazy"></div>
+  <div class="product-info">
+    <h3>All Accessories Available</h3>
+    <p>Trims, tools, profiles, clips and installation materials available under one roof.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20All%20Accessories%20Available" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/skirting-base-boards.jpg" alt="Skirting / Base Boards" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Skirting / Base Boards</h3>
+    <p>Elegant skirting boards for a neat and premium wall-to-floor finish.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Skirting%20/%20Base%20Boards" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/corner-guards.jpg" alt="Corner Guards" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Corner Guards</h3>
+    <p>Durable corner guards for clean edges and added protection.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Corner%20Guards" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/expansion-joint-covers.jpg" alt="Expansion Joint Covers" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Expansion Joint Covers</h3>
+    <p>High-quality joint covers for clean, professional installations.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Expansion%20Joint%20Covers" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article>
+<article class="product-card">
+  <div class="product-img"><img src="images/tools-installation-items.jpg" alt="Tools & Installation Items" loading="lazy"></div>
+  <div class="product-info">
+    <h3>Tools & Installation Items</h3>
+    <p>Professional tools and installation items for efficient and precise fitting.</p>
+    <a class="inquire-btn" href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Tools%20&%20Installation%20Items" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-whatsapp"></i> INQUIRE VIA WHATSAPP
+    </a>
+  </div>
+</article></div></section>
+<div class="accessories-banner">ALL ACCESSORIES, TRIMS, PROFILES, MOULDINGS, BONDS, LIGHTS, TOOLS &amp; INSTALLATION MATERIALS AVAILABLE — EVERYTHING YOU NEED, ALL IN ONE PLACE.</div>
+<footer><p class="copyright">&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
+<p class="company-details">CIN: U46693UP2026PTC243112 &nbsp;|&nbsp; GST: 09AACCZ8945N1ZC<br>IEC: AACCZ8945N &nbsp;|&nbsp; Udyam Reg: UDYAM-UP-07-0104617</p></footer>
+<a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
 <script>
-
-document.getElementById("menu-toggle").onclick=function(){
-
-document.getElementById("nav-menu").classList.toggle("active");
-
-};
-
+document.getElementById('menu-toggle').onclick=function(){document.getElementById('nav-menu').classList.toggle('active');};
 </script>
-
-
 </body>
 </html>
