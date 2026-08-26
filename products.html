@@ -3,173 +3,917 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Zuba International | Our Products</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body, html { width: 100%; font-family: 'Montserrat', sans-serif; background: #050f1a; color: #ffffff; overflow-x: hidden; }
-        
-        /* Luxury Header */
-        header { background: rgba(5, 15, 26, 0.92); padding: 18px 30px; border-bottom: 2px solid #c0a16b; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 22px; color: white; text-decoration: none; letter-spacing: 1px; }
-        .logo span { color: #c0a16b; }
-        
-        #menu-toggle { display: none; color: #c0a16b; font-size: 24px; cursor: pointer; }
-        .nav-menu { display: flex; gap: 25px; list-style: none; }
-        .nav-menu a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
-        .nav-menu a i { color: #c0a16b; }
-        .nav-menu a:hover { color: #c0a16b; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        /* Page Banner */
-        .page-banner { padding: 70px 20px; text-align: center; background: linear-gradient(to bottom, #050f1a, #071628); border-bottom: 1px solid rgba(192, 161, 107, 0.2); }
-        .page-banner h1 { font-family: 'Playfair Display', serif; font-size: 40px; color: #c0a16b; margin-bottom: 10px; }
-        .page-banner p { color: #94a3b8; font-size: 15px; letter-spacing: 1px; }
+        html,
+        body {
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background: #050f1a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
 
-        /* Products Grid Section */
-        .products-section { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        
-        .product-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(192, 161, 107, 0.25); border-radius: 10px; overflow: hidden; transition: 0.4s; }
-        .product-card:hover { border-color: #c0a16b; transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        
-        .product-img { width: 100%; height: 220px; background: #0b1d32; display: flex; justify-content: center; align-items: center; color: #c0a16b; font-size: 50px; border-bottom: 1px solid rgba(192, 161, 107, 0.15); }
-        .product-info { padding: 25px; }
-        .product-info h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: #fff; margin-bottom: 12px; }
-        .product-info p { font-size: 14px; color: #cbd5e1; line-height: 1.6; margin-bottom: 20px; }
-        .inquire-btn { display: inline-block; background: transparent; border: 1px solid #c0a16b; color: #c0a16b; padding: 10px 20px; font-weight: 600; font-size: 13px; text-decoration: none; border-radius: 4px; transition: 0.3s; letter-spacing: 1px; }
-        .inquire-btn:hover { background: #c0a16b; color: #050f1a; }
+        body {
+            perspective: 1200px;
+        }
 
-        /* Professional Footer */
-        footer { background: #030a12; border-top: 1px solid rgba(192, 161, 107, 0.2); padding: 50px 20px; text-align: center; margin-top: 80px; }
-        .footer-content { max-width: 900px; margin: 0 auto; line-height: 1.8; }
-        .copyright { color: #ffffff; font-weight: 600; margin-bottom: 15px; font-size: 14px; letter-spacing: 0.5px; }
-        .company-details { color: #c0a16b; font-size: 12px; letter-spacing: 1px; line-height: 1.8; }
 
-        /* WhatsApp Floating Button */
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background-color: #25d366; color: white; border-radius: 50%; font-size: 32px; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; z-index: 2000; box-shadow: 0 4px 20px rgba(0,0,0,0.5); transition: 0.3s; }
-        .whatsapp-float:hover { transform: scale(1.1); }
+        /* =========================
+           LUXURY HEADER
+        ========================= */
 
-        /* Mobile Responsive */
+        header {
+            background: rgba(5, 15, 26, 0.92);
+            padding: 18px 30px;
+            border-bottom: 2px solid #c0a16b;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 22px;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: 0.3s ease;
+        }
+
+        .logo span {
+            color: #c0a16b;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        #menu-toggle {
+            display: none;
+            color: #c0a16b;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-menu a i {
+            color: #c0a16b;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #c0a16b;
+            transform: translateY(-4px);
+        }
+
+        .nav-menu a:hover i {
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+
+        /* =========================
+           PAGE BANNER
+        ========================= */
+
+        .page-banner {
+            padding: 70px 20px;
+            text-align: center;
+            background: linear-gradient(
+                to bottom,
+                #050f1a,
+                #071628
+            );
+            border-bottom: 1px solid rgba(192, 161, 107, 0.2);
+        }
+
+        .page-banner h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            color: #c0a16b;
+            margin-bottom: 10px;
+        }
+
+        .page-banner p {
+            color: #94a3b8;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           PRODUCTS SECTION
+        ========================= */
+
+        .products-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(320px, 1fr)
+            );
+            gap: 30px;
+
+            perspective: 1400px;
+        }
+
+
+        /* =========================
+           PREMIUM 3D PRODUCT CARD
+        ========================= */
+
+        .product-card {
+            position: relative;
+
+            background: rgba(255, 255, 255, 0.02);
+
+            backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(
+                192,
+                161,
+                107,
+                0.25
+            );
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            transform-style: preserve-3d;
+
+            transform:
+                translateY(0)
+                rotateX(0deg)
+                rotateY(0deg)
+                scale(1);
+
+            transition:
+                transform 0.18s ease-out,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+
+            will-change: transform;
+
+            cursor: pointer;
+        }
+
+
+        /* Premium floating hover */
+
+        .product-card:hover {
+            border-color: #c0a16b;
+
+            box-shadow:
+                0 30px 70px rgba(0, 0, 0, 0.55),
+                0 10px 30px rgba(
+                    192,
+                    161,
+                    107,
+                    0.18
+                );
+        }
+
+
+        /* Golden glow behind card */
+
+        .product-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            top: -100px;
+            right: -100px;
+
+            background: rgba(
+                192,
+                161,
+                107,
+                0.12
+            );
+
+            border-radius: 50%;
+
+            filter: blur(35px);
+
+            opacity: 0;
+
+            transition: opacity 0.4s ease;
+
+            pointer-events: none;
+
+            z-index: 0;
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+
+        /* =========================
+           PRODUCT IMAGE / ICON
+        ========================= */
+
+        .product-img {
+            width: 100%;
+            height: 220px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(192, 161, 107, 0.08),
+                    transparent 60%
+                ),
+                #0b1d32;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: #c0a16b;
+
+            font-size: 50px;
+
+            border-bottom:
+                1px solid rgba(
+                    192,
+                    161,
+                    107,
+                    0.15
+                );
+
+            overflow: hidden;
+
+            transform-style: preserve-3d;
+
+            position: relative;
+
+            z-index: 1;
+        }
+
+
+        .product-img i {
+            transition:
+                transform 0.45s ease,
+                text-shadow 0.45s ease;
+        }
+
+
+        .product-card:hover .product-img i {
+            transform:
+                translateZ(45px)
+                scale(1.18)
+                rotate(4deg);
+
+            text-shadow:
+                0 10px 30px rgba(
+                    192,
+                    161,
+                    107,
+                    0.45
+                );
+        }
+
+
+        /* =========================
+           PRODUCT CONTENT
+        ========================= */
+
+        .product-info {
+            padding: 25px;
+
+            position: relative;
+
+            z-index: 2;
+
+            transform-style: preserve-3d;
+        }
+
+
+        .product-info h3 {
+            font-family: 'Playfair Display', serif;
+
+            font-size: 22px;
+
+            color: #fff;
+
+            margin-bottom: 12px;
+
+            transition:
+                color 0.35s ease,
+                transform 0.35s ease;
+        }
+
+
+        .product-card:hover .product-info h3 {
+            color: #c0a16b;
+
+            transform:
+                translateZ(18px);
+        }
+
+
+        .product-info p {
+            font-size: 14px;
+
+            color: #cbd5e1;
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+
+            transition:
+                transform 0.35s ease;
+        }
+
+
+        .product-card:hover .product-info p {
+            transform:
+                translateZ(8px);
+        }
+
+
+        /* =========================
+           WHATSAPP INQUIRE BUTTON
+        ========================= */
+
+        .inquire-btn {
+            display: inline-block;
+
+            background: transparent;
+
+            border:
+                1px solid #c0a16b;
+
+            color: #c0a16b;
+
+            padding: 10px 20px;
+
+            font-weight: 600;
+
+            font-size: 13px;
+
+            text-decoration: none;
+
+            border-radius: 4px;
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.3s ease;
+
+            letter-spacing: 1px;
+
+            transform-style: preserve-3d;
+        }
+
+
+        .inquire-btn:hover {
+            background: #c0a16b;
+
+            color: #050f1a;
+
+            transform:
+                translateY(-5px)
+                translateZ(20px)
+                scale(1.04);
+
+            box-shadow:
+                0 10px 25px rgba(
+                    192,
+                    161,
+                    107,
+                    0.25
+                );
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #030a12;
+
+            border-top:
+                1px solid rgba(
+                    192,
+                    161,
+                    107,
+                    0.2
+                );
+
+            padding: 50px 20px;
+
+            text-align: center;
+
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            line-height: 1.8;
+        }
+
+        .copyright {
+            color: #ffffff;
+
+            font-weight: 600;
+
+            margin-bottom: 15px;
+
+            font-size: 14px;
+
+            letter-spacing: 0.5px;
+        }
+
+        .company-details {
+            color: #c0a16b;
+
+            font-size: 12px;
+
+            letter-spacing: 1px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           WHATSAPP FLOATING BUTTON
+        ========================= */
+
+        .whatsapp-float {
+            position: fixed;
+
+            bottom: 25px;
+
+            right: 25px;
+
+            background-color: #25d366;
+
+            color: white;
+
+            border-radius: 50%;
+
+            font-size: 32px;
+
+            width: 60px;
+
+            height: 60px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            z-index: 2000;
+
+            box-shadow:
+                0 4px 20px rgba(
+                    0,
+                    0,
+                    0,
+                    0.5
+                );
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+            animation:
+                whatsappFloat 3s ease-in-out infinite;
+        }
+
+
+        @keyframes whatsappFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-7px);
+            }
+        }
+
+
+        .whatsapp-float:hover {
+            transform:
+                translateY(-8px)
+                scale(1.12);
+
+            box-shadow:
+                0 10px 30px rgba(
+                    37,
+                    211,
+                    102,
+                    0.4
+                );
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
         @media (max-width: 768px) {
-            #menu-toggle { display: block; }
-            .nav-menu { display: none; flex-direction: column; position: absolute; top: 65px; left: 0; width: 100%; background: #050f1a; padding: 25px 0; border-bottom: 2px solid #c0a16b; text-align: center; }
-            .nav-menu.active { display: flex; }
-            .page-banner h1 { font-size: 30px; }
+
+            #menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+
+                flex-direction: column;
+
+                position: absolute;
+
+                top: 65px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: #050f1a;
+
+                padding: 25px 0;
+
+                border-bottom:
+                    2px solid #c0a16b;
+
+                text-align: center;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .page-banner h1 {
+                font-size: 30px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+
+                gap: 22px;
+            }
+
+            .product-card {
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+            .product-card:hover {
+                transform:
+                    translateY(-8px)
+                    scale(1.015)
+                    rotateX(1deg);
+            }
+
+            .product-img {
+                height: 200px;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+
+                font-size: 28px;
+
+                bottom: 18px;
+                right: 18px;
+            }
+        }
+
+
+        /* =========================
+           REDUCED MOTION
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
+
+            .product-card {
+                transform: none !important;
+            }
         }
     </style>
 </head>
+
+
 <body>
 
-    <!-- Header Navigation -->
+
+    <!-- =========================
+         HEADER NAVIGATION
+    ========================= -->
+
     <header>
+
         <div class="nav-container">
-            <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
-            <div id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
-            <nav class="nav-menu" id="nav-menu">
-                <a href="index.html"><i class="fa-solid fa-house"></i> HOME</a>
-                <a href="products.html"><i class="fa-solid fa-box-open"></i> PRODUCTS</a>
-                <a href="about.html"><i class="fa-solid fa-circle-info"></i> ABOUT</a>
-                <a href="contact.html"><i class="fa-solid fa-envelope"></i> CONTACT</a>
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                ZUBA
+                <span>INTERNATIONAL</span>
+            </a>
+
+
+            <div id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+
+            <nav
+                class="nav-menu"
+                id="nav-menu"
+            >
+
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                    HOME
+                </a>
+
+                <a href="products.html">
+                    <i class="fa-solid fa-box-open"></i>
+                    PRODUCTS
+                </a>
+
+                <a href="about.html">
+                    <i class="fa-solid fa-circle-info"></i>
+                    ABOUT
+                </a>
+
+                <a href="contact.html">
+                    <i class="fa-solid fa-envelope"></i>
+                    CONTACT
+                </a>
+
             </nav>
+
         </div>
+
     </header>
 
-    <!-- Page Banner -->
+
+
+    <!-- =========================
+         PAGE BANNER
+    ========================= -->
+
     <div class="page-banner">
-        <h1>Our Premium Collections</h1>
-        <p>EXPLORE OUR EXQUISITE RANGE OF INTERIOR & EXTERIOR SOLUTIONS</p>
+
+        <h1>
+            Our Premium Collections
+        </h1>
+
+        <p>
+            EXPLORE OUR EXQUISITE RANGE OF
+            INTERIOR &amp; EXTERIOR SOLUTIONS
+        </p>
+
     </div>
 
-    <!-- Products Section -->
+
+
+    <!-- =========================
+         PRODUCTS
+    ========================= -->
+
     <section class="products-section">
+
         <div class="products-grid">
-            
-            <!-- Product 1 -->
+
+
+            <!-- PRODUCT 1 -->
+
             <div class="product-card">
-                <div class="product-img"><i class="fa-solid fa-border-all"></i></div>
-                <div class="product-info">
-                    <h3>Architectural Wall Panels</h3>
-                    <p>High-grade decorative wall panels offering a sophisticated look and elite finish for modern corporate and residential spaces.</p>
-                    <a href="https://wa.me/919278246138?text=I%20want%20to%20inquire%20about%20Architectural%20Wall%20Panels" target="_blank" class="inquire-btn">INQUIRE VIA WHATSAPP</a>
+
+                <div class="product-img">
+                    <i class="fa-solid fa-border-all"></i>
                 </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Architectural Wall Panels
+                    </h3>
+
+                    <p>
+                        High-grade decorative wall panels
+                        offering a sophisticated look and
+                        elite finish for modern corporate
+                        and residential spaces.
+                    </p>
+
+                    <a
+                        href="https://wa.me/919278246138?text=I%20want%20to%20inquire%20about%20Architectural%20Wall%20Panels"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inquire-btn"
+                    >
+                        INQUIRE VIA WHATSAPP
+                    </a>
+
+                </div>
+
             </div>
 
-            <!-- Product 2 -->
+
+
+            <!-- PRODUCT 2 -->
+
             <div class="product-card">
-                <div class="product-img"><i class="fa-solid fa-layer-group"></i></div>
-                <div class="product-info">
-                    <h3>Designer Louvers</h3>
-                    <p>Premium interior and exterior louvers engineered for durability, acoustics, and breathtaking architectural aesthetics.</p>
-                    <a href="https://wa.me/919278246138?text=I%20want%20to%20inquire%20about%20Designer%20Louvers" target="_blank" class="inquire-btn">INQUIRE VIA WHATSAPP</a>
+
+                <div class="product-img">
+                    <i class="fa-solid fa-layer-group"></i>
                 </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Designer Louvers
+                    </h3>
+
+                    <p>
+                        Premium interior and exterior
+                        louvers engineered for durability,
+                        acoustics, and breathtaking
+                        architectural aesthetics.
+                    </p>
+
+                    <a
+                        href="https://wa.me/919278246138?text=I%20want%20to%20inquire%20about%20Designer%20Louvers"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inquire-btn"
+                    >
+                        INQUIRE VIA WHATSAPP
+                    </a>
+
+                </div>
+
             </div>
 
-            <!-- Product 3 -->
+
+
+            <!-- PRODUCT 3 -->
+
             <div class="product-card">
-                <div class="product-img"><i class="fa-solid fa-gem"></i></div>
-                <div class="product-info">
-                    <h3>UV Marble Sheets</h3>
-                    <p>Flawless gloss-finish UV marble sheets designed to deliver the luxurious look of natural stone with superior strength.</p>
-                    <a href="https://wa.me/919278246138?text=I%20want%20to%20inquire%20about%20UV%20Marble%20Sheets" target="_blank" class="inquire-btn">INQUIRE VIA WHATSAPP</a>
+
+                <div class="product-img">
+                    <i class="fa-solid fa-gem"></i>
                 </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        UV Marble Sheets
+                    </h3>
+
+                    <p>
+                        Flawless gloss-finish UV marble
+                        sheets designed to deliver the
+                        luxurious look of natural stone
+                        with superior strength.
+                    </p>
+
+                    <a
+                        href="https://wa.me/919278246138?text=I%20want%20to%20inquire%20about%20UV%20Marble%20Sheets"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inquire-btn"
+                    >
+                        INQUIRE VIA WHATSAPP
+                    </a>
+
+                </div>
+
             </div>
 
-            <!-- Product 4 -->
+
+
+            <!-- PRODUCT 4 -->
+
             <div class="product-card">
-                <div class="product-img"><i class="fa-solid fa-house-chimney"></i></div>
-                <div class="product-info">
-                    <h3>Exterior Decor Elements</h3>
-                    <p>Weather-resistant exterior cladding and elements built to withstand harsh environments while maintaining pristine elegance.</p>
-                    <a href="https://wa.me/919278246138?text=I%20want%20to%20inquire%20about%20Exterior%20Decor%20Elements" target="_blank" class="inquire-btn">INQUIRE VIA WHATSAPP</a>
+
+                <div class="product-img">
+                    <i class="fa-solid fa-house-chimney"></i>
                 </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Exterior Decor Elements
+                    </h3>
+
+                    <p>
+                        Weather-resistant exterior
+                        cladding and elements built to
+                        withstand harsh environments
+                        while maintaining pristine elegance.
+                    </p>
+
+                    <a
+                        href="https://wa.me/919278246138?text=I%20want%20to%20inquire%20about%20Exterior%20Decor%20Elements"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inquire-btn"
+                    >
+                        INQUIRE VIA WHATSAPP
+                    </a>
+
+                </div>
+
             </div>
 
-            <!-- Product 5 -->
+
+
+            <!-- PRODUCT 5 -->
+
             <div class="product-card">
-                <div class="product-img"><i class="fa-solid fa-couch"></i></div>
-                <div class="product-info">
-                    <h3>Luxury Home Decor</h3>
-                    <p>Exclusively curated home decoration accessories and lifestyle artifacts sourced globally for discerning clientele.</p>
-                    <a href="https://wa.me/919278246138?text=I%20want%20to%20inquire%20about%20Luxury%20Home%20Decor" target="_blank" class="inquire-btn">INQUIRE VIA WHATSAPP</a>
+
+                <div class="product-img">
+                    <i class="fa-solid fa-couch"></i>
                 </div>
-            </div>
 
-            <!-- Product 6 -->
-            <div class="product-card">
-                <div class="product-img"><i class="fa-solid fa-boxes-stacked"></i></div>
                 <div class="product-info">
-                    <h3>Custom B2B Supplies</h3>
-                    <p>Tailored import-export solutions and bulk material sourcing handled with strict international trade compliance.</p>
-                    <a href="https://wa.me/919278246138?text=I%20want%20to%20inquire%20about%20Custom%20B2B%20Supplies" target="_blank" class="inquire-btn">INQUIRE VIA WHATSAPP</a>
-                </div>
-            </div>
 
-        </div>
-    </section>
+                    <h3>
+                        Luxury Home Decor
+                    </h3>
 
-    <!-- Professional Footer -->
-    <footer>
-        <div class="footer-content">
-            <p class="copyright">&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
-            <p class="company-details">
-                CIN: U46693UP2026PTC243112 &nbsp;|&nbsp; GST: 09AACCZ8945N1ZC<br>
-                IEC: AACCZ8945N &nbsp;|&nbsp; Udyam Reg: UDYAM-UP-07-0104617
-            </p>
-        </div>
-    </footer>
+                    <p>
+                        Exclusively curated home decoration
+                        accessories and lifestyle artifacts
+                        sourced globally for discerning
+                        clientele.
+                    </p>
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Mobile Menu Script -->
-    <script>
-        document.getElementById('menu-toggle').onclick = function() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        };
-    </script>
-</body>
-</html>
+                    <a
+                        href="https://wa.me/919278246138?text=I%20want%20to%20inquire%20about%20Luxury%20Home%20Decor"
+                        target="_blan
