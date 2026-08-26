@@ -1,963 +1,1014 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Zuba International | Our Products</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <style>
-
-        /* =====================================================
-           RESET
-        ===================================================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            width: 100%;
-            min-height: 100vh;
-            font-family: 'Montserrat', sans-serif;
-            color: #ffffff;
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(192,161,107,0.10),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 80% 60%,
-                    rgba(0,90,180,0.14),
-                    transparent 35%
-                ),
-                #050f1a;
-            overflow-x: hidden;
-        }
-
-
-        /* =====================================================
-           HEADER
-        ===================================================== */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            width: 100%;
-
-            background: rgba(5,15,26,0.94);
-
-            border-bottom: 1px solid rgba(192,161,107,0.65);
-
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-
-            box-shadow:
-                0 10px 40px rgba(0,0,0,0.25);
-
-            padding: 18px 25px;
-        }
-
-        .nav-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            color: #ffffff;
-            text-decoration: none;
-
-            font-size: 22px;
-            font-weight: 700;
-
-            letter-spacing: 1px;
-
-            transition: 0.3s ease;
-        }
-
-        .logo span {
-            color: #c0a16b;
-        }
-
-        .logo:hover {
-            transform: translateY(-2px);
-            text-shadow:
-                0 0 15px rgba(192,161,107,0.6);
-        }
-
-
-        /* =====================================================
-           NAVIGATION
-        ===================================================== */
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-
-            list-style: none;
-        }
-
-        .nav-menu a {
-            position: relative;
-
-            display: flex;
-            align-items: center;
-            gap: 8px;
-
-            color: #ffffff;
-            text-decoration: none;
-
-            font-size: 13px;
-            font-weight: 600;
-
-            letter-spacing: 1px;
-
-            transition: all 0.35s ease;
-        }
-
-        .nav-menu a i {
-            color: #c0a16b;
-            transition: 0.35s ease;
-        }
-
-        .nav-menu a::after {
-            content: "";
-
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-
-            width: 0;
-            height: 2px;
-
-            background: #c0a16b;
-
-            transition: width 0.35s ease;
-        }
-
-        .nav-menu a:hover {
-            color: #c0a16b;
-            transform: translateY(-3px);
-        }
-
-        .nav-menu a:hover i {
-            transform: rotateY(180deg);
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-
-
-        /* =====================================================
-           MOBILE MENU BUTTON
-        ===================================================== */
-
-        #menu-toggle {
-            display: none;
-
-            color: #c0a16b;
-            font-size: 25px;
-
-            cursor: pointer;
-
-            transition: 0.3s ease;
-        }
-
-        #menu-toggle:hover {
-            transform: scale(1.12);
-        }
-
-
-        /* =====================================================
-           PAGE BANNER
-        ===================================================== */
-
-        .page-banner {
-            position: relative;
-
-            padding: 85px 20px 75px;
-
-            text-align: center;
-
-            overflow: hidden;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(5,15,26,0.96),
-                    rgba(7,22,40,0.92)
-                );
-
-            border-bottom:
-                1px solid rgba(192,161,107,0.2);
-        }
-
-        .page-banner::before {
-            content: "";
-
-            position: absolute;
-
-            width: 350px;
-            height: 350px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(192,161,107,0.08);
-
-            filter: blur(65px);
-
-            top: -170px;
-            left: -100px;
-
-            animation:
-                bannerGlow 6s ease-in-out infinite alternate;
-        }
-
-        .page-banner::after {
-            content: "";
-
-            position: absolute;
-
-            width: 350px;
-            height: 350px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(0,100,220,0.10);
-
-            filter: blur(65px);
-
-            right: -100px;
-            bottom: -170px;
-
-            animation:
-                bannerGlow 7s ease-in-out infinite alternate-reverse;
-        }
-
-        @keyframes bannerGlow {
-
-            from {
-                transform: translateY(0);
-            }
-
-            to {
-                transform: translateY(35px);
-            }
-        }
-
-        .page-banner h1 {
-            position: relative;
-            z-index: 2;
-
-            font-family: 'Playfair Display', serif;
-
-            font-size: clamp(32px, 5vw, 52px);
-
-            color: #c0a16b;
-
-            margin-bottom: 15px;
-
-            text-shadow:
-                0 0 25px rgba(192,161,107,0.28);
-
-            animation:
-                titleFloat 4s ease-in-out infinite;
-        }
-
-        @keyframes titleFloat {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-6px);
-            }
-        }
-
-        .page-banner p {
-            position: relative;
-            z-index: 2;
-
-            color: #94a3b8;
-
-            font-size: 13px;
-
-            letter-spacing: 2px;
-
-            line-height: 1.8;
-        }
-
-
-        /* =====================================================
-           PRODUCTS SECTION
-        ===================================================== */
-
-        .products-section {
-            width: 100%;
-            max-width: 1200px;
-
-            margin: 70px auto;
-
-            padding: 0 20px;
-        }
-
-        .products-intro {
-            text-align: center;
-
-            margin-bottom: 45px;
-        }
-
-        .products-intro h2 {
-            font-family: 'Playfair Display', serif;
-
-            font-size: 30px;
-
-            color: #ffffff;
-
-            margin-bottom: 12px;
-        }
-
-        .products-intro p {
-            max-width: 700px;
-
-            margin: auto;
-
-            color: #94a3b8;
-
-            font-size: 14px;
-
-            line-height: 1.8;
-        }
-
-        .gold-line {
-            width: 70px;
-            height: 3px;
-
-            margin: 18px auto;
-
-            background: #c0a16b;
-
-            border-radius: 10px;
-        }
-
-
-        /* =====================================================
-           PRODUCTS GRID
-        ===================================================== */
-
-        .products-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 32px;
-        }
-
-
-        /* =====================================================
-           PRODUCT CARD
-        ===================================================== */
-
-        .product-card {
-            position: relative;
-
-            min-height: 475px;
-
-            display: flex;
-            flex-direction: column;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.075),
-                    rgba(255,255,255,0.015)
-                );
-
-            border:
-                1px solid rgba(192,161,107,0.25);
-
-            border-radius: 18px;
-
-            overflow: hidden;
-
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-
-            box-shadow:
-                0 15px 45px rgba(0,0,0,0.22);
-
-            transition:
-                transform 0.45s ease,
-                box-shadow 0.45s ease,
-                border-color 0.45s ease;
-        }
-
-        .product-card:hover {
-            transform:
-                translateY(-14px)
-                scale(1.015);
-
-            border-color:
-                rgba(192,161,107,0.85);
-
-            box-shadow:
-                0 28px 65px rgba(0,0,0,0.55),
-                0 0 35px rgba(192,161,107,0.12);
-        }
-
-
-        /* =====================================================
-           PRODUCT IMAGE / ICON AREA
-        ===================================================== */
-
-        .product-img {
-            position: relative;
-
-            width: 100%;
-            height: 215px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            overflow: hidden;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(0,110,255,0.55),
-                    rgba(7,25,48,0.96) 68%
-                );
-
-            border-bottom:
-                1px solid rgba(192,161,107,0.22);
-        }
-
-        .product-img::before {
-            content: "";
-
-            position: absolute;
-
-            width: 150%;
-            height: 55px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255,255,255,0.13),
-                    transparent
-                );
-
-            transform:
-                rotate(-35deg)
-                translateX(-100%);
-
-            animation:
-                shine 5s linear infinite;
-        }
-
-        @keyframes shine {
-
-            0% {
-                transform:
-                    rotate(-35deg)
-                    translateX(-100%);
-            }
-
-            40%,
-            100% {
-                transform:
-                    rotate(-35deg)
-                    translateX(100%);
-            }
-        }
-
-        .product-img i {
-            position: relative;
-            z-index: 2;
-
-            font-size: 58px;
-
-            color: #ffffff;
-
-            text-shadow:
-                0 0 15px rgba(255,255,255,0.45),
-                0 0 35px rgba(192,161,107,0.40);
-
-            transition:
-                transform 0.5s ease,
-                color 0.5s ease,
-                text-shadow 0.5s ease;
-        }
-
-        .product-card:hover .product-img i {
-            color: #c0a16b;
-
-            transform:
-                scale(1.18)
-                rotateY(12deg);
-
-            text-shadow:
-                0 0 20px rgba(192,161,107,0.75),
-                0 0 45px rgba(192,161,107,0.45);
-        }
-
-
-        /* =====================================================
-           PRODUCT INFO
-        ===================================================== */
-
-        .product-info {
-            flex: 1;
-
-            display: flex;
-            flex-direction: column;
-
-            padding: 25px;
-        }
-
-        .product-category {
-            display: inline-block;
-
-            width: fit-content;
-
-            color: #c0a16b;
-
-            font-size: 10px;
-
-            font-weight: 700;
-
-            letter-spacing: 1.5px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 10px;
-        }
-
-        .product-info h3 {
-            font-family: 'Playfair Display', serif;
-
-            color: #ffffff;
-
-            font-size: 21px;
-
-            line-height: 1.35;
-
-            margin-bottom: 12px;
-
-            transition:
-                color 0.3s ease,
-                transform 0.3s ease;
-        }
-
-        .product-card:hover .product-info h3 {
-            color: #c0a16b;
-
-            transform:
-                translateX(3px);
-        }
-
-        .product-info p {
-            color: #cbd5e1;
-
-            font-size: 13px;
-
-            line-height: 1.75;
-
-            margin-bottom: 20px;
-        }
-
-
-        /* =====================================================
-           PRODUCT FEATURES
-        ===================================================== */
-
-        .product-features {
-            list-style: none;
-
-            margin-bottom: 20px;
-        }
-
-        .product-features li {
-            display: flex;
-            align-items: center;
-
-            gap: 8px;
-
-            color: #aebccc;
-
-            font-size: 11px;
-
-            margin-bottom: 7px;
-        }
-
-        .product-features li i {
-            color: #c0a16b;
-
-            font-size: 10px;
-        }
-
-
-        /* =====================================================
-           WHATSAPP BUTTON
-        ===================================================== */
-
-        .inquire-btn {
-            display: inline-flex;
-
-            align-items: center;
-            justify-content: center;
-
-            gap: 9px;
-
-            width: 100%;
-
-            margin-top: auto;
-
-            padding: 12px 16px;
-
-            background:
-                rgba(192,161,107,0.035);
-
-            border:
-                1px solid #c0a16b;
-
-            border-radius: 6px;
-
-            color: #c0a16b;
-
-            text-decoration: none;
-
-            font-size: 11px;
-
-            font-weight: 700;
-
-            letter-spacing: 0.8px;
-
-            transition:
-                all 0.35s ease;
-        }
-
-        .inquire-btn i {
-            font-size: 15px;
-        }
-
-        .inquire-btn:hover {
-            background: #c0a16b;
-
-            color: #050f1a;
-
-            transform:
-                translateY(-4px);
-
-            box-shadow:
-                0 12px 25px rgba(192,161,107,0.25);
-        }
-
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        footer {
-            background: #030a12;
-
-            border-top:
-                1px solid rgba(192,161,107,0.2);
-
-            padding: 50px 20px;
-
-            text-align: center;
-
-            margin-top: 90px;
-        }
-
-        .footer-content {
-            max-width: 900px;
-
-            margin: auto;
-
-            line-height: 1.8;
-        }
-
-        .copyright {
-            color: #ffffff;
-
-            font-weight: 600;
-
-            margin-bottom: 15px;
-
-            font-size: 14px;
-
-            letter-spacing: 0.5px;
-        }
-
-        .company-details {
-            color: #c0a16b;
-
-            font-size: 12px;
-
-            letter-spacing: 1px;
-
-            line-height: 2;
-        }
-
-
-        /* =====================================================
-           FLOATING WHATSAPP
-        ===================================================== */
-
-        .whatsapp-float {
-            position: fixed;
-
-            right: 25px;
-            bottom: 25px;
-
-            width: 62px;
-            height: 62px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: #25d366;
-
-            color: #ffffff;
-
-            border-radius: 50%;
-
-            font-size: 30px;
-
-            text-decoration: none;
-
-            z-index: 2000;
-
-            box-shadow:
-                0 5px 25px rgba(37,211,102,0.35);
-
-            animation:
-                whatsappFloat 2.5s ease-in-out infinite;
-
-            transition: 0.3s ease;
-        }
-
-        @keyframes whatsappFloat {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-9px);
-            }
-        }
-
-        .whatsapp-float:hover {
-            animation-play-state: paused;
-
-            transform:
-                scale(1.12)
-                rotate(8deg);
-
-            box-shadow:
-                0 8px 35px rgba(37,211,102,0.55);
-        }
-
-
-        /* =====================================================
-           TABLET
-        ===================================================== */
-
-        @media (max-width: 1000px) {
-
-            .products-grid {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-            }
-
-        }
-
-
-        /* =====================================================
-           MOBILE
-        ===================================================== */
-
-        @media (max-width: 768px) {
-
-            header {
-                padding: 16px 20px;
-            }
-
-            #menu-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-
-                display: none;
-
-                position: absolute;
-
-                top: 67px;
-                left: 0;
-
-                width: 100%;
-
-                flex-direction: column;
-
-                gap: 22px;
-
-                padding: 25px 20px;
-
-                background:
-                    rgba(5,15,26,0.98);
-
-                border-bottom:
-                    2px solid #c0a16b;
-
-                backdrop-filter: blur(15px);
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu a {
-                justify-content: center;
-            }
-
-            .page-banner {
-                padding:
-                    65px 20px
-                    60px;
-            }
-
-            .page-banner h1 {
-                font-size: 34px;
-            }
-
-            .page-banner p {
-                font-size: 11px;
-                letter-spacing: 1.3px;
-            }
-
-            .products-section {
-                margin-top: 50px;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-
-                gap: 25px;
-            }
-
-            .product-card {
-                min-height: 460px;
-            }
-
-            .product-img {
-                height: 210px;
-            }
-
-            .whatsapp-float {
-                width: 58px;
-                height: 58px;
-
-                right: 18px;
-                bottom: 18px;
-            }
-
-        }
-
-
-        /* =====================================================
-           SMALL MOBILE
-        ===================================================== */
-
-        @media (max-width: 420px) {
-
-            .logo {
-                font-size: 17px;
-            }
-
-            .page-banner h1 {
-                font-size: 29px;
-            }
-
-            .products-intro h2 {
-                font-size: 25px;
-            }
-
-            .product-img {
-                height: 195px;
-            }
-
-            .product-info {
-                padding: 22px;
-            }
-
-            .product-info h3 {
-                font-size: 20px;
-            }
-
-            .product-info p {
-                font-size: 12.5px;
-            }
-
-        }
-
-
-        /* =====================================================
-           REDUCED MOTION
-        ===================================================== */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation: none !important;
-                transition: none !important;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zuba International | Our Products</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    font-family:'Montserrat',sans-serif;
+    color:#fff;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(192,161,107,.08),transparent 30%),
+    radial-gradient(circle at 80% 60%,rgba(0,90,180,.12),transparent 35%),
+    #050f1a;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,15,26,.90);
+    padding:18px 30px;
+    border-bottom:1px solid rgba(192,161,107,.6);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#c0a16b;
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-menu a{
+    position:relative;
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:1px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    transition:.35s ease;
+}
+
+.nav-menu a i{
+    color:#c0a16b;
+}
+
+.nav-menu a:hover{
+    color:#c0a16b;
+    transform:translateY(-3px);
+}
+
+.nav-menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#c0a16b;
+    transition:.35s;
+}
+
+.nav-menu a:hover::after{
+    width:100%;
+}
+
+#menu-toggle{
+    display:none;
+    color:#c0a16b;
+    font-size:25px;
+    cursor:pointer;
+}
+
+
+/* =========================
+   BANNER
+========================= */
+
+.page-banner{
+    position:relative;
+    padding:80px 20px 70px;
+    text-align:center;
+    overflow:hidden;
+    background:
+    linear-gradient(
+        135deg,
+        rgba(5,15,26,.96),
+        rgba(7,22,40,.92)
+    );
+    border-bottom:1px solid rgba(192,161,107,.2);
+}
+
+.page-banner::before{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:rgba(192,161,107,.08);
+    filter:blur(60px);
+    top:-150px;
+    left:-100px;
+    animation:glow 6s ease-in-out infinite alternate;
+}
+
+.page-banner::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:rgba(0,100,220,.08);
+    filter:blur(60px);
+    right:-100px;
+    bottom:-150px;
+    animation:glow 7s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes glow{
+    from{transform:translateY(0);}
+    to{transform:translateY(35px);}
+}
+
+.page-banner h1{
+    position:relative;
+    z-index:2;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(32px,5vw,52px);
+    color:#c0a16b;
+    margin-bottom:15px;
+    text-shadow:0 0 25px rgba(192,161,107,.25);
+}
+
+.page-banner p{
+    position:relative;
+    z-index:2;
+    color:#94a3b8;
+    font-size:14px;
+    letter-spacing:2px;
+    line-height:1.7;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section{
+    max-width:1200px;
+    margin:65px auto;
+    padding:0 20px;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card{
+    position:relative;
+    min-height:475px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.07),
+        rgba(255,255,255,.015)
+    );
+
+    border:1px solid rgba(192,161,107,.25);
+    border-radius:18px;
+    overflow:hidden;
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    transform-style:preserve-3d;
+
+    transition:
+    transform .45s ease,
+    box-shadow .45s ease,
+    border-color .45s ease;
+}
+
+.product-card:hover{
+    border-color:rgba(192,161,107,.85);
+
+    transform:
+    translateY(-15px)
+    scale(1.02);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.55),
+    0 0 35px rgba(192,161,107,.15);
+}
+
+
+/* =========================
+   PRODUCT IMAGE / ICON
+========================= */
+
+.product-img{
+    position:relative;
+    width:100%;
+    height:220px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(0,110,255,.55),
+        rgba(7,25,48,.95) 65%
+    );
+
+    border-bottom:1px solid rgba(192,161,107,.2);
+    overflow:hidden;
+}
+
+.product-img::before{
+    content:"";
+    position:absolute;
+    width:130%;
+    height:55px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.15),
+        transparent
+    );
+
+    transform:rotate(-35deg) translateX(-100%);
+    animation:shine 5s linear infinite;
+}
+
+@keyframes shine{
+    0%{
+        transform:rotate(-35deg) translateX(-100%);
+    }
+
+    40%,100%{
+        transform:rotate(-35deg) translateX(100%);
+    }
+}
+
+.product-img i{
+    position:relative;
+    z-index:2;
+
+    font-size:60px;
+    color:#fff;
+
+    text-shadow:
+    0 0 15px rgba(255,255,255,.45),
+    0 0 35px rgba(192,161,107,.45);
+
+    transition:.5s ease;
+}
+
+.product-card:hover .product-img i{
+    color:#c0a16b;
+    transform:scale(1.18) rotateY(10deg);
+
+    text-shadow:
+    0 0 20px rgba(192,161,107,.7),
+    0 0 45px rgba(192,161,107,.4);
+}
+
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.product-info{
+    padding:25px;
+    min-height:255px;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.product-info h3{
+    font-family:'Playfair Display',serif;
+    font-size:21px;
+    color:#fff;
+    margin-bottom:12px;
+    transition:.3s;
+}
+
+.product-card:hover .product-info h3{
+    color:#c0a16b;
+}
+
+.product-info p{
+    font-size:13.5px;
+    color:#cbd5e1;
+    line-height:1.75;
+    margin-bottom:20px;
+}
+
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.inquire-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    width:fit-content;
+    margin-top:auto;
+
+    background:rgba(192,161,107,.03);
+    border:1px solid #c0a16b;
+
+    color:#c0a16b;
+
+    padding:11px 18px;
+
+    font-weight:600;
+    font-size:11px;
+
+    text-decoration:none;
+    border-radius:6px;
+    letter-spacing:.8px;
+
+    transition:.35s ease;
+}
+
+.inquire-btn i{
+    font-size:15px;
+}
+
+.inquire-btn:hover{
+    background:#c0a16b;
+    color:#050f1a;
+
+    transform:
+    translateY(-5px)
+    scale(1.04);
+
+    box-shadow:
+    0 12px 25px rgba(192,161,107,.25);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#030a12;
+    border-top:1px solid rgba(192,161,107,.2);
+    padding:55px 20px;
+    text-align:center;
+    margin-top:90px;
+}
+
+.footer-content{
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.copyright{
+    color:#fff;
+    font-weight:600;
+    margin-bottom:15px;
+    font-size:14px;
+}
+
+.company-details{
+    color:#c0a16b;
+    font-size:12px;
+    letter-spacing:1px;
+    line-height:2;
+}
+
+
+/* =========================
+   FLOATING WHATSAPP
+========================= */
+
+.whatsapp-float{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+
+    width:62px;
+    height:62px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#25d366;
+    color:#fff;
+
+    border-radius:50%;
+    font-size:30px;
+
+    text-decoration:none;
+    z-index:2000;
+
+    box-shadow:
+    0 5px 25px rgba(37,211,102,.35);
+
+    animation:whatsappFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes whatsappFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.whatsapp-float:hover{
+    animation-play-state:paused;
+    transform:scale(1.12);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:950px){
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    header{
+        padding:16px 20px;
+    }
+
+    #menu-toggle{
+        display:block;
+    }
+
+    .nav-menu{
+        display:none;
+
+        position:absolute;
+        top:68px;
+        left:0;
+
+        width:100%;
+
+        flex-direction:column;
+        gap:22px;
+
+        padding:25px;
+
+        background:rgba(5,15,26,.98);
+
+        border-bottom:2px solid #c0a16b;
+
+        backdrop-filter:blur(15px);
+    }
+
+    .nav-menu.active{
+        display:flex;
+    }
+
+    .nav-menu a{
+        justify-content:center;
+    }
+
+    .page-banner{
+        padding:65px 20px;
+    }
+
+    .page-banner p{
+        font-size:11px;
+    }
+
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-card{
+        min-height:450px;
+    }
+
+    .whatsapp-float{
+        width:58px;
+        height:58px;
+        right:18px;
+        bottom:18px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:420px){
+
+    .logo{
+        font-size:18px;
+    }
+
+    .product-img{
+        height:200px;
+    }
+
+    .product-info{
+        padding:22px;
+    }
+
+    .product-info h3{
+        font-size:20px;
+    }
+
+    .product-info p{
+        font-size:13px;
+    }
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-    <!-- ===================================
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="nav-container">
+
+<a href="index.html" class="logo">
+ZUBA <span>INTERNATIONAL</span>
+</a>
+
+<div id="menu-toggle">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+<nav class="nav-menu" id="nav-menu">
+
+<a href="index.html">
+<i class="fa-solid fa-house"></i>
+HOME
+</a>
+
+<a href="products.html">
+<i class="fa-solid fa-box-open"></i>
+PRODUCTS
+</a>
+
+<a href="about.html">
+<i class="fa-solid fa-circle-info"></i>
+ABOUT
+</a>
+
+<a href="contact.html">
+<i class="fa-solid fa-envelope"></i>
+CONTACT
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     BANNER
+========================= -->
+
+<section class="page-banner">
+
+<h1>Our Premium Collections</h1>
+
+<p>
+PREMIUM INTERIOR SURFACES, EXTERIOR FINISHES &amp; DECORATIVE SOLUTIONS
+</p>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section class="products-section">
+
+<div class="products-grid">
+
+
+<!-- 1 -->
+
+<div class="product-card">
+
+<div class="product-img">
+<i class="fa-solid fa-border-all"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Architectural Wall Panels</h3>
+
+<p>
+High-grade decorative wall panels designed to create sophisticated feature walls, corporate interiors and premium residential spaces.
+</p>
+
+<a class="inquire-btn"
+href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Architectural%20Wall%20Panels."
+target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+INQUIRE VIA WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- 2 -->
+
+<div class="product-card">
+
+<div class="product-img">
+<i class="fa-solid fa-layer-group"></i>
+</div>
+
+<div class="product-info">
+
+<h3>WPC Wall Panels</h3>
+
+<p>
+Premium wood-plastic composite panels offering elegant interiors with durability, easy maintenance and a modern architectural appearance.
+</p>
+
+<a class="inquire-btn"
+href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20WPC%20Wall%20Panels."
+target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+INQUIRE VIA WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- 3 -->
+
+<div class="product-card">
+
+<div class="product-img">
+<i class="fa-solid fa-grip-lines"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Charcoal Fluted Panels</h3>
+
+<p>
+Modern fluted decorative panels for feature walls, TV units, offices, hotels and luxury residential interiors.
+</p>
+
+<a class="inquire-btn"
+href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Charcoal%20Fluted%20Panels."
+target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+INQUIRE VIA WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- 4 -->
+
+<div class="product-card">
+
+<div class="product-img">
+<i class="fa-solid fa-sheet-plastic"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Carbon Sheets</h3>
+
+<p>
+Premium decorative carbon sheets suitable for stylish wall applications, furniture surfaces, partitions and contemporary interiors.
+</p>
+
+<a class="inquire-btn"
+href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Carbon%20Sheets."
+target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+INQUIRE VIA WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- 5 -->
+
+<div class="product-card">
+
+<div class="product-img">
+<i class="fa-solid fa-image"></i>
+</div>
+
+<div class="product-info">
+
+<h3>HD Wallpapers</h3>
+
+<p>
+High-definition decorative wallpapers available in premium textures and patterns for bedrooms, living rooms, offices and commercial spaces.
+</p>
+
+<a class="inquire-btn"
+href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20HD%20Wallpapers."
+target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+INQUIRE VIA WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- 6 -->
+
+<div class="product-card">
+
+<div class="product-img">
+<i class="fa-solid fa-leaf"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Artificial Grass</h3>
+
+<p>
+Premium artificial grass solutions for balconies, terraces, gardens, lawns, commercial landscapes and decorative outdoor areas.
+</p>
+
+<a class="inquire-btn"
+href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Artificial%20Grass."
+target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+INQUIRE VIA WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- 7 -->
+
+<div class="product-card">
+
+<div class="product-img">
+<i class="fa-solid fa-building"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Exterior Wall Cladding</h3>
+
+<p>
+Durable decorative cladding solutions designed to enhance exterior facades, commercial buildings, villas and modern architectural projects.
+</p>
+
+<a class="inquire-btn"
+href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Exterior%20Wall%20Cladding."
+target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+INQUIRE VIA WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- 8 -->
+
+<div class="product-card">
+
+<div class="product-img">
+<i class="fa-solid fa-gem"></i>
+</div>
+
+<div class="product-info">
+
+<h3>PVC Marble Sheets</h3>
+
+<p>
+Elegant marble-finish sheets offering a premium stone appearance for walls, kitchens, bathrooms, feature areas and commercial interiors.
+</p>
+
+<a class="inquire-btn"
+href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20PVC%20Marble%20Sheets."
+target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+INQUIRE VIA WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- 9 -->
+
+<div class="product-card">
+
+<div class="product-img">
+<i class="fa-solid fa-bars-staggered"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Louvers &amp; Decorative Panels</h3>
+
+<p>
+Contemporary louvers and decorative panel systems for partitions, ceilings, feature walls, facades and premium interior styling.
+</p>
+
+<a class="inquire-btn"
+href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Louvers%20and%20Decorative%20Panels."
+target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+INQUIRE VIA WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+<!-- 10 -->
+
+<div class="product-card">
+
+<div class="product-img">
+<i class="fa-solid fa-tree"></i>
+</div>
+
+<div class="product-info">
+
+<h3>Outdoor Decking</h3>
+
+<p>
+Premium decking solutions for terraces, balconies, gardens, poolside areas and outdoor commercial spaces with a refined modern finish.
+</p>
+
+<a class="inquire-btn"
+href="https://wa.me/919278246138?text=Hello%20Zuba%20International,%20I%20am%20interested%20in%20Outdoor%20Decking."
+target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+INQUIRE VIA WHATSAPP
+</a>
+
+</div>
+</div>
+
+
+</div>
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-content">
+
+<p class="copyright">
+&copy; 2026 Zuba International Private Limited. All Rights Reserved.
+</p>
+
+<p class="company-details">
+
+CIN: U46693UP2026PTC243112
+&nbsp;|&nbsp;
+GST: 09AACCZ8945N1ZC
+
+<br>
+
+IEC: AACCZ8945N
+&nbsp;|&nbsp;
+Udyam Reg: UDYAM-UP-07-0104617
+
+</p>
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
+
+<a
+href="https://wa.me/919278246138"
+class="whatsapp-float"
+target="_blank"
+rel="noopener noreferrer">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+<!-- =========================
+     MOBILE MENU
+========================= -->
+
+<script>
+
+document.getElementById("menu-toggle").onclick=function(){
+
+document.getElementById("nav-menu").classList.toggle("active");
+
+};
+
+</script>
+
+
+</body>
+</html>
