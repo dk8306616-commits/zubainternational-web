@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        /* Body transparent rakhi hai taaki fixed background video saaf dikhe */
         body, html { width: 100%; font-family: 'Montserrat', sans-serif; background: transparent; color: #ffffff; overflow-x: hidden; }
         
         /* Video Background */
@@ -35,20 +33,18 @@
         .hero-btn { background: #c0a16b; color: #050f1a; padding: 12px 30px; font-weight: 700; text-decoration: none; border-radius: 4px; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
         .hero-btn:hover { background: #d4b277; transform: translateY(-2px); }
 
-        /* Intro Welcome Block - Broad & Luxurious */
+        /* Intro Welcome Block */
         .intro-block { position: relative; background: #071628; padding: 80px 20px; text-align: center; z-index: 10; border-top: 2px solid #c0a16b; }
         .intro-block div { max-width: 850px; margin: 0 auto; }
         .intro-block h2 { font-family: 'Playfair Display', serif; font-size: 34px; color: #c0a16b; margin-bottom: 20px; }
         .intro-block p { font-size: 16px; color: #cbd5e1; line-height: 1.8; }
 
-        /* Specialties / Why Choose Us Section */
+        /* Specialties Section */
         .specialties { position: relative; background: #050f1a; padding: 90px 20px; text-align: center; z-index: 10; border-top: 1px solid rgba(192, 161, 107, 0.2); }
         .specialties h2 { font-family: 'Playfair Display', serif; font-size: 36px; color: #c0a16b; margin-bottom: 15px; }
         .section-subtitle { color: #94a3b8; font-size: 15px; margin-bottom: 50px; letter-spacing: 1px; }
-        
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1150px; margin: 0 auto; }
         
-        /* Glassmorphism Cards */
         .card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(192, 161, 107, 0.25); padding: 40px 30px; border-radius: 10px; transition: 0.4s; text-align: left; }
         .card:hover { border-color: #c0a16b; transform: translateY(-8px); background: rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .card i { font-size: 40px; color: #c0a16b; margin-bottom: 20px; display: block; }
@@ -65,6 +61,189 @@
         .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background-color: #25d366; color: white; border-radius: 50%; font-size: 32px; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; z-index: 2000; box-shadow: 0 4px 20px rgba(0,0,0,0.5); transition: 0.3s; }
         .whatsapp-float:hover { transform: scale(1.1); }
 
+        /* --- FLOATING COFFEE CUP WIDGET & ANIMATION --- */
+        .coffee-float {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            width: 75px;
+            height: 75px;
+            background: rgba(5, 15, 26, 0.85);
+            border: 2px solid #c0a16b;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 2000;
+            box-shadow: 0 6px 25px rgba(192, 161, 107, 0.4);
+            animation: floatBob 3s ease-in-out infinite;
+            transition: 0.3s;
+        }
+        .coffee-float:hover {
+            transform: scale(1.12);
+            background: #071628;
+        }
+        .coffee-icon-wrap {
+            position: relative;
+            font-size: 32px;
+            color: #c0a16b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .steam-line {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            width: 3px;
+            height: 12px;
+            background: #c0a16b;
+            border-radius: 2px;
+            transform: translateX(-50%);
+            animation: steamWave 1.5s ease-in-out infinite;
+        }
+        @keyframes floatBob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes steamWave {
+            0% { opacity: 0; transform: translateX(-50%) translateY(4px) scaleY(0.5); }
+            50% { opacity: 1; transform: translateX(-50%) translateY(-2px) scaleY(1.2); }
+            100% { opacity: 0; transform: translateX(-50%) translateY(-8px) scaleY(0.8); }
+        }
+
+        /* --- ENQUIRY MODAL POPUP --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(3, 10, 18, 0.85);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.4s ease;
+            padding: 20px;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-box {
+            background: #071628;
+            border: 2px solid #c0a16b;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 12px;
+            padding: 35px 30px;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+            transform: translateY(30px);
+            transition: 0.4s ease;
+        }
+        .modal-overlay.active .modal-box {
+            transform: translateY(0);
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: transparent;
+            border: none;
+            color: #c0a16b;
+            font-size: 24px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .modal-close:hover { color: #fff; }
+        .modal-box h2 {
+            font-family: 'Playfair Display', serif;
+            color: #c0a16b;
+            font-size: 28px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .modal-box p.subtitle {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 13px;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(192, 161, 107, 0.3);
+            border-radius: 6px;
+            color: #fff;
+            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+            outline: none;
+            transition: 0.3s;
+        }
+        .form-control:focus {
+            border-color: #c0a16b;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            background: rgba(5, 15, 26, 0.5);
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid rgba(192, 161, 107, 0.2);
+            max-height: 160px;
+            overflow-y: auto;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #cbd5e1;
+            cursor: pointer;
+        }
+        .checkbox-item input {
+            accent-color: #c0a16b;
+            width: 15px; height: 15px;
+        }
+        .submit-btn {
+            width: 100%;
+            background: #c0a16b;
+            color: #050f1a;
+            padding: 14px;
+            font-weight: 700;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .submit-btn:hover {
+            background: #d4b277;
+            transform: translateY(-2px);
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             #menu-toggle { display: block; }
@@ -73,6 +252,7 @@
             .hero h1 { font-size: 28px; }
             .hero p { font-size: 12px; letter-spacing: 2px; }
             .specialties h2, .intro-block h2 { font-size: 26px; }
+            .checkbox-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -105,7 +285,7 @@
         <a href="products.html" class="hero-btn">EXPLORE COLLECTION</a>
     </div>
 
-    <!-- Welcome / Intro Block (Broad & Luxury Focus) -->
+    <!-- Welcome / Intro Block -->
     <section class="intro-block">
         <div>
             <h2>Welcome to Zuba International</h2>
@@ -148,16 +328,91 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
+    <!-- Floating Coffee Cup Widget -->
+    <div class="coffee-float" id="openCoffeeModal" title="Let's Have A Coffee / Quick Enquiry">
+        <div class="coffee-icon-wrap">
+            <div class="steam-line"></div>
+            <i class="fa-solid fa-mug-hot"></i>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Mobile Menu Script -->
+    <!-- Enquiry Popup Modal -->
+    <div class="modal-overlay" id="coffeeModal">
+        <div class="modal-box">
+            <button class="modal-close" id="closeCoffeeModal"><i class="fa-solid fa-xmark"></i></button>
+            <h2>REQUEST A QUOTE</h2>
+            <p class="subtitle">Tell us what you're looking for and our team will get back to you instantly.</p>
+            
+            <form id="enquiryForm">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" class="form-control" id="custName" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" id="custEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Company Name</label>
+                    <input type="text" class="form-control" id="custCompany" placeholder="Enter company name">
+                </div>
+                <div class="form-group">
+                    <label>Phone / WhatsApp Number *</label>
+                    <input type="tel" class="form-control" id="custPhone" required placeholder="Enter phone number">
+                </div>
+                
+                <div class="form-group">
+                    <label>Products Interested In (Select checkboxes):</label>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="Architectural Wall Panels"> Architectural Wall Panels</label>
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="WPC Wall Panels"> WPC Wall Panels</label>
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="Carbon Crystal Panels"> Carbon Crystal Panels</label>
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="UV Marble Sheets"> UV Marble Sheets</label>
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="PVC Wall Panels"> PVC Wall Panels</label>
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="Charcoal Fluted Panels"> Charcoal Fluted Panels</label>
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="Acoustic Slat Wall Panels"> Acoustic Slat Wall Panels</label>
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="PU Stone Wall Panels"> PU Stone Wall Panels</label>
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="Outdoor WPC Cladding"> Outdoor WPC Cladding</label>
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="Decorative Lights"> Decorative Lights</label>
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="U & L Profiles"> U & L Profiles</label>
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="Other Products"> Other Products</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Message / Requirements</label>
+                    <textarea class="form-control" id="custMessage" rows="3" placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">SEND ENQUIRY VIA WHATSAPP</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script>
+        // Mobile Menu Toggle
         document.getElementById('menu-toggle').onclick = function() {
             document.getElementById('nav-menu').classList.toggle('active');
         };
-    </script>
-</body>
-</html>
+
+        // Coffee Modal Open/Close Logic
+        const modal = document.getElementById('coffeeModal');
+        const openBtn = document.getElementById('openCoffeeModal');
+        const closeBtn = document.getElementById('closeCoffeeModal');
+
+        openBtn.onclick = () => modal.classList.add('active');
+        closeBtn.onclick = () => modal.classList.remove('active');
+        window.onclick = (e) => { if (e.target == modal) modal.classList.remove('active'); };
+
+        // Form Submit Handler -> WhatsApp Integration
+        document.getElementById('enquiryForm').onsubmit = function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('custName').value.trim();
+            const email = document.getElementById('custEmail').v
