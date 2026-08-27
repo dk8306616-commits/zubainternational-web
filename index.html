@@ -30,11 +30,11 @@ header{
 .nav-menu a:hover, .nav-menu a.active{color:#c0a16b;transform:translateY(-2px)}
 #menu-toggle{display:none;color:#c0a16b;font-size:25px;cursor:pointer}
 
-/* Grand Video Hero Section - Mobile Friendly */
+/* Grand Video Hero Section - Mobile Perfect Fit */
 .hero{
   position:relative;
   height:85vh;
-  min-height:450px;
+  min-height:500px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -42,7 +42,7 @@ header{
   padding:0 20px;
   overflow:hidden;
   border-bottom:1px solid rgba(192,161,107,.2);
-  background:#050f1a;
+  background:#030a12;
 }
 .hero-video{
   position:absolute;
@@ -55,13 +55,13 @@ header{
 .hero-overlay{
   position:absolute;
   top:0; left:0; width:100%; height:100%;
-  background:linear-gradient(rgba(5,15,26,0.4), rgba(5,15,26,0.75));
+  background:linear-gradient(rgba(5,15,26,0.3), rgba(5,15,26,0.7));
   z-index:2;
 }
 .hero-content{position:relative;max-width:800px;z-index:3;padding:0 15px;}
 .hero h1{
   font-family:'Playfair Display',serif;
-  font-size:clamp(22px, 4vw, 48px);
+  font-size:clamp(24px, 4.5vw, 46px);
   color:#c0a16b;
   margin-bottom:12px;
   letter-spacing:1px;
@@ -69,7 +69,7 @@ header{
 }
 .hero p{
   color:#cbd5e1;
-  font-size:clamp(11px, 1.8vw, 14px);
+  font-size:clamp(10px, 1.6vw, 13px);
   letter-spacing:2px;
   margin-bottom:25px;
   text-transform:uppercase;
@@ -181,7 +181,16 @@ footer{background:#030a12;border-top:1px solid rgba(192,161,107,.2);padding:45px
   .nav-menu.active{display:flex}
   .nav-menu a{justify-content:center}
   .whatsapp-float{width:auto; padding:6px 14px 6px 8px; right:15px; bottom:15px;}
-  .hero{height:75vh;}
+  .hero{
+    height:55vh;
+    min-height:380px;
+  }
+  .hero-video{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+  }
 }
 </style>
 </head>
