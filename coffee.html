@@ -12,12 +12,12 @@
         
         header { background: rgba(5, 15, 26, 0.92); padding: 15px 20px; border-bottom: 2px solid #c0a16b; position: sticky; top: 0; z-index: 1000; }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 18px; color: white; text-decoration: none; letter-spacing: 1px; }
+        .logo { font-weight: 700; font-size: 18px; color: white; text-decoration: none; letter-spacing: 1px; white-space: nowrap; }
         .logo span { color: #c0a16b; }
         
         #menu-toggle { display: none; color: #c0a16b; font-size: 22px; cursor: pointer; }
-        .nav-menu { display: flex; gap: 15px; list-style: none; align-items: center; }
-        .nav-menu a { color: #fff; text-decoration: none; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 5px; transition: 0.3s; }
+        .nav-menu { display: flex; gap: 20px; list-style: none; align-items: center; }
+        .nav-menu a { color: #fff; text-decoration: none; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 6px; transition: 0.3s; white-space: nowrap; }
         .nav-menu a i { color: #c0a16b; }
 
         .container { width: 92%; max-width: 650px; margin: 30px auto; background: #071628; border: 2px solid #c0a16b; border-radius: 12px; padding: 25px 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.8); text-align: center; }
@@ -47,10 +47,10 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             #menu-toggle { display: block; }
+            .logo { font-size: 15px; }
             .nav-menu { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: #050f1a; padding: 20px 0; border-bottom: 2px solid #c0a16b; text-align: center; }
             .nav-menu.active { display: flex; }
             .container { width: 95%; padding: 20px 15px; margin: 15px auto; }
-            .checkbox-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -58,14 +58,14 @@
 
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo">ZUBA <span>INT.</span></a>
+            <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
             <div id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
             <nav class="nav-menu" id="nav-menu">
                 <a href="index.html"><i class="fa-solid fa-house"></i> HOME</a>
                 <a href="products.html"><i class="fa-solid fa-box-open"></i> PRODUCTS</a>
                 <a href="about.html"><i class="fa-solid fa-circle-info"></i> ABOUT</a>
                 <a href="contact.html"><i class="fa-solid fa-envelope"></i> CONTACT</a>
-                <a href="coffee.html" style="color: #c0a16b;"><i class="fa-solid fa-mug-hot"></i> COFFEE</a>
+                <a href="coffee.html" style="color: #c0a16b;"><i class="fa-solid fa-mug-hot"></i> COFFEE WITH US</a>
             </nav>
         </div>
     </header>
