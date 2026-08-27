@@ -1,224 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuba International | Luxury Home Decor & Global Trade</title>
-    <meta name="google-site-verification" content="TYiED33T3kWCgT307naeH5tAit4hLUZC9jWN9ursees" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body, html { width: 100%; font-family: 'Montserrat', sans-serif; background: transparent; color: #ffffff; overflow-x: hidden; }
-        
-        /* Video Background */
-        #bg-video { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1; }
-        
-        /* Luxury Header */
-        header { background: rgba(5, 15, 26, 0.92); padding: 18px 30px; border-bottom: 2px solid #c0a16b; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 22px; color: white; text-decoration: none; letter-spacing: 1px; }
-        .logo span { color: #c0a16b; }
-        
-        #menu-toggle { display: none; color: #c0a16b; font-size: 24px; cursor: pointer; }
-        .nav-menu { display: flex; gap: 22px; list-style: none; align-items: center; }
-        .nav-menu a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; display: flex; align-items: center; gap: 7px; transition: 0.3s; }
-        .nav-menu a i { color: #c0a16b; }
-        .nav-menu a:hover { color: #c0a16b; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zuba International | Luxury Home Decor & Global Trade</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:#050f1a;color:#fff;overflow-x:hidden}
 
-        /* Hero Section */
-        .hero { height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: rgba(5, 15, 26, 0.35); }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 48px; color: #fff; text-shadow: 0 4px 15px rgba(0,0,0,0.8); margin-bottom: 15px; letter-spacing: 1px; }
-        .hero p { font-size: 16px; color: #c0a16b; letter-spacing: 4px; font-weight: 600; text-shadow: 0 2px 8px rgba(0,0,0,0.8); margin-bottom: 30px; }
-        .hero-btn { background: #c0a16b; color: #050f1a; padding: 12px 30px; font-weight: 700; text-decoration: none; border-radius: 4px; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .hero-btn:hover { background: #d4b277; transform: translateY(-2px); }
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(5,15,26,.92);
+  padding:18px 30px;
+  border-bottom:1px solid rgba(192,161,107,.65);
+  backdrop-filter:blur(15px);
+  box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+.nav-container{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{color:#fff;text-decoration:none;font-size:22px;font-weight:700;letter-spacing:1px;font-family:'Playfair Display',serif;}
+.logo span{color:#c0a16b}
+.nav-menu{display:flex;align-items:center;gap:22px;list-style:none}
+.nav-menu a{color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:0.5px;display:flex;align-items:center;gap:6px;transition:.35s}
+.nav-menu a i{color:#c0a16b}
+.nav-menu a:hover, .nav-menu a.active{color:#c0a16b;transform:translateY(-2px)}
+#menu-toggle{display:none;color:#c0a16b;font-size:25px;cursor:pointer}
 
-        /* Intro Welcome Block */
-        .intro-block { position: relative; background: #071628; padding: 80px 20px; text-align: center; z-index: 10; border-top: 2px solid #c0a16b; }
-        .intro-block div { max-width: 850px; margin: 0 auto; }
-        .intro-block h2 { font-family: 'Playfair Display', serif; font-size: 34px; color: #c0a16b; margin-bottom: 20px; }
-        .intro-block p { font-size: 16px; color: #cbd5e1; line-height: 1.8; }
+.hero{
+  position:relative;
+  height:85vh;
+  min-height:550px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 20px;
+  background:linear-gradient(rgba(5,15,26,0.5), rgba(5,15,26,0.7)), url('images/hero-bg.jpg') no-repeat center center/cover;
+  border-bottom:1px solid rgba(192,161,107,.2);
+}
+.hero-content{max-width:900px;z-index:2}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px, 5vw, 64px);
+  color:#c0a16b;
+  margin-bottom:15px;
+  text-shadow:0 0 30px rgba(192,161,107,0.3);
+}
+.hero p{
+  color:#cbd5e1;
+  font-size:15px;
+  letter-spacing:2px;
+  margin-bottom:30px;
+  text-transform:uppercase;
+}
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 28px;
+  background:rgba(192,161,107,0.1);
+  border:1px solid #c0a16b;
+  color:#c0a16b;
+  font-weight:700;
+  font-size:12px;
+  text-decoration:none;
+  border-radius:6px;
+  letter-spacing:1px;
+  transition:.3s;
+}
+.hero-btn:hover{background:#c0a16b;color:#050f1a;transform:translateY(-3px);box-shadow:0 10px 25px rgba(192,161,107,0.3)}
 
-        /* Specialties Section */
-        .specialties { position: relative; background: #050f1a; padding: 90px 20px; text-align: center; z-index: 10; border-top: 1px solid rgba(192, 161, 107, 0.2); }
-        .specialties h2 { font-family: 'Playfair Display', serif; font-size: 36px; color: #c0a16b; margin-bottom: 15px; }
-        .section-subtitle { color: #94a3b8; font-size: 15px; margin-bottom: 50px; letter-spacing: 1px; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1150px; margin: 0 auto; }
-        
-        .card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(192, 161, 107, 0.25); padding: 40px 30px; border-radius: 10px; transition: 0.4s; text-align: left; }
-        .card:hover { border-color: #c0a16b; transform: translateY(-8px); background: rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .card i { font-size: 40px; color: #c0a16b; margin-bottom: 20px; display: block; }
-        .card h3 { font-size: 20px; margin-bottom: 12px; font-family: 'Playfair Display', serif; color: #fff; }
-        .card p { font-size: 14px; color: #cbd5e1; line-height: 1.7; }
+/* Animated WhatsApp Floating Widget */
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:linear-gradient(135deg, #071628 0%, #0d233a 100%);
+  border:2px solid #25d366;
+  border-radius:35px;
+  padding:8px 16px 8px 10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
+  z-index:2000;
+  box-shadow:0 8px 25px rgba(0,0,0,0.6), 0 0 15px rgba(37, 211, 102, 0.3);
+  animation: widgetFloat 3s ease-in-out infinite;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.whatsapp-float:hover{ transform: scale(1.06); border-color: #fff; }
+.whatsapp-icon-box{
+  width:38px;
+  height:38px;
+  background:rgba(37, 211, 102, 0.15);
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:20px;
+  color:#25d366;
+  animation: cupTilt 2s ease-in-out infinite;
+}
+.whatsapp-text-content{ display:flex; flex-direction:column; text-align:left; }
+.whatsapp-text-top{ font-size:9px; color:#94a3b8; letter-spacing:1px; text-transform:uppercase; }
+.whatsapp-text-main{ font-size:12px; color:#fff; font-weight:700; font-family:'Playfair Display',serif; }
 
-        /* Professional Footer */
-        footer { background: #030a12; border-top: 1px solid rgba(192, 161, 107, 0.2); padding: 50px 20px; text-align: center; position: relative; z-index: 10; }
-        .footer-content { max-width: 900px; margin: 0 auto; line-height: 1.8; }
-        .copyright { color: #ffffff; font-weight: 600; margin-bottom: 15px; font-size: 14px; letter-spacing: 0.5px; }
-        .company-details { color: #c0a16b; font-size: 12px; letter-spacing: 1px; line-height: 1.8; }
+@keyframes widgetFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes cupTilt { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-5deg); } 75% { transform: rotate(5deg); } }
 
-        /* --- ANIMATED WHATSAPP FLOATING WIDGET (Like Coffee Widget) --- */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: linear-gradient(135deg, #071628 0%, #0d233a 100%);
-            border: 2px solid #25d366;
-            border-radius: 35px;
-            padding: 8px 16px 8px 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            z-index: 2000;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 15px rgba(37, 211, 102, 0.3);
-            animation: widgetFloat 3s ease-in-out infinite;
-            transition: 0.3s;
-            text-decoration: none;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.06);
-            border-color: #fff;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
-        }
-        
-        .whatsapp-icon-box {
-            position: relative;
-            width: 42px;
-            height: 42px;
-            background: rgba(37, 211, 102, 0.15);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 22px;
-            color: #25d366;
-            animation: cupTilt 2s ease-in-out infinite;
-        }
-
-        .whatsapp-text-content {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-        .whatsapp-text-top {
-            font-size: 10px;
-            color: #94a3b8;
-            letter-spacing: 1px;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-        .whatsapp-text-main {
-            font-size: 13px;
-            color: #fff;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        @keyframes widgetFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-7px); }
-        }
-        @keyframes cupTilt {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-5deg); }
-            75% { transform: rotate(5deg); }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            #menu-toggle { display: block; }
-            .nav-menu { display: none; flex-direction: column; position: absolute; top: 65px; left: 0; width: 100%; background: #050f1a; padding: 25px 0; border-bottom: 2px solid #c0a16b; text-align: center; }
-            .nav-menu.active { display: flex; }
-            .hero h1 { font-size: 28px; }
-            .hero p { font-size: 12px; letter-spacing: 2px; }
-            .specialties h2, .intro-block h2 { font-size: 26px; }
-        }
-    </style>
+@media(max-width:768px){
+  header{padding:16px 20px}
+  #menu-toggle{display:block}
+  .nav-menu{display:none;position:absolute;top:68px;left:0;width:100%;flex-direction:column;gap:22px;padding:25px;background:rgba(5,15,26,.98);border-bottom:2px solid #c0a16b;text-align:center;}
+  .nav-menu.active{display:flex}
+  .nav-menu a{justify-content:center}
+  .whatsapp-float{width:auto; padding:6px 14px 6px 8px; right:15px; bottom:15px;}
+}
+</style>
 </head>
 <body>
 
-    <video autoplay muted loop playsinline id="bg-video">
-        <source src="wap.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
+    <div id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+    <nav class="nav-menu" id="nav-menu">
+      <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="products.html"><i class="fa-solid fa-box-open"></i> Products</a>
+      <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="coffee.html"><i class="fa-solid fa-mug-hot"></i> Coffee with us!</a>
+    </nav>
+  </div>
+</header>
 
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
-            <div id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
-            <nav class="nav-menu" id="nav-menu">
-                <a href="index.html"><i class="fa-solid fa-house"></i> HOME</a>
-                <a href="products.html"><i class="fa-solid fa-box-open"></i> PRODUCTS</a>
-                <a href="about.html"><i class="fa-solid fa-circle-info"></i> ABOUT</a>
-                <a href="contact.html"><i class="fa-solid fa-envelope"></i> CONTACT</a>
-                <a href="coffee.html"><i class="fa-solid fa-mug-hot"></i> COFFEE WITH US</a>
-            </nav>
-        </div>
-    </header>
+<section class="hero">
+  <div class="hero-content">
+    <h1>EXCELLENCE IN GLOBAL TRADE</h1>
+    <p>PREMIUM INTERIOR &amp; EXTERIOR SOLUTIONS</p>
+    <a href="products.html" class="hero-btn">EXPLORE COLLECTION</a>
+  </div>
+</section><section style="max-width:1200px; margin:70px auto; padding:0 20px; text-align:center;">
+  <h2 style="font-family:'Playfair Display',serif; color:#c0a16b; font-size:34px; margin-bottom:15px;">Welcome to Zuba International</h2>
+  <p style="color:#94a3b8; font-size:14px; line-height:1.8; max-width:800px; margin:0 auto;">Your trusted partner in premium interior and exterior surface solutions. We bring elegance, durability, and global standards directly to your residential and commercial projects.</p>
+</section>
 
-    <div class="hero">
-        <h1>EXCELLENCE IN GLOBAL TRADE</h1>
-        <p>PREMIUM INTERIOR & EXTERIOR SOLUTIONS</p>
-        <a href="products.html" class="hero-btn">EXPLORE COLLECTION</a>
-    </div>
+<footer>
+  <div class="footer-logo">ZUBA <span>INTERNATIONAL</span></div>
+  <p class="footer-description">Your trusted partner in premium interior and exterior surfaces. We deliver elegance, durability and excellence in every product.</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="coffee.html">Coffee with us!</a>
+  </div>
+  <p class="copyright">&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
+  <p class="company-details">
+    CIN: U46693UP2026PTC243112 &nbsp;|&nbsp; GST: 09AACCZ8945N1ZC<br>
+    IEC: AACCZ8945N &nbsp;|&nbsp; Udyam Reg: UDYAM-UP-07-0104617
+  </p>
+</footer>
 
-    <section class="intro-block">
-        <div>
-            <h2>Welcome to Zuba International</h2>
-            <p>We bridge global markets with elite craftsmanship, delivering world-class interior and exterior decoration solutions designed to transform ordinary spaces into breathtaking architectural masterpieces. Rooted in excellence and trust, we serve clients worldwide.</p>
-        </div>
-    </section>
+<a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <div class="whatsapp-icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+  <div class="whatsapp-text-content">
+    <span class="whatsapp-text-top">CONNECT WITH US</span>
+    <span class="whatsapp-text-main">WhatsApp Chat</span>
+  </div>
+</a>
 
-    <section class="specialties">
-        <h2>Why Choose Zuba International</h2>
-        <p class="section-subtitle">Redefining elite spaces with unmatched global standards</p>
-        
-        <div class="grid-container">
-            <div class="card">
-                <i class="fa-solid fa-gem"></i>
-                <h3>Luxurious Aesthetics</h3>
-                <p>Curated selection of high-end home decor and architectural elements designed for ultra-modern luxury interiors and exteriors.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-earth-americas"></i>
-                <h3>Global Export Excellence</h3>
-                <p>Seamless international trade operations, trusted compliance, and secure logistics ensuring flawless execution across borders.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-shield-halved"></i>
-                <h3>Verified & Trusted</h3>
-                <p>Officially registered corporate entity backed by transparent business practices, robust quality checks, and dedicated client support.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <p class="copyright">&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
-            <p class="company-details">
-                CIN: U46693UP2026PTC243112 &nbsp;|&nbsp; GST: 09AACCZ8945N1ZC<br>
-                IEC: AACCZ8945N &nbsp;|&nbsp; Udyam Reg: UDYAM-UP-07-0104617
-            </p>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <div class="whatsapp-icon-box">
-            <i class="fa-brands fa-whatsapp"></i>
-        </div>
-        <div class="whatsapp-text-content">
-            <span class="whatsapp-text-top">CONNECT WITH US</span>
-            <span class="whatsapp-text-main">WhatsApp Chat</span>
-        </div>
-    </a>
-
-    <script>
-        // Mobile Menu Toggle
-        document.getElementById('menu-toggle').onclick = function() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        };
-    </script>
+<script>
+document.getElementById('menu-toggle').onclick=function(){document.getElementById('nav-menu').classList.toggle('active');};
+</script>
 </body>
 </html>
