@@ -19,31 +19,90 @@
         .nav-menu a i { color: #c0a16b; }
         .nav-menu a:hover { color: #c0a16b; }
 
-        .container { max-width: 700px; margin: 50px auto; background: #071628; border: 2px solid #c0a16b; border-radius: 12px; padding: 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.8); text-align: center; }
+        .container { max-width: 700px; margin: 40px auto; background: #071628; border: 2px solid #c0a16b; border-radius: 12px; padding: 35px; box-shadow: 0 15px 40px rgba(0,0,0,0.8); text-align: center; }
         
-        /* Animated Cup */
-        .animated-cup-box { position: relative; width: 80px; height: 80px; margin: 0 auto 20px; background: rgba(192, 161, 107, 0.15); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 38px; color: #c0a16b; animation: cupTilt 2s ease-in-out infinite; }
-        .steam-1, .steam-2 { position: absolute; background: #c0a16b; border-radius: 2px; }
-        .steam-1 { top: -12px; left: 28px; width: 3px; height: 12px; animation: steamRise1 1.5s ease-in-out infinite; }
-        .steam-2 { top: -15px; right: 28px; width: 3px; height: 15px; animation: steamRise2 1.8s ease-in-out infinite; }
+        /* Realistic Iced Coffee Cup with Dome Lid & Straw Animation */
+        .iced-cup-container {
+            width: 90px;
+            height: 110px;
+            margin: 0 auto 20px;
+            position: relative;
+            animation: cupBounce 2s ease-in-out infinite;
+        }
+        .straw {
+            position: absolute;
+            top: -15px;
+            left: 52px;
+            width: 6px;
+            height: 45px;
+            background: #e11d48;
+            transform: rotate(15deg);
+            border-radius: 3px;
+            z-index: 3;
+            animation: strawTilt 2s ease-in-out infinite;
+        }
+        .dome-lid {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 60px;
+            height: 25px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 30px 30px 5px 5px;
+            z-index: 2;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        .cup-body {
+            position: absolute;
+            top: 38px;
+            left: 20px;
+            width: 50px;
+            height: 65px;
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            border-radius: 0 0 10px 10px;
+            z-index: 1;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cup-logo {
+            font-size: 14px;
+            font-weight: 800;
+            color: #facc15;
+            background: #b91c1c;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
 
-        @keyframes cupTilt { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-5deg); } 75% { transform: rotate(5deg); } }
-        @keyframes steamRise1 { 0% { opacity: 0; transform: translateY(4px) scaleY(0.4); } 50% { opacity: 1; transform: translateY(-2px) scaleY(1.2); } 100% { opacity: 0; transform: translateY(-8px) scaleY(0.8); } }
-        @keyframes steamRise2 { 0% { opacity: 0; transform: translateY(6px) scaleY(0.5); } 50% { opacity: 1; transform: translateY(-3px) scaleY(1.3); } 100% { opacity: 0; transform: translateY(-9px) scaleY(0.7); } }
+        @keyframes cupBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(-2deg); }
+        }
+        @keyframes strawTilt {
+            0%, 100% { transform: rotate(15deg); }
+            50% { transform: rotate(20deg) translateY(-2px); }
+        }
 
-        h1 { font-family: 'Playfair Display', serif; color: #c0a16b; font-size: 32px; margin-bottom: 10px; }
-        p.subtitle { color: #94a3b8; font-size: 14px; margin-bottom: 30px; }
+        h1 { font-family: 'Playfair Display', serif; color: #c0a16b; font-size: 30px; margin-bottom: 8px; }
+        p.subtitle { color: #94a3b8; font-size: 13px; margin-bottom: 25px; }
 
-        .form-group { margin-bottom: 20px; text-align: left; }
-        .form-group label { display: block; font-size: 12px; font-weight: 600; color: #cbd5e1; margin-bottom: 6px; }
-        .form-control { width: 100%; padding: 12px 15px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(192, 161, 107, 0.3); border-radius: 6px; color: #fff; font-size: 14px; outline: none; }
+        .form-group { margin-bottom: 16px; text-align: left; }
+        .form-group label { display: block; font-size: 12px; font-weight: 600; color: #cbd5e1; margin-bottom: 5px; }
+        .form-control { width: 100%; padding: 11px 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(192, 161, 107, 0.3); border-radius: 6px; color: #fff; font-size: 14px; outline: none; }
         .form-control:focus { border-color: #c0a16b; }
         
-        .checkbox-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; background: rgba(5, 15, 26, 0.5); padding: 15px; border-radius: 6px; border: 1px solid rgba(192, 161, 107, 0.2); }
-        .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #cbd5e1; cursor: pointer; }
-        .checkbox-item input { accent-color: #c0a16b; width: 15px; height: 15px; }
+        .checkbox-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; background: rgba(5, 15, 26, 0.5); padding: 12px; border-radius: 6px; border: 1px solid rgba(192, 161, 107, 0.2); max-height: 140px; overflow-y: auto; }
+        .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 11px; color: #cbd5e1; cursor: pointer; }
+        .checkbox-item input { accent-color: #c0a16b; width: 14px; height: 14px; }
 
-        .submit-btn { width: 100%; background: #c0a16b; color: #050f1a; padding: 14px; font-weight: 700; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; margin-top: 15px; transition: 0.3s; }
+        .submit-btn { width: 100%; background: #c0a16b; color: #050f1a; padding: 13px; font-weight: 700; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; margin-top: 10px; transition: 0.3s; }
         .submit-btn:hover { background: #d4b277; }
     </style>
 </head>
@@ -63,13 +122,17 @@
     </header>
 
     <div class="container">
-        <div class="animated-cup-box">
-            <div class="steam-1"></div>
-            <div class="steam-2"></div>
-            <i class="fa-solid fa-mug-hot"></i>
+        <!-- Animated Dome Lid Iced Cup with Straw -->
+        <div class="iced-cup-container">
+            <div class="straw"></div>
+            <div class="dome-lid"></div>
+            <div class="cup-body">
+                <div class="cup-logo">M</div>
+            </div>
         </div>
+
         <h1>COFFEE WITH US</h1>
-        <p class="subtitle">Let's discuss your project over a virtual coffee. Fill out the form below!</p>
+        <p class="subtitle">Let's discuss your luxury project over a virtual coffee. Fill out the form below!</p>
         
         <form id="coffeeForm">
             <div class="form-group">
@@ -105,7 +168,7 @@
 
             <div class="form-group">
                 <label>Message / Requirements</label>
-                <textarea class="form-control" id="cMessage" rows="3" placeholder="Tell us about your requirements..."></textarea>
+                <textarea class="form-control" id="cMessage" rows="2" placeholder="Tell us about your requirements..."></textarea>
             </div>
 
             <button type="submit" class="submit-btn">SEND ENQUIRY VIA WHATSAPP</button>
