@@ -3,52 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee With Us | Zuba International</title>
+    <title>Coffee with us! | Zuba International</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body, html { width: 100%; font-family: 'Montserrat', sans-serif; background: #050f1a; color: #ffffff; overflow-x: hidden; }
+        body, html { width: 100%; font-family: 'Montserrat', sans-serif; background: #e11d48; color: #ffffff; overflow-x: hidden; }
         
-        header { background: rgba(5, 15, 26, 0.92); padding: 15px 20px; border-bottom: 2px solid #c0a16b; position: sticky; top: 0; z-index: 1000; }
+        header { background: #be123c; padding: 15px 20px; border-bottom: 2px solid rgba(255,255,255,0.2); position: sticky; top: 0; z-index: 1000; }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 18px; color: white; text-decoration: none; letter-spacing: 1px; white-space: nowrap; }
-        .logo span { color: #c0a16b; }
+        .logo { font-weight: 700; font-size: 18px; color: white; text-decoration: none; letter-spacing: 0.5px; white-space: nowrap; }
+        .logo span { color: #fde047; }
         
-        #menu-toggle { display: none; color: #c0a16b; font-size: 22px; cursor: pointer; }
+        #menu-toggle { display: none; color: #fff; font-size: 22px; cursor: pointer; }
         .nav-menu { display: flex; gap: 20px; list-style: none; align-items: center; }
-        .nav-menu a { color: #fff; text-decoration: none; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 6px; transition: 0.3s; white-space: nowrap; }
-        .nav-menu a i { color: #c0a16b; }
+        .nav-menu a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: 0.3s; white-space: nowrap; text-transform: none; }
+        .nav-menu a i { color: #fde047; }
+        .nav-menu a:hover { color: #fde047; }
 
-        .container { width: 92%; max-width: 650px; margin: 30px auto; background: #071628; border: 2px solid #c0a16b; border-radius: 12px; padding: 25px 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.8); text-align: center; }
+        .container { width: 92%; max-width: 550px; margin: 30px auto; background: #f43f5e; border: 2px solid #fb7185; border-radius: 12px; padding: 25px 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); text-align: center; }
         
         /* Iced Cup Animation */
         .iced-cup-container { width: 80px; height: 100px; margin: 0 auto 15px; position: relative; animation: cupBounce 2s ease-in-out infinite; }
-        .straw { position: absolute; top: -12px; left: 48px; width: 5px; height: 40px; background: #e11d48; transform: rotate(15deg); border-radius: 3px; z-index: 3; }
-        .dome-lid { position: absolute; top: 12px; left: 12px; width: 56px; height: 22px; background: rgba(255, 255, 255, 0.85); border-radius: 25px 25px 5px 5px; z-index: 2; border-bottom: 2px solid #cbd5e1; }
+        .straw { position: absolute; top: -12px; left: 48px; width: 5px; height: 40px; background: #1e293b; transform: rotate(15deg); border-radius: 3px; z-index: 3; }
+        .dome-lid { position: absolute; top: 12px; left: 12px; width: 56px; height: 22px; background: rgba(255, 255, 255, 0.9); border-radius: 25px 25px 5px 5px; z-index: 2; border-bottom: 2px solid #cbd5e1; }
         .cup-body { position: absolute; top: 32px; left: 15px; width: 50px; height: 60px; background: linear-gradient(135deg, #d97706 0%, #b45309 100%); border-radius: 0 0 10px 10px; z-index: 1; display: flex; justify-content: center; align-items: center; border: 2px solid rgba(255,255,255,0.3); }
         .cup-logo { font-size: 13px; font-weight: 800; color: #facc15; background: #b91c1c; width: 20px; height: 20px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
 
         @keyframes cupBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
-        h1 { font-family: 'Playfair Display', serif; color: #c0a16b; font-size: 24px; margin-bottom: 6px; }
-        p.subtitle { color: #94a3b8; font-size: 12px; margin-bottom: 20px; }
+        h1 { font-family: 'Playfair Display', serif; color: #fff; font-size: 24px; margin-bottom: 6px; text-transform: none; }
+        p.subtitle { color: #ffe4e6; font-size: 12px; margin-bottom: 20px; }
 
         .form-group { margin-bottom: 14px; text-align: left; }
-        .form-group label { display: block; font-size: 11px; font-weight: 600; color: #cbd5e1; margin-bottom: 4px; }
-        .form-control { width: 100%; padding: 10px 12px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(192, 161, 107, 0.3); border-radius: 6px; color: #fff; font-size: 13px; outline: none; }
+        .form-group label { display: block; font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 4px; text-transform: none; }
+        .form-control { width: 100%; padding: 11px 14px; background: #be123c; border: 1px solid #fb7185; border-radius: 6px; color: #fff; font-size: 13px; outline: none; }
+        .form-control::placeholder { color: #fecdd3; }
         
-        .checkbox-grid { display: grid; grid-template-columns: 1fr; gap: 8px; background: rgba(5, 15, 26, 0.5); padding: 12px; border-radius: 6px; border: 1px solid rgba(192, 161, 107, 0.2); max-height: 140px; overflow-y: auto; }
-        .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 11px; color: #cbd5e1; }
-        .checkbox-item input { accent-color: #c0a16b; width: 14px; height: 14px; }
+        .checkbox-grid { display: grid; grid-template-columns: 1fr; gap: 8px; background: #be123c; padding: 12px; border-radius: 6px; border: 1px solid #fb7185; max-height: 140px; overflow-y: auto; }
+        .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #fff; }
+        .checkbox-item input { accent-color: #fde047; width: 14px; height: 14px; }
 
-        .submit-btn { width: 100%; background: #c0a16b; color: #050f1a; padding: 12px; font-weight: 700; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+        .submit-btn { width: 100%; background: #ffffff; color: #e11d48; padding: 13px; font-weight: 700; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+        .submit-btn:hover { background: #f1f5f9; }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
             #menu-toggle { display: block; }
             .logo { font-size: 15px; }
-            .nav-menu { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: #050f1a; padding: 20px 0; border-bottom: 2px solid #c0a16b; text-align: center; }
+            .nav-menu { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: #be123c; padding: 20px 0; border-bottom: 2px solid rgba(255,255,255,0.2); text-align: center; }
             .nav-menu.active { display: flex; }
             .container { width: 95%; padding: 20px 15px; margin: 15px auto; }
         }
@@ -58,14 +61,14 @@
 
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
+            <a href="index.html" class="logo">Zuba <span>International</span></a>
             <div id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
             <nav class="nav-menu" id="nav-menu">
-                <a href="index.html"><i class="fa-solid fa-house"></i> HOME</a>
-                <a href="products.html"><i class="fa-solid fa-box-open"></i> PRODUCTS</a>
-                <a href="about.html"><i class="fa-solid fa-circle-info"></i> ABOUT</a>
-                <a href="contact.html"><i class="fa-solid fa-envelope"></i> CONTACT</a>
-                <a href="coffee.html" style="color: #c0a16b;"><i class="fa-solid fa-mug-hot"></i> Coffee With Us!</a>
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="products.html"><i class="fa-solid fa-box-open"></i> Products</a>
+                <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+                <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+                <a href="coffee.html" style="color: #fde047;"><i class="fa-solid fa-mug-hot"></i> Coffee with us!</a>
             </nav>
         </div>
     </header>
@@ -79,29 +82,29 @@
             </div>
         </div>
 
-        <h1>Coffee With Us!</h1>
+        <h1>Coffee with us!</h1>
         <p class="subtitle">Let's discuss your luxury project over a virtual coffee.</p>
         
         <form id="coffeeForm">
             <div class="form-group">
-                <label>Full Name *</label>
+                <label>Enter Name *</label>
                 <input type="text" class="form-control" id="cName" required placeholder="Enter your name">
             </div>
             <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" class="form-control" id="cEmail" placeholder="Enter your email">
+                <label>Enter Email *</label>
+                <input type="email" class="form-control" id="cEmail" required placeholder="Enter your email">
             </div>
             <div class="form-group">
-                <label>Company Name</label>
-                <input type="text" class="form-control" id="cCompany" placeholder="Enter company name">
+                <label>Company Name *</label>
+                <input type="text" class="form-control" id="cCompany" required placeholder="Enter company name">
             </div>
             <div class="form-group">
-                <label>Phone / WhatsApp Number *</label>
+                <label>Enter Phone *</label>
                 <input type="tel" class="form-control" id="cPhone" required placeholder="Enter phone number">
             </div>
             
             <div class="form-group">
-                <label>Products Interested In:</label>
+                <label>Services *</label>
                 <div class="checkbox-grid">
                     <label class="checkbox-item"><input type="checkbox" name="cprod" value="Architectural Wall Panels"> Architectural Wall Panels</label>
                     <label class="checkbox-item"><input type="checkbox" name="cprod" value="WPC Wall Panels"> WPC Wall Panels</label>
@@ -115,11 +118,11 @@
             </div>
 
             <div class="form-group">
-                <label>Message / Requirements</label>
+                <label>Enter Message</label>
                 <textarea class="form-control" id="cMessage" rows="2" placeholder="Tell us about your requirements..."></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">SEND ENQUIRY VIA WHATSAPP</button>
+            <button type="submit" class="submit-btn">Submit</button>
         </form>
     </div>
 
@@ -139,9 +142,9 @@
             let prods = [];
             document.querySelectorAll('input[name="cprod"]:checked').forEach((cb) => { prods.push(cb.value); });
 
-            let text = `*Coffee With Us Enquiry - Zuba International*\n\n` +
+            let text = `*Coffee with us! Enquiry - Zuba International*\n\n` +
                        `*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email || 'N/A'}\n` +
-                       `*Company:* ${company || 'N/A'}\n*Products:* ${prods.length > 0 ? prods.join(', ') : 'General'}\n*Message:* ${message || 'N/A'}`;
+                       `*Company:* ${company || 'N/A'}\n*Services:* ${prods.length > 0 ? prods.join(', ') : 'General'}\n*Message:* ${message || 'N/A'}`;
 
             window.open(`https://wa.me/919278246138?text=${encodeURIComponent(text)}`, '_blank');
         };
