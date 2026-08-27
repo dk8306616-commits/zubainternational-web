@@ -21,8 +21,8 @@
         .logo span { color: #c0a16b; }
         
         #menu-toggle { display: none; color: #c0a16b; font-size: 24px; cursor: pointer; }
-        .nav-menu { display: flex; gap: 25px; list-style: none; }
-        .nav-menu a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .nav-menu { display: flex; gap: 22px; list-style: none; align-items: center; }
+        .nav-menu a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; display: flex; align-items: center; gap: 7px; transition: 0.3s; cursor: pointer; }
         .nav-menu a i { color: #c0a16b; }
         .nav-menu a:hover { color: #c0a16b; }
 
@@ -100,7 +100,6 @@
             animation: cupTilt 2s ease-in-out infinite;
         }
 
-        /* Animated Steam & Stick lines */
         .steam-1, .steam-2 {
             position: absolute;
             background: #c0a16b;
@@ -141,7 +140,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Keyframes for animations */
         @keyframes widgetFloat {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-7px); }
@@ -321,6 +319,7 @@
                 <a href="products.html"><i class="fa-solid fa-box-open"></i> PRODUCTS</a>
                 <a href="about.html"><i class="fa-solid fa-circle-info"></i> ABOUT</a>
                 <a href="contact.html"><i class="fa-solid fa-envelope"></i> CONTACT</a>
+                <a id="openCoffeeMenu"><i class="fa-solid fa-mug-hot"></i> COFFEE WITH US</a>
             </nav>
         </div>
     </header>
@@ -425,4 +424,4 @@
                         <label class="checkbox-item"><input type="checkbox" name="product" value="Outdoor WPC Cladding"> Outdoor WPC Cladding</label>
                         <label class="checkbox-item"><input type="checkbox" name="product" value="Decorative Lights"> Decorative Lights</label>
                         <label class="checkbox-item"><input type="checkbox" name="product" value="U & L Profiles"> U & L Profiles</label>
-                        <label class="checkbox-item"><input type="checkbox" name="product" value="Othe
+                        <label class="checkbox-item"
