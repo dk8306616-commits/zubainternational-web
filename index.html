@@ -30,11 +30,11 @@ header{
 .nav-menu a:hover, .nav-menu a.active{color:#c0a16b;transform:translateY(-2px)}
 #menu-toggle{display:none;color:#c0a16b;font-size:25px;cursor:pointer}
 
-/* Grand Video Hero Section */
+/* Grand Video Hero Section - Mobile Friendly */
 .hero{
   position:relative;
-  height:90vh;
-  min-height:600px;
+  height:85vh;
+  min-height:450px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -42,12 +42,12 @@ header{
   padding:0 20px;
   overflow:hidden;
   border-bottom:1px solid rgba(192,161,107,.2);
+  background:#050f1a;
 }
 .hero-video{
   position:absolute;
   top:50%; left:50%;
-  min-width:100%; min-height:100%;
-  width:auto; height:auto;
+  width:100%; height:100%;
   transform:translate(-50%, -50%);
   object-fit:cover;
   z-index:1;
@@ -55,34 +55,35 @@ header{
 .hero-overlay{
   position:absolute;
   top:0; left:0; width:100%; height:100%;
-  background:linear-gradient(rgba(5,15,26,0.5), rgba(5,15,26,0.85));
+  background:linear-gradient(rgba(5,15,26,0.4), rgba(5,15,26,0.75));
   z-index:2;
 }
-.hero-content{position:relative;max-width:900px;z-index:3}
+.hero-content{position:relative;max-width:800px;z-index:3;padding:0 15px;}
 .hero h1{
   font-family:'Playfair Display',serif;
-  font-size:clamp(38px, 6vw, 68px);
+  font-size:clamp(22px, 4vw, 48px);
   color:#c0a16b;
-  margin-bottom:15px;
-  text-shadow:0 0 35px rgba(192,161,107,0.4);
+  margin-bottom:12px;
+  letter-spacing:1px;
+  text-shadow:0 0 25px rgba(192,161,107,0.3);
 }
 .hero p{
   color:#cbd5e1;
-  font-size:15px;
-  letter-spacing:3px;
-  margin-bottom:30px;
+  font-size:clamp(11px, 1.8vw, 14px);
+  letter-spacing:2px;
+  margin-bottom:25px;
   text-transform:uppercase;
 }
 .hero-btn{
   display:inline-flex;
   align-items:center;
   gap:10px;
-  padding:15px 32px;
+  padding:12px 28px;
   background:rgba(192,161,107,0.1);
   border:1px solid #c0a16b;
   color:#c0a16b;
   font-weight:700;
-  font-size:12px;
+  font-size:11px;
   text-decoration:none;
   border-radius:6px;
   letter-spacing:1px;
@@ -180,6 +181,7 @@ footer{background:#030a12;border-top:1px solid rgba(192,161,107,.2);padding:45px
   .nav-menu.active{display:flex}
   .nav-menu a{justify-content:center}
   .whatsapp-float{width:auto; padding:6px 14px 6px 8px; right:15px; bottom:15px;}
+  .hero{height:75vh;}
 }
 </style>
 </head>
