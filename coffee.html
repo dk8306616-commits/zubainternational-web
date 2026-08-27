@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee with us! | Zuba International</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -12,12 +12,14 @@
         
         header { background: #be123c; padding: 15px 20px; border-bottom: 2px solid rgba(255,255,255,0.2); position: sticky; top: 0; z-index: 1000; }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 18px; color: white; text-decoration: none; letter-spacing: 0.5px; white-space: nowrap; }
-        .logo span { color: #fde047; }
+        
+        /* Luxury Font Styling for Logo */
+        .logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 19px; color: white; text-decoration: none; letter-spacing: 1.5px; white-space: nowrap; text-transform: uppercase; }
+        .logo span { color: #fde047; font-style: italic; font-weight: 600; }
         
         #menu-toggle { display: none; color: #fff; font-size: 22px; cursor: pointer; }
         .nav-menu { display: flex; gap: 20px; list-style: none; align-items: center; }
-        .nav-menu a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: 0.3s; white-space: nowrap; text-transform: none; }
+        .nav-menu a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: 0.3s; white-space: nowrap; }
         .nav-menu a i { color: #fde047; }
         .nav-menu a:hover { color: #fde047; }
 
@@ -32,11 +34,11 @@
 
         @keyframes cupBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
-        h1 { font-family: 'Playfair Display', serif; color: #fff; font-size: 24px; margin-bottom: 6px; text-transform: none; }
+        h1 { font-family: 'Playfair Display', serif; color: #fff; font-size: 24px; margin-bottom: 6px; }
         p.subtitle { color: #ffe4e6; font-size: 12px; margin-bottom: 20px; }
 
         .form-group { margin-bottom: 14px; text-align: left; }
-        .form-group label { display: block; font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 4px; text-transform: none; }
+        .form-group label { display: block; font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 4px; }
         .form-control { width: 100%; padding: 11px 14px; background: #be123c; border: 1px solid #fb7185; border-radius: 6px; color: #fff; font-size: 13px; outline: none; }
         .form-control::placeholder { color: #fecdd3; }
         
@@ -50,7 +52,7 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             #menu-toggle { display: block; }
-            .logo { font-size: 15px; }
+            .logo { font-size: 14px; letter-spacing: 1px; }
             .nav-menu { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: #be123c; padding: 20px 0; border-bottom: 2px solid rgba(255,255,255,0.2); text-align: center; }
             .nav-menu.active { display: flex; }
             .container { width: 95%; padding: 20px 15px; margin: 15px auto; }
