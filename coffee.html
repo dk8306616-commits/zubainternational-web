@@ -8,121 +8,69 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body, html { width: 100%; font-family: 'Montserrat', sans-serif; background: #050f1a; color: #ffffff; min-height: 100vh; }
+        body, html { width: 100%; font-family: 'Montserrat', sans-serif; background: #050f1a; color: #ffffff; overflow-x: hidden; }
         
-        header { background: rgba(5, 15, 26, 0.92); padding: 18px 30px; border-bottom: 2px solid #c0a16b; position: sticky; top: 0; z-index: 1000; }
+        header { background: rgba(5, 15, 26, 0.92); padding: 15px 20px; border-bottom: 2px solid #c0a16b; position: sticky; top: 0; z-index: 1000; }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 22px; color: white; text-decoration: none; letter-spacing: 1px; }
+        .logo { font-weight: 700; font-size: 18px; color: white; text-decoration: none; letter-spacing: 1px; }
         .logo span { color: #c0a16b; }
-        .nav-menu { display: flex; gap: 22px; list-style: none; align-items: center; }
-        .nav-menu a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; display: flex; align-items: center; gap: 7px; transition: 0.3s; }
+        
+        #menu-toggle { display: none; color: #c0a16b; font-size: 22px; cursor: pointer; }
+        .nav-menu { display: flex; gap: 15px; list-style: none; align-items: center; }
+        .nav-menu a { color: #fff; text-decoration: none; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 5px; transition: 0.3s; }
         .nav-menu a i { color: #c0a16b; }
-        .nav-menu a:hover { color: #c0a16b; }
 
-        .container { max-width: 700px; margin: 40px auto; background: #071628; border: 2px solid #c0a16b; border-radius: 12px; padding: 35px; box-shadow: 0 15px 40px rgba(0,0,0,0.8); text-align: center; }
+        .container { width: 92%; max-width: 650px; margin: 30px auto; background: #071628; border: 2px solid #c0a16b; border-radius: 12px; padding: 25px 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.8); text-align: center; }
         
-        /* Realistic Iced Coffee Cup with Dome Lid & Straw Animation */
-        .iced-cup-container {
-            width: 90px;
-            height: 110px;
-            margin: 0 auto 20px;
-            position: relative;
-            animation: cupBounce 2s ease-in-out infinite;
-        }
-        .straw {
-            position: absolute;
-            top: -15px;
-            left: 52px;
-            width: 6px;
-            height: 45px;
-            background: #e11d48;
-            transform: rotate(15deg);
-            border-radius: 3px;
-            z-index: 3;
-            animation: strawTilt 2s ease-in-out infinite;
-        }
-        .dome-lid {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 60px;
-            height: 25px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 30px 30px 5px 5px;
-            z-index: 2;
-            border-bottom: 2px solid #cbd5e1;
-        }
-        .cup-body {
-            position: absolute;
-            top: 38px;
-            left: 20px;
-            width: 50px;
-            height: 65px;
-            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-            border-radius: 0 0 10px 10px;
-            z-index: 1;
-            overflow: hidden;
-            border: 2px solid rgba(255,255,255,0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .cup-logo {
-            font-size: 14px;
-            font-weight: 800;
-            color: #facc15;
-            background: #b91c1c;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
+        /* Iced Cup Animation */
+        .iced-cup-container { width: 80px; height: 100px; margin: 0 auto 15px; position: relative; animation: cupBounce 2s ease-in-out infinite; }
+        .straw { position: absolute; top: -12px; left: 48px; width: 5px; height: 40px; background: #e11d48; transform: rotate(15deg); border-radius: 3px; z-index: 3; }
+        .dome-lid { position: absolute; top: 12px; left: 12px; width: 56px; height: 22px; background: rgba(255, 255, 255, 0.85); border-radius: 25px 25px 5px 5px; z-index: 2; border-bottom: 2px solid #cbd5e1; }
+        .cup-body { position: absolute; top: 32px; left: 15px; width: 50px; height: 60px; background: linear-gradient(135deg, #d97706 0%, #b45309 100%); border-radius: 0 0 10px 10px; z-index: 1; display: flex; justify-content: center; align-items: center; border: 2px solid rgba(255,255,255,0.3); }
+        .cup-logo { font-size: 13px; font-weight: 800; color: #facc15; background: #b91c1c; width: 20px; height: 20px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
 
-        @keyframes cupBounce {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(-2deg); }
-        }
-        @keyframes strawTilt {
-            0%, 100% { transform: rotate(15deg); }
-            50% { transform: rotate(20deg) translateY(-2px); }
-        }
+        @keyframes cupBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
-        h1 { font-family: 'Playfair Display', serif; color: #c0a16b; font-size: 30px; margin-bottom: 8px; }
-        p.subtitle { color: #94a3b8; font-size: 13px; margin-bottom: 25px; }
+        h1 { font-family: 'Playfair Display', serif; color: #c0a16b; font-size: 24px; margin-bottom: 6px; }
+        p.subtitle { color: #94a3b8; font-size: 12px; margin-bottom: 20px; }
 
-        .form-group { margin-bottom: 16px; text-align: left; }
-        .form-group label { display: block; font-size: 12px; font-weight: 600; color: #cbd5e1; margin-bottom: 5px; }
-        .form-control { width: 100%; padding: 11px 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(192, 161, 107, 0.3); border-radius: 6px; color: #fff; font-size: 14px; outline: none; }
-        .form-control:focus { border-color: #c0a16b; }
+        .form-group { margin-bottom: 14px; text-align: left; }
+        .form-group label { display: block; font-size: 11px; font-weight: 600; color: #cbd5e1; margin-bottom: 4px; }
+        .form-control { width: 100%; padding: 10px 12px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(192, 161, 107, 0.3); border-radius: 6px; color: #fff; font-size: 13px; outline: none; }
         
-        .checkbox-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; background: rgba(5, 15, 26, 0.5); padding: 12px; border-radius: 6px; border: 1px solid rgba(192, 161, 107, 0.2); max-height: 140px; overflow-y: auto; }
-        .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 11px; color: #cbd5e1; cursor: pointer; }
+        .checkbox-grid { display: grid; grid-template-columns: 1fr; gap: 8px; background: rgba(5, 15, 26, 0.5); padding: 12px; border-radius: 6px; border: 1px solid rgba(192, 161, 107, 0.2); max-height: 140px; overflow-y: auto; }
+        .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 11px; color: #cbd5e1; }
         .checkbox-item input { accent-color: #c0a16b; width: 14px; height: 14px; }
 
-        .submit-btn { width: 100%; background: #c0a16b; color: #050f1a; padding: 13px; font-weight: 700; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; margin-top: 10px; transition: 0.3s; }
-        .submit-btn:hover { background: #d4b277; }
+        .submit-btn { width: 100%; background: #c0a16b; color: #050f1a; padding: 12px; font-weight: 700; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            #menu-toggle { display: block; }
+            .nav-menu { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: #050f1a; padding: 20px 0; border-bottom: 2px solid #c0a16b; text-align: center; }
+            .nav-menu.active { display: flex; }
+            .container { width: 95%; padding: 20px 15px; margin: 15px auto; }
+            .checkbox-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
-            <nav class="nav-menu">
+            <a href="index.html" class="logo">ZUBA <span>INT.</span></a>
+            <div id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+            <nav class="nav-menu" id="nav-menu">
                 <a href="index.html"><i class="fa-solid fa-house"></i> HOME</a>
                 <a href="products.html"><i class="fa-solid fa-box-open"></i> PRODUCTS</a>
                 <a href="about.html"><i class="fa-solid fa-circle-info"></i> ABOUT</a>
                 <a href="contact.html"><i class="fa-solid fa-envelope"></i> CONTACT</a>
-                <a href="coffee.html" style="color: #c0a16b;"><i class="fa-solid fa-mug-hot"></i> COFFEE WITH US</a>
+                <a href="coffee.html" style="color: #c0a16b;"><i class="fa-solid fa-mug-hot"></i> COFFEE</a>
             </nav>
         </div>
     </header>
 
     <div class="container">
-        <!-- Animated Dome Lid Iced Cup with Straw -->
         <div class="iced-cup-container">
             <div class="straw"></div>
             <div class="dome-lid"></div>
@@ -132,7 +80,7 @@
         </div>
 
         <h1>COFFEE WITH US</h1>
-        <p class="subtitle">Let's discuss your luxury project over a virtual coffee. Fill out the form below!</p>
+        <p class="subtitle">Let's discuss your luxury project over a virtual coffee.</p>
         
         <form id="coffeeForm">
             <div class="form-group">
@@ -176,6 +124,10 @@
     </div>
 
     <script>
+        document.getElementById('menu-toggle').onclick = function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        };
+
         document.getElementById('coffeeForm').onsubmit = function(e) {
             e.preventDefault();
             const name = document.getElementById('cName').value.trim();
