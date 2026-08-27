@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee With Us | Zuba International</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body, html { width: 100%; font-family: 'Montserrat', sans-serif; background: #050f1a; color: #ffffff; min-height: 100vh; }
+        
+        header { background: rgba(5, 15, 26, 0.92); padding: 18px 30px; border-bottom: 2px solid #c0a16b; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 22px; color: white; text-decoration: none; letter-spacing: 1px; }
+        .logo span { color: #c0a16b; }
+        .nav-menu { display: flex; gap: 22px; list-style: none; align-items: center; }
+        .nav-menu a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; display: flex; align-items: center; gap: 7px; transition: 0.3s; }
+        .nav-menu a i { color: #c0a16b; }
+        .nav-menu a:hover { color: #c0a16b; }
 
+        .container { max-width: 700px; margin: 50px auto; background: #071628; border: 2px solid #c0a16b; border-radius: 12px; padding: 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.8); text-align: center; }
+        
+        /* Animated Cup */
+        .animated-cup-box { position: relative; width: 80px; height: 80px; margin: 0 auto 20px; background: rgba(192, 161, 107, 0.15); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 38px; color: #c0a16b; animation: cupTilt 2s ease-in-out infinite; }
+        .steam-1, .steam-2 { position: absolute; background: #c0a16b; border-radius: 2px; }
+        .steam-1 { top: -12px; left: 28px; width: 3px; height: 12px; animation: steamRise1 1.5s ease-in-out infinite; }
+        .steam-2 { top: -15px; right: 28px; width: 3px; height: 15px; animation: steamRise2 1.8s ease-in-out infinite; }
+
+        @keyframes cupTilt { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-5deg); } 75% { transform: rotate(5deg); } }
+        @keyframes steamRise1 { 0% { opacity: 0; transform: translateY(4px) scaleY(0.4); } 50% { opacity: 1; transform: translateY(-2px) scaleY(1.2); } 100% { opacity: 0; transform: translateY(-8px) scaleY(0.8); } }
+        @keyframes steamRise2 { 0% { opacity: 0; transform: translateY(6px) scaleY(0.5); } 50% { opacity: 1; transform: translateY(-3px) scaleY(1.3); } 100% { opacity: 0; transform: translateY(-9px) scaleY(0.7); } }
+
+        h1 { font-family: 'Playfair Display', serif; color: #c0a16b; font-size: 32px; margin-bottom: 10px; }
+        p.subtitle { color: #94a3b8; font-size: 14px; margin-bottom: 30px; }
+
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; font-size: 12px; font-weight: 600; color: #cbd5e1; margin-bottom: 6px; }
+        .form-control { width: 100%; padding: 12px 15px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(192, 161, 107, 0.3); border-radius: 6px; color: #fff; font-size: 14px; outline: none; }
+        .form-control:focus { border-color: #c0a16b; }
+        
+        .checkbox-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; background: rgba(5, 15, 26, 0.5); padding: 15px; border-radius: 6px; border: 1px solid rgba(192, 161, 107, 0.2); }
+        .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #cbd5e1; cursor: pointer; }
+        .checkbox-item input { accent-color: #c0a16b; width: 15px; height: 15px; }
+
+        .submit-btn { width: 100%; background: #c0a16b; color: #050f1a; padding: 14px; font-weight: 700; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; margin-top: 15px; transition: 0.3s; }
+        .submit-btn:hover { background: #d4b277; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
+            <nav class="nav-menu">
+                <a href="index.html"><i class="fa-solid fa-house"></i> HOME</a>
+                <a href="products.html"><i class="fa-solid fa-box-open"></i> PRODUCTS</a>
+                <a href="about.html"><i class="fa-solid fa-circle-info"></i> ABOUT</a>
+                <a href="contact.html"><i class="fa-solid fa-envelope"></i> CONTACT</a>
+                <a href="coffee.html" style="color: #c0a16b;"><i class="fa-solid fa-mug-hot"></i> COFFEE WITH US</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="animated-cup-box">
+            <div class="steam-1"></div>
+            <div class="steam-2"></div>
+            <i class="fa-solid fa-mug-hot"></i>
+        </div>
+        <h1>COFFEE WITH US</h1>
+        <p class="subtitle">Let's discuss your project over a virtual coffee. Fill out the form below!</p>
+        
+        <form id="coffeeForm">
+            <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" class="form-control" id="cName" required placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" class="form-control" id="cEmail" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label>Company Name</label>
+                <input type="text" class="form-control" id="cCompany" placeholder="Enter company name">
+            </div>
+            <div class="form-group">
+                <label>Phone / WhatsApp Number *</label>
+                <input type="tel" class="form-control" id="cPhone" required placeholder="Enter phone number">
+            </div>
+            
+            <div class="form-group">
+                <label>Products Interested In:</label>
+                <div class="checkbox-grid">
+                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="Architectural Wall Panels"> Architectural Wall Panels</label>
+                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="WPC Wall Panels"> WPC Wall Panels</label>
+                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="Carbon Crystal Panels"> Carbon Crystal Panels</label>
+                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="UV Marble Sheets"> UV Marble Sheets</label>
+                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="PVC Wall Panels"> PVC Wall Panels</label>
+                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="Charcoal Fluted Panels"> Charcoal Fluted Panels</label>
+                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="Decorative Lights"> Decorative Lights</label>
+                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="Other Products"> Other Products</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Message / Requirements</label>
+                <textarea class="form-control" id="cMessage" rows="3" placeholder="Tell us about your requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">SEND ENQUIRY VIA WHATSAPP</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('coffeeForm').onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('cName').value.trim();
+            const email = document.getElementById('cEmail').value.trim();
+            const company = document.getElementById('cCompany').value.trim();
+            const phone = document.getElementById('cPhone').value.trim();
+            const message = document.getElementById('cMessage').value.trim();
+
+            let prods = [];
+            document.querySelectorAll('input[name="cprod"]:checked').forEach((cb) => { prods.push(cb.value); });
+
+            let text = `*Coffee With Us Enquiry - Zuba International*\n\n` +
+                       `*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email || 'N/A'}\n` +
+                       `*Company:* ${company || 'N/A'}\n*Products:* ${prods.length > 0 ? prods.join(', ') : 'General'}\n*Message:* ${message || 'N/A'}`;
+
+            window.open(`https://wa.me/919278246138?text=${encodeURIComponent(text)}`, '_blank');
+        };
+    </script>
+</body>
+</html>
