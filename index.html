@@ -61,56 +61,105 @@
         .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background-color: #25d366; color: white; border-radius: 50%; font-size: 32px; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; z-index: 2000; box-shadow: 0 4px 20px rgba(0,0,0,0.5); transition: 0.3s; }
         .whatsapp-float:hover { transform: scale(1.1); }
 
-        /* --- FLOATING COFFEE CUP WIDGET & ANIMATION --- */
-        .coffee-float {
+        /* --- "COFFEE WITH US" FLOATING WIDGET & ANIMATIONS --- */
+        .coffee-with-us-float {
             position: fixed;
-            bottom: 100px;
-            right: 25px;
-            width: 75px;
-            height: 75px;
-            background: rgba(5, 15, 26, 0.85);
+            bottom: 105px;
+            right: 20px;
+            background: linear-gradient(135deg, #071628 0%, #0d233a 100%);
             border: 2px solid #c0a16b;
+            border-radius: 35px;
+            padding: 8px 16px 8px 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            z-index: 2000;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6), 0 0 15px rgba(192, 161, 107, 0.3);
+            animation: widgetFloat 3s ease-in-out infinite;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .coffee-with-us-float:hover {
+            transform: scale(1.06);
+            border-color: #fff;
+            box-shadow: 0 10px 30px rgba(192, 161, 107, 0.5);
+        }
+        
+        .coffee-icon-box {
+            position: relative;
+            width: 42px;
+            height: 42px;
+            background: rgba(192, 161, 107, 0.15);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
-            z-index: 2000;
-            box-shadow: 0 6px 25px rgba(192, 161, 107, 0.4);
-            animation: floatBob 3s ease-in-out infinite;
-            transition: 0.3s;
-        }
-        .coffee-float:hover {
-            transform: scale(1.12);
-            background: #071628;
-        }
-        .coffee-icon-wrap {
-            position: relative;
-            font-size: 32px;
+            font-size: 20px;
             color: #c0a16b;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            animation: cupTilt 2s ease-in-out infinite;
         }
-        .steam-line {
+
+        /* Animated Steam & Stick lines */
+        .steam-1, .steam-2 {
             position: absolute;
-            top: -12px;
-            left: 50%;
-            width: 3px;
-            height: 12px;
             background: #c0a16b;
             border-radius: 2px;
-            transform: translateX(-50%);
-            animation: steamWave 1.5s ease-in-out infinite;
         }
-        @keyframes floatBob {
+        .steam-1 {
+            top: -8px;
+            left: 14px;
+            width: 2px;
+            height: 8px;
+            animation: steamRise1 1.5s ease-in-out infinite;
+        }
+        .steam-2 {
+            top: -10px;
+            right: 14px;
+            width: 2px;
+            height: 10px;
+            animation: steamRise2 1.8s ease-in-out infinite;
+        }
+
+        .coffee-text-content {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        .coffee-text-top {
+            font-size: 10px;
+            color: #94a3b8;
+            letter-spacing: 1px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        .coffee-text-main {
+            font-size: 13px;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Keyframes for animations */
+        @keyframes widgetFloat {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+            50% { transform: translateY(-7px); }
         }
-        @keyframes steamWave {
-            0% { opacity: 0; transform: translateX(-50%) translateY(4px) scaleY(0.5); }
-            50% { opacity: 1; transform: translateX(-50%) translateY(-2px) scaleY(1.2); }
-            100% { opacity: 0; transform: translateX(-50%) translateY(-8px) scaleY(0.8); }
+        @keyframes cupTilt {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+        @keyframes steamRise1 {
+            0% { opacity: 0; transform: translateY(4px) scaleY(0.4); }
+            50% { opacity: 1; transform: translateY(-2px) scaleY(1.2); }
+            100% { opacity: 0; transform: translateY(-8px) scaleY(0.8); }
+        }
+        @keyframes steamRise2 {
+            0% { opacity: 0; transform: translateY(6px) scaleY(0.5); }
+            50% { opacity: 1; transform: translateY(-3px) scaleY(1.3); }
+            100% { opacity: 0; transform: translateY(-9px) scaleY(0.7); }
         }
 
         /* --- ENQUIRY MODAL POPUP --- */
@@ -258,13 +307,11 @@
 </head>
 <body>
 
-    <!-- Background Video -->
     <video autoplay muted loop playsinline id="bg-video">
         <source src="wap.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <!-- Header Navigation -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
@@ -278,14 +325,12 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <div class="hero">
         <h1>EXCELLENCE IN GLOBAL TRADE</h1>
         <p>PREMIUM INTERIOR & EXTERIOR SOLUTIONS</p>
         <a href="products.html" class="hero-btn">EXPLORE COLLECTION</a>
     </div>
 
-    <!-- Welcome / Intro Block -->
     <section class="intro-block">
         <div>
             <h2>Welcome to Zuba International</h2>
@@ -293,7 +338,6 @@
         </div>
     </section>
 
-    <!-- Why Choose Us / Specialties Section -->
     <section class="specialties">
         <h2>Why Choose Zuba International</h2>
         <p class="section-subtitle">Redefining elite spaces with unmatched global standards</p>
@@ -317,7 +361,6 @@
         </div>
     </section>
 
-    <!-- Professional Footer -->
     <footer>
         <div class="footer-content">
             <p class="copyright">&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
@@ -328,25 +371,27 @@
         </div>
     </footer>
 
-    <!-- Floating Coffee Cup Widget -->
-    <div class="coffee-float" id="openCoffeeModal" title="Let's Have A Coffee / Quick Enquiry">
-        <div class="coffee-icon-wrap">
-            <div class="steam-line"></div>
+    <div class="coffee-with-us-float" id="openCoffeeModal" title="Coffee With Us - Quick Enquiry">
+        <div class="coffee-icon-box">
+            <div class="steam-1"></div>
+            <div class="steam-2"></div>
             <i class="fa-solid fa-mug-hot"></i>
+        </div>
+        <div class="coffee-text-content">
+            <span class="coffee-text-top">LET'S CONNECT</span>
+            <span class="coffee-text-main">Coffee With Us</span>
         </div>
     </div>
 
-    <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Enquiry Popup Modal -->
     <div class="modal-overlay" id="coffeeModal">
         <div class="modal-box">
             <button class="modal-close" id="closeCoffeeModal"><i class="fa-solid fa-xmark"></i></button>
-            <h2>REQUEST A QUOTE</h2>
-            <p class="subtitle">Tell us what you're looking for and our team will get back to you instantly.</p>
+            <h2>COFFEE WITH US</h2>
+            <p class="subtitle">Tell us what you're looking for over a virtual coffee, and our team will get back to you instantly.</p>
             
             <form id="enquiryForm">
                 <div class="form-group">
@@ -380,39 +425,4 @@
                         <label class="checkbox-item"><input type="checkbox" name="product" value="Outdoor WPC Cladding"> Outdoor WPC Cladding</label>
                         <label class="checkbox-item"><input type="checkbox" name="product" value="Decorative Lights"> Decorative Lights</label>
                         <label class="checkbox-item"><input type="checkbox" name="product" value="U & L Profiles"> U & L Profiles</label>
-                        <label class="checkbox-item"><input type="checkbox" name="product" value="Other Products"> Other Products</label>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Message / Requirements</label>
-                    <textarea class="form-control" id="custMessage" rows="3" placeholder="Tell us about your project..."></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">SEND ENQUIRY VIA WHATSAPP</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script>
-        // Mobile Menu Toggle
-        document.getElementById('menu-toggle').onclick = function() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        };
-
-        // Coffee Modal Open/Close Logic
-        const modal = document.getElementById('coffeeModal');
-        const openBtn = document.getElementById('openCoffeeModal');
-        const closeBtn = document.getElementById('closeCoffeeModal');
-
-        openBtn.onclick = () => modal.classList.add('active');
-        closeBtn.onclick = () => modal.classList.remove('active');
-        window.onclick = (e) => { if (e.target == modal) modal.classList.remove('active'); };
-
-        // Form Submit Handler -> WhatsApp Integration
-        document.getElementById('enquiryForm').onsubmit = function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('custName').value.trim();
-            const email = document.getElementById('custEmail').v
+                        <label class="checkbox-item"><input type="checkbox" name="product" value="Othe
