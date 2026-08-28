@@ -34,71 +34,92 @@ header{
   max-width:550px;
   margin:40px auto 80px;
   background:#ff1744;
-  padding:20px;
+  padding:25px;
   border-radius:12px;
 }
 
-/* Animated Coffee Cup */
+/* Perfect Animated Coffee Cup */
 .cup-wrapper{
   text-align:center;
-  margin-bottom:25px;
+  margin-bottom:30px;
   position:relative;
 }
 .coffee-cup{
-  width:120px;
-  height:140px;
+  width:130px;
+  height:150px;
   margin:0 auto;
   position:relative;
   animation: cupFloat 2.5s ease-in-out infinite;
 }
+.cup-straw{
+  width:10px;
+  height:85px;
+  background:#212121;
+  position:absolute;
+  top:-40px;
+  left:68px;
+  transform:rotate(15deg);
+  border-radius:4px;
+  z-index:3;
+  animation: strawMove 2s ease-in-out infinite;
+}
+.cup-lid{
+  width:140px;
+  height:28px;
+  background:#f5f5f5;
+  border-radius:14px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+  box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+.cup-foam{
+  width:120px;
+  height:35px;
+  background:#fff;
+  border-radius:50%;
+  position:absolute;
+  top:22px;
+  left:5px;
+  z-index:2;
+}
 .cup-body{
-  width:100%;
-  height:110px;
-  background:#d7ccc8;
-  border-radius:0 0 20px 20px;
+  width:120px;
+  height:115px;
+  background:linear-gradient(135deg, #d7ccc8, #bcaaa4);
+  border-radius:0 0 25px 25px;
+  margin:0 auto;
   position:relative;
   overflow:hidden;
   border:3px solid #fff;
   border-top:none;
 }
-.cup-lid{
-  width:130px;
-  height:25px;
-  background:#fff;
-  border-radius:15px;
-  margin:0 auto;
-  position:relative;
-  box-shadow:0 4px 6px rgba(0,0,0,0.1);
-}
-.cup-straw{
-  width:8px;
-  height:70px;
+.cup-logo{
+  position:absolute;
+  top:35px;
+  left:50%;
+  transform:translateX(-50%);
+  width:32px;
+  height:32px;
   background:#d32f2f;
-  position:absolute;
-  top:-45px;
-  left:65px;
-  transform:rotate(15deg);
-  border-radius:4px;
-  animation: strawMove 2s ease-in-out infinite;
-}
-.coffee-foam{
-  width:110px;
-  height:30px;
-  background:#fff;
+  color:#ffeb3b;
   border-radius:50%;
-  position:absolute;
-  top:5px;
-  left:2px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  font-size:18px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.2);
 }
 .ice-cube{
   position:absolute;
-  background:rgba(255,255,255,0.6);
+  background:rgba(255,255,255,0.75);
   border:1px solid #fff;
   border-radius:4px;
   animation: iceShake 1.5s ease-in-out infinite;
 }
-.ice1{width:22px;height:22px;top:40px;left:20px;transform:rotate(15deg);}
-.ice2{width:26px;height:26px;top:55px;right:20px;transform:rotate(-20deg);animation-delay:0.3s;}
+.ice1{width:22px;height:22px;bottom:20px;left:15px;transform:rotate(15deg);}
+.ice2{width:26px;height:26px;bottom:35px;right:15px;transform:rotate(-20deg);animation-delay:0.3s;}
 
 @keyframes cupFloat{
   0%, 100%{ transform: translateY(0); }
@@ -114,7 +135,7 @@ header{
 }
 
 /* Form Fields */
-.form-group{margin-bottom:15px;}
+.form-group{margin-bottom:16px;}
 .form-control{
   width:100%;
   padding:14px 18px;
@@ -126,13 +147,13 @@ header{
   outline:none;
   font-family:'Montserrat',sans-serif;
 }
-.form-control::placeholder{color:rgba(255,255,255,0.8);}
+.form-control::placeholder{color:rgba(255,255,255,0.85);}
 textarea.form-control{resize:vertical;min-height:90px;}
 
 .services-title{
-  font-size:16px;
+  font-size:15px;
   font-weight:600;
-  margin:20px 0 12px 0;
+  margin:22px 0 12px 0;
   color:#fff;
 }
 .checkbox-grid{
@@ -167,7 +188,7 @@ textarea.form-control{resize:vertical;min-height:90px;}
   background:#fff;
   color:#333;
   border:none;
-  padding:12px 20px;
+  padding:12px 18px;
   border-radius:4px;
   font-weight:600;
   cursor:pointer;
@@ -176,14 +197,26 @@ textarea.form-control{resize:vertical;min-height:90px;}
 .captcha-box{
   background:#0288d1;
   color:#fff;
-  padding:12px 18px;
+  padding:12px 16px;
   border-radius:4px;
   font-weight:bold;
   font-size:15px;
   text-align:center;
-  min-width:55px;
+  min-width:50px;
 }
 .captcha-plus{font-size:18px;font-weight:bold;}
+.captcha-input{
+  width:60px;
+  background:#0288d1;
+  border:none;
+  border-radius:4px;
+  color:#fff;
+  text-align:center;
+  font-size:16px;
+  font-weight:bold;
+  padding:11px 0;
+  outline:none;
+}
 
 .submit-btn{
   width:100%;
@@ -278,13 +311,14 @@ footer{background:#030a12;border-top:1px solid rgba(192,161,107,.2);padding:45px
 </header>
 
 <div class="coffee-container">
-  <!-- Animated Coffee Cup with Stick & Ice/Sugar Cubes -->
+  <!-- Perfect Animated Coffee Cup with Straw & Ice/Sugar Cubes -->
   <div class="cup-wrapper">
     <div class="coffee-cup">
       <div class="cup-straw"></div>
       <div class="cup-lid"></div>
+      <div class="cup-foam"></div>
       <div class="cup-body">
-        <div class="coffee-foam"></div>
+        <div class="cup-logo">Z</div>
         <div class="ice-cube ice1"></div>
         <div class="ice-cube ice2"></div>
       </div>
@@ -326,6 +360,7 @@ footer{background:#030a12;border-top:1px solid rgba(192,161,107,.2);padding:45px
       <div class="captcha-box">35</div>
       <span class="captcha-plus">+</span>
       <div class="captcha-box">38</div>
+      <input type="text" class="captcha-input" placeholder="=" required>
     </div>
 
     <button type="submit" class="submit-btn">Start Now</button>
