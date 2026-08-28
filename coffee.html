@@ -38,110 +38,95 @@ header{
   border-radius:12px;
 }
 
-/* Realistic Animated Coffee Cup */
+/* Exact Reference Style Animated Cup */
 .cup-wrapper{
   text-align:center;
-  margin-bottom:30px;
+  margin-bottom:35px;
   position:relative;
 }
-.coffee-cup{
-  width:140px;
-  height:160px;
+.coffee-cup-box{
+  width:150px;
+  height:180px;
   margin:0 auto;
   position:relative;
-  animation: cupFloat 2.5s ease-in-out infinite;
 }
-.cup-straw{
-  width:10px;
+.cup-straw-ref{
+  width:8px;
   height:95px;
   background:#212121;
   position:absolute;
-  top:-45px;
-  left:72px;
+  top:-35px;
+  left:78px;
   transform:rotate(12deg);
   border-radius:4px;
-  z-index:3;
-  animation: strawMove 2s ease-in-out infinite;
+  z-index:4;
 }
-.cup-lid{
-  width:150px;
-  height:24px;
-  background:#ffffff;
-  border-radius:12px;
-  margin:0 auto;
-  position:relative;
-  z-index:2;
-  box-shadow:0 4px 10px rgba(0,0,0,0.25);
-}
-.cup-lid::after{
-  content:'';
-  position:absolute;
-  top:-6px;
-  left:50%;
-  transform:translateX(-50%);
-  width:50px;
-  height:8px;
-  background:#e0e0e0;
-  border-radius:4px;
-}
-.cup-foam{
-  width:130px;
-  height:32px;
+.cup-cream-top{
+  width:120px;
+  height:40px;
   background:#fff;
-  border-radius:50%;
+  border-radius:60px 60px 10px 10px;
   position:absolute;
-  top:20px;
-  left:5px;
-  z-index:2;
+  top:12px;
+  left:15px;
+  z-index:3;
+  box-shadow:0 -4px 10px rgba(0,0,0,0.1);
 }
-.cup-body{
-  width:130px;
-  height:125px;
-  background:linear-gradient(135deg, #d7ccc8, #bcaaa4);
-  border-radius:0 0 25px 25px;
-  margin:0 auto;
-  position:relative;
+.cup-lid-ref{
+  width:140px;
+  height:20px;
+  background:#f5f5f5;
+  border-radius:10px;
+  position:absolute;
+  top:45px;
+  left:5px;
+  z-index:3;
+  box-shadow:0 3px 6px rgba(0,0,0,0.15);
+}
+.cup-body-ref{
+  width:120px;
+  height:115px;
+  background:#e0ac69;
+  border-radius:0 0 20px 20px;
+  position:absolute;
+  top:60px;
+  left:15px;
   overflow:hidden;
   border:3px solid #fff;
-  border-top:none;
+  z-index:2;
 }
 .cup-logo-badge{
   position:absolute;
-  top:40px;
+  top:30px;
   left:50%;
   transform:translateX(-50%);
   background:#d32f2f;
-  color:#fff;
-  padding:5px 12px;
-  border-radius:15px;
+  color:#ffeb3b;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-family:'Playfair Display',serif;
   font-weight:bold;
-  font-size:13px;
-  letter-spacing:1px;
-  box-shadow:0 3px 6px rgba(0,0,0,0.2);
-  white-space:nowrap;
+  font-size:16px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.25);
+  z-index:3;
 }
-.ice-cube{
+/* Sparkle Animation Effect */
+.sparkle{
   position:absolute;
-  background:rgba(255,255,255,0.75);
-  border:1px solid #fff;
-  border-radius:4px;
-  animation: iceShake 1.5s ease-in-out infinite;
+  top:10px;
+  right:20px;
+  font-size:22px;
+  color:#ffeb3b;
+  animation: sparkleAnim 1.5s ease-in-out infinite;
+  z-index:5;
 }
-.ice1{width:20px;height:20px;bottom:15px;left:15px;transform:rotate(15deg);}
-.ice2{width:24px;height:24px;bottom:30px;right:15px;transform:rotate(-20deg);animation-delay:0.3s;}
-
-@keyframes cupFloat{
-  0%, 100%{ transform: translateY(0); }
-  50%{ transform: translateY(-8px); }
-}
-@keyframes strawMove{
-  0%, 100%{ transform: rotate(12deg) translateY(0); }
-  50%{ transform: rotate(9deg) translateY(-3px); }
-}
-@keyframes iceShake{
-  0%, 100%{ transform: translateY(0) rotate(0deg); }
-  50%{ transform: translateY(3px) rotate(5deg); }
+@keyframes sparkleAnim{
+  0%, 100%{ transform: scale(0.8); opacity: 0.5; }
+  50%{ transform: scale(1.2); opacity: 1; }
 }
 
 /* Form Fields */
@@ -323,16 +308,14 @@ footer{background:#030a12;border-top:1px solid rgba(192,161,107,.2);padding:45px
 </header>
 
 <div class="coffee-container">
-  <!-- Perfect Realistic Coffee Cup with 'Zuba' & Straw -->
   <div class="cup-wrapper">
-    <div class="coffee-cup">
-      <div class="cup-straw"></div>
-      <div class="cup-lid"></div>
-      <div class="cup-foam"></div>
-      <div class="cup-body">
-        <div class="cup-logo-badge">Zuba</div>
-        <div class="ice-cube ice1"></div>
-        <div class="ice-cube ice2"></div>
+    <div class="coffee-cup-box">
+      <div class="sparkle">✨</div>
+      <div class="cup-straw-ref"></div>
+      <div class="cup-cream-top"></div>
+      <div class="cup-lid-ref"></div>
+      <div class="cup-body-ref">
+        <div class="cup-logo-badge">Z</div>
       </div>
     </div>
   </div>
@@ -408,7 +391,6 @@ footer{background:#030a12;border-top:1px solid rgba(192,161,107,.2);padding:45px
 <script>
 document.getElementById('menu-toggle').onclick=function(){document.getElementById('nav-menu').classList.toggle('active');};
 
-// Random Captcha Generator (1 to 9)
 let correctAnswer = 0;
 function generateCaptcha() {
   let n1 = Math.floor(Math.random() * 9) + 1;
@@ -431,7 +413,6 @@ function validateCaptcha(e) {
   return true;
 }
 
-// Initialize captcha on load
 window.onload = generateCaptcha;
 </script>
 </body>
