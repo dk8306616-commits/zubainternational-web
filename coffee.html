@@ -1,155 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee with us! | Zuba International</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body, html { width: 100%; font-family: 'Montserrat', sans-serif; background: #e11d48; color: #ffffff; overflow-x: hidden; }
-        
-        header { background: #be123c; padding: 15px 20px; border-bottom: 2px solid rgba(255,255,255,0.2); position: sticky; top: 0; z-index: 1000; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        
-        /* Luxury Font Styling for Logo */
-        .logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 19px; color: white; text-decoration: none; letter-spacing: 1.5px; white-space: nowrap; text-transform: uppercase; }
-        .logo span { color: #fde047; font-style: italic; font-weight: 600; }
-        
-        #menu-toggle { display: none; color: #fff; font-size: 22px; cursor: pointer; }
-        .nav-menu { display: flex; gap: 20px; list-style: none; align-items: center; }
-        .nav-menu a { color: #fff; text-decoration: none; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: 0.3s; white-space: nowrap; }
-        .nav-menu a i { color: #fde047; }
-        .nav-menu a:hover { color: #fde047; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zuba International | Coffee with us!</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',sans-serif;background:#ff1744;color:#fff;overflow-x:hidden}
 
-        .container { width: 92%; max-width: 550px; margin: 30px auto; background: #f43f5e; border: 2px solid #fb7185; border-radius: 12px; padding: 25px 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); text-align: center; }
-        
-        /* Iced Cup Animation */
-        .iced-cup-container { width: 80px; height: 100px; margin: 0 auto 15px; position: relative; animation: cupBounce 2s ease-in-out infinite; }
-        .straw { position: absolute; top: -12px; left: 48px; width: 5px; height: 40px; background: #1e293b; transform: rotate(15deg); border-radius: 3px; z-index: 3; }
-        .dome-lid { position: absolute; top: 12px; left: 12px; width: 56px; height: 22px; background: rgba(255, 255, 255, 0.9); border-radius: 25px 25px 5px 5px; z-index: 2; border-bottom: 2px solid #cbd5e1; }
-        .cup-body { position: absolute; top: 32px; left: 15px; width: 50px; height: 60px; background: linear-gradient(135deg, #d97706 0%, #b45309 100%); border-radius: 0 0 10px 10px; z-index: 1; display: flex; justify-content: center; align-items: center; border: 2px solid rgba(255,255,255,0.3); }
-        .cup-logo { font-size: 13px; font-weight: 800; color: #facc15; background: #b91c1c; width: 20px; height: 20px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(5,15,26,.92);
+  padding:18px 30px;
+  border-bottom:1px solid rgba(192,161,107,.65);
+  backdrop-filter:blur(15px);
+  box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+.nav-container{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{color:#fff;text-decoration:none;font-size:22px;font-weight:700;letter-spacing:1px;font-family:'Playfair Display',serif;}
+.logo span{color:#c0a16b}
+.nav-menu{display:flex;align-items:center;gap:22px;list-style:none}
+.nav-menu a{color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:0.5px;display:flex;align-items:center;gap:6px;transition:.35s}
+.nav-menu a i{color:#c0a16b}
+.nav-menu a:hover, .nav-menu a.active{color:#c0a16b;transform:translateY(-2px)}
+#menu-toggle{display:none;color:#c0a16b;font-size:25px;cursor:pointer}
 
-        @keyframes cupBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+/* Coffee Form Container */
+.coffee-container{
+  max-width:550px;
+  margin:40px auto 80px;
+  background:#ff1744;
+  padding:20px;
+  border-radius:12px;
+}
 
-        h1 { font-family: 'Playfair Display', serif; color: #fff; font-size: 24px; margin-bottom: 6px; }
-        p.subtitle { color: #ffe4e6; font-size: 12px; margin-bottom: 20px; }
+/* Animated Coffee Cup */
+.cup-wrapper{
+  text-align:center;
+  margin-bottom:25px;
+  position:relative;
+}
+.coffee-cup{
+  width:120px;
+  height:140px;
+  margin:0 auto;
+  position:relative;
+  animation: cupFloat 2.5s ease-in-out infinite;
+}
+.cup-body{
+  width:100%;
+  height:110px;
+  background:#d7ccc8;
+  border-radius:0 0 20px 20px;
+  position:relative;
+  overflow:hidden;
+  border:3px solid #fff;
+  border-top:none;
+}
+.cup-lid{
+  width:130px;
+  height:25px;
+  background:#fff;
+  border-radius:15px;
+  margin:0 auto;
+  position:relative;
+  box-shadow:0 4px 6px rgba(0,0,0,0.1);
+}
+.cup-straw{
+  width:8px;
+  height:70px;
+  background:#d32f2f;
+  position:absolute;
+  top:-45px;
+  left:65px;
+  transform:rotate(15deg);
+  border-radius:4px;
+  animation: strawMove 2s ease-in-out infinite;
+}
+.coffee-foam{
+  width:110px;
+  height:30px;
+  background:#fff;
+  border-radius:50%;
+  position:absolute;
+  top:5px;
+  left:2px;
+}
+.ice-cube{
+  position:absolute;
+  background:rgba(255,255,255,0.6);
+  border:1px solid #fff;
+  border-radius:4px;
+  animation: iceShake 1.5s ease-in-out infinite;
+}
+.ice1{width:22px;height:22px;top:40px;left:20px;transform:rotate(15deg);}
+.ice2{width:26px;height:26px;top:55px;right:20px;transform:rotate(-20deg);animation-delay:0.3s;}
 
-        .form-group { margin-bottom: 14px; text-align: left; }
-        .form-group label { display: block; font-size: 12px; font-weight: 600; color: #fff; margin-bottom: 4px; }
-        .form-control { width: 100%; padding: 11px 14px; background: #be123c; border: 1px solid #fb7185; border-radius: 6px; color: #fff; font-size: 13px; outline: none; }
-        .form-control::placeholder { color: #fecdd3; }
-        
-        .checkbox-grid { display: grid; grid-template-columns: 1fr; gap: 8px; background: #be123c; padding: 12px; border-radius: 6px; border: 1px solid #fb7185; max-height: 140px; overflow-y: auto; }
-        .checkbox-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #fff; }
-        .checkbox-item input { accent-color: #fde047; width: 14px; height: 14px; }
+@keyframes cupFloat{
+  0%, 100%{ transform: translateY(0); }
+  50%{ transform: translateY(-8px); }
+}
+@keyframes strawMove{
+  0%, 100%{ transform: rotate(15deg) translateY(0); }
+  50%{ transform: rotate(12deg) translateY(-3px); }
+}
+@keyframes iceShake{
+  0%, 100%{ transform: translateY(0) rotate(0deg); }
+  50%{ transform: translateY(3px) rotate(5deg); }
+}
 
-        .submit-btn { width: 100%; background: #ffffff; color: #e11d48; padding: 13px; font-weight: 700; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; margin-top: 10px; transition: 0.3s; }
-        .submit-btn:hover { background: #f1f5f9; }
+/* Form Fields */
+.form-group{margin-bottom:15px;}
+.form-control{
+  width:100%;
+  padding:14px 18px;
+  background:#d81b60;
+  border:none;
+  border-radius:6px;
+  color:#fff;
+  font-size:14px;
+  outline:none;
+  font-family:'Montserrat',sans-serif;
+}
+.form-control::placeholder{color:rgba(255,255,255,0.8);}
+textarea.form-control{resize:vertical;min-height:90px;}
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            #menu-toggle { display: block; }
-            .logo { font-size: 14px; letter-spacing: 1px; }
-            .nav-menu { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: #be123c; padding: 20px 0; border-bottom: 2px solid rgba(255,255,255,0.2); text-align: center; }
-            .nav-menu.active { display: flex; }
-            .container { width: 95%; padding: 20px 15px; margin: 15px auto; }
-        }
-    </style>
+.services-title{
+  font-size:16px;
+  font-weight:600;
+  margin:20px 0 12px 0;
+  color:#fff;
+}
+.checkbox-grid{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:20px;
+}
+.checkbox-label{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:13px;
+  cursor:pointer;
+  color:#fff;
+}
+.checkbox-label input[type="checkbox"]{
+  width:16px;
+  height:16px;
+  accent-color:#fff;
+  cursor:pointer;
+}
+
+/* Captcha & Buttons */
+.captcha-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:20px;
+}
+.refresh-btn{
+  background:#fff;
+  color:#333;
+  border:none;
+  padding:12px 20px;
+  border-radius:4px;
+  font-weight:600;
+  cursor:pointer;
+  font-size:13px;
+}
+.captcha-box{
+  background:#0288d1;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:4px;
+  font-weight:bold;
+  font-size:15px;
+  text-align:center;
+  min-width:55px;
+}
+.captcha-plus{font-size:18px;font-weight:bold;}
+
+.submit-btn{
+  width:100%;
+  background:#0288d1;
+  color:#fff;
+  border:none;
+  padding:14px;
+  border-radius:4px;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+  margin-top:20px;
+  letter-spacing:0.5px;
+}
+.submit-btn:hover{opacity:0.9;}
+
+/* Footer */
+footer{background:#030a12;border-top:1px solid rgba(192,161,107,.2);padding:45px 20px;text-align:center;margin-top:80px}
+.footer-logo{color:#fff;font-size:19px;font-weight:700;margin-bottom:6px;font-family:'Playfair Display',serif;}
+.footer-logo span{color:#c0a16b}
+.footer-description{max-width:550px;margin:0 auto 20px;color:#718096;font-size:12px;line-height:1.7}
+.footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+.footer-links a{color:#94a3b8;text-decoration:none;font-size:12px}
+.footer-links a:hover{color:#c0a16b}
+.copyright{font-size:14px;font-weight:600;margin-bottom:12px}
+.company-details{color:#c0a16b;font-size:12px;letter-spacing:1px;line-height:1.9}
+
+/* Animated WhatsApp Floating Widget */
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:linear-gradient(135deg, #071628 0%, #0d233a 100%);
+  border:2px solid #25d366;
+  border-radius:35px;
+  padding:8px 16px 8px 10px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
+  z-index:2000;
+  box-shadow:0 8px 25px rgba(0,0,0,0.6), 0 0 15px rgba(37, 211, 102, 0.3);
+  animation: widgetFloat 3s ease-in-out infinite;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.whatsapp-float:hover{ transform: scale(1.06); border-color: #fff; }
+.whatsapp-icon-box{
+  width:38px;
+  height:38px;
+  background:rgba(37, 211, 102, 0.15);
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:20px;
+  color:#25d366;
+  animation: cupTilt 2s ease-in-out infinite;
+}
+.whatsapp-text-content{ display:flex; flex-direction:column; text-align:left; }
+.whatsapp-text-top{ font-size:9px; color:#94a3b8; letter-spacing:1px; text-transform:uppercase; }
+.whatsapp-text-main{ font-size:12px; color:#fff; font-weight:700; font-family:'Playfair Display',serif; }
+
+@keyframes widgetFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes cupTilt { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-5deg); } 75% { transform: rotate(5deg); } }
+
+@media(max-width:768px){
+  header{padding:16px 20px}
+  #menu-toggle{display:block}
+  .nav-menu{display:none;position:absolute;top:68px;left:0;width:100%;flex-direction:column;gap:22px;padding:25px;background:rgba(5,15,26,.98);border-bottom:2px solid #c0a16b;text-align:center;}
+  .nav-menu.active{display:flex}
+  .nav-menu a{justify-content:center}
+  .coffee-container{margin:20px 15px;padding:15px;}
+  .whatsapp-float{width:auto; padding:6px 14px 6px 8px; right:15px; bottom:15px;}
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Zuba <span>International</span></a>
-            <div id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
-            <nav class="nav-menu" id="nav-menu">
-                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-                <a href="products.html"><i class="fa-solid fa-box-open"></i> Products</a>
-                <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
-                <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-                <a href="coffee.html" style="color: #fde047;"><i class="fa-solid fa-mug-hot"></i> Coffee with us!</a>
-            </nav>
-        </div>
-    </header>
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="logo">ZUBA <span>INTERNATIONAL</span></a>
+    <div id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+    <nav class="nav-menu" id="nav-menu">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="products.html"><i class="fa-solid fa-box-open"></i> Products</a>
+      <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <a href="coffee.html" class="active"><i class="fa-solid fa-mug-hot"></i> Coffee with us!</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="container">
-        <div class="iced-cup-container">
-            <div class="straw"></div>
-            <div class="dome-lid"></div>
-            <div class="cup-body">
-                <div class="cup-logo">M</div>
-            </div>
-        </div>
+<div class="coffee-container">
+  <!-- Animated Coffee Cup with Stick & Ice/Sugar Cubes -->
+  <div class="cup-wrapper">
+    <div class="coffee-cup">
+      <div class="cup-straw"></div>
+      <div class="cup-lid"></div>
+      <div class="cup-body">
+        <div class="coffee-foam"></div>
+        <div class="ice-cube ice1"></div>
+        <div class="ice-cube ice2"></div>
+      </div>
+    </div>
+  </div>
 
-        <h1>Coffee with us!</h1>
-        <p class="subtitle">Let's discuss your luxury project over a virtual coffee.</p>
-        
-        <form id="coffeeForm">
-            <div class="form-group">
-                <label>Enter Name *</label>
-                <input type="text" class="form-control" id="cName" required placeholder="Enter your name">
-            </div>
-            <div class="form-group">
-                <label>Enter Email *</label>
-                <input type="email" class="form-control" id="cEmail" required placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label>Company Name *</label>
-                <input type="text" class="form-control" id="cCompany" required placeholder="Enter company name">
-            </div>
-            <div class="form-group">
-                <label>Enter Phone *</label>
-                <input type="tel" class="form-control" id="cPhone" required placeholder="Enter phone number">
-            </div>
-            
-            <div class="form-group">
-                <label>Services *</label>
-                <div class="checkbox-grid">
-                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="Architectural Wall Panels"> Architectural Wall Panels</label>
-                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="WPC Wall Panels"> WPC Wall Panels</label>
-                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="Carbon Crystal Panels"> Carbon Crystal Panels</label>
-                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="UV Marble Sheets"> UV Marble Sheets</label>
-                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="PVC Wall Panels"> PVC Wall Panels</label>
-                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="Charcoal Fluted Panels"> Charcoal Fluted Panels</label>
-                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="Decorative Lights"> Decorative Lights</label>
-                    <label class="checkbox-item"><input type="checkbox" name="cprod" value="Other Products"> Other Products</label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Enter Message</label>
-                <textarea class="form-control" id="cMessage" rows="2" placeholder="Tell us about your requirements..."></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">Submit</button>
-        </form>
+  <form action="#" method="POST">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Enter Name *" required>
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-control" placeholder="Enter Email *" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Company Name *" required>
+    </div>
+    <div class="form-group">
+      <input type="tel" class="form-control" placeholder="Enter Phone *" required>
     </div>
 
-    <script>
-        document.getElementById('menu-toggle').onclick = function() {
-            document.getElementById('nav-menu').classList.toggle('active');
-        };
+    <div class="services-title">Products &amp; Solutions *</div>
+    <div class="checkbox-grid">
+      <label class="checkbox-label"><input type="checkbox" name="service" value="WPC Wall Panels"> WPC Wall Panels</label>
+      <label class="checkbox-label"><input type="checkbox" name="service" value="UV Marble Sheets"> UV Marble Sheets</label>
+      <label class="checkbox-label"><input type="checkbox" name="service" value="Charcoal Fluted Panels"> Charcoal Fluted Panels</label>
+      <label class="checkbox-label"><input type="checkbox" name="service" value="Acoustic Slat Wall Panels"> Acoustic Slat Wall Panels</label>
+      <label class="checkbox-label"><input type="checkbox" name="service" value="PU Stone Wall Panels"> PU Stone Wall Panels</label>
+      <label class="checkbox-label"><input type="checkbox" name="service" value="Outdoor WPC Cladding"> Outdoor WPC Cladding</label>
+      <label class="checkbox-label"><input type="checkbox" name="service" value="PVC Ceiling & Wall Panels"> PVC Ceiling & Wall Panels</label>
+      <label class="checkbox-label"><input type="checkbox" name="service" value="Profiles & Accessories"> Profiles, Trims &amp; Accessories</label>
+    </div>
 
-        document.getElementById('coffeeForm').onsubmit = function(e) {
-            e.preventDefault();
-            const name = document.getElementById('cName').value.trim();
-            const email = document.getElementById('cEmail').value.trim();
-            const company = document.getElementById('cCompany').value.trim();
-            const phone = document.getElementById('cPhone').value.trim();
-            const message = document.getElementById('cMessage').value.trim();
+    <div class="form-group">
+      <textarea class="form-control" placeholder="Enter Message"></textarea>
+    </div>
 
-            let prods = [];
-            document.querySelectorAll('input[name="cprod"]:checked').forEach((cb) => { prods.push(cb.value); });
+    <div class="captcha-row">
+      <button type="button" class="refresh-btn">Refresh</button>
+      <div class="captcha-box">35</div>
+      <span class="captcha-plus">+</span>
+      <div class="captcha-box">38</div>
+    </div>
 
-            let text = `*Coffee with us! Enquiry - Zuba International*\n\n` +
-                       `*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email || 'N/A'}\n` +
-                       `*Company:* ${company || 'N/A'}\n*Services:* ${prods.length > 0 ? prods.join(', ') : 'General'}\n*Message:* ${message || 'N/A'}`;
+    <button type="submit" class="submit-btn">Start Now</button>
+  </form>
+</div>
 
-            window.open(`https://wa.me/919278246138?text=${encodeURIComponent(text)}`, '_blank');
-        };
-    </script>
+<footer>
+  <div class="footer-logo">ZUBA <span>INTERNATIONAL</span></div>
+  <p class="footer-description">Your trusted partner in premium interior and exterior surfaces. We deliver elegance, durability and excellence in every product.</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="coffee.html">Coffee with us!</a>
+  </div>
+  <p class="copyright">&copy; 2026 Zuba International Private Limited. All Rights Reserved.</p>
+  <p class="company-details">
+    CIN: U46693UP2026PTC243112 &nbsp;|&nbsp; GST: 09AACCZ8945N1ZC<br>
+    IEC: AACCZ8945N &nbsp;|&nbsp; Udyam Reg: UDYAM-UP-07-0104617
+  </p>
+</footer>
+
+<a href="https://wa.me/919278246138" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <div class="whatsapp-icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+  <div class="whatsapp-text-content">
+    <span class="whatsapp-text-top">CONNECT WITH US</span>
+    <span class="whatsapp-text-main">WhatsApp Chat</span>
+  </div>
+</a>
+
+<script>
+document.getElementById('menu-toggle').onclick=function(){document.getElementById('nav-menu').classList.toggle('active');};
+</script>
 </body>
 </html>
