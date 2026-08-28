@@ -38,54 +38,65 @@ header{
   border-radius:12px;
 }
 
-/* Perfect Animated Coffee Cup */
+/* Realistic Animated Coffee Cup */
 .cup-wrapper{
   text-align:center;
   margin-bottom:30px;
   position:relative;
 }
 .coffee-cup{
-  width:130px;
-  height:150px;
+  width:140px;
+  height:160px;
   margin:0 auto;
   position:relative;
   animation: cupFloat 2.5s ease-in-out infinite;
 }
 .cup-straw{
   width:10px;
-  height:85px;
+  height:95px;
   background:#212121;
   position:absolute;
-  top:-40px;
-  left:68px;
-  transform:rotate(15deg);
+  top:-45px;
+  left:72px;
+  transform:rotate(12deg);
   border-radius:4px;
   z-index:3;
   animation: strawMove 2s ease-in-out infinite;
 }
 .cup-lid{
-  width:140px;
-  height:28px;
-  background:#f5f5f5;
-  border-radius:14px;
+  width:150px;
+  height:24px;
+  background:#ffffff;
+  border-radius:12px;
   margin:0 auto;
   position:relative;
   z-index:2;
-  box-shadow:0 4px 8px rgba(0,0,0,0.2);
+  box-shadow:0 4px 10px rgba(0,0,0,0.25);
+}
+.cup-lid::after{
+  content:'';
+  position:absolute;
+  top:-6px;
+  left:50%;
+  transform:translateX(-50%);
+  width:50px;
+  height:8px;
+  background:#e0e0e0;
+  border-radius:4px;
 }
 .cup-foam{
-  width:120px;
-  height:35px;
+  width:130px;
+  height:32px;
   background:#fff;
   border-radius:50%;
   position:absolute;
-  top:22px;
+  top:20px;
   left:5px;
   z-index:2;
 }
 .cup-body{
-  width:120px;
-  height:115px;
+  width:130px;
+  height:125px;
   background:linear-gradient(135deg, #d7ccc8, #bcaaa4);
   border-radius:0 0 25px 25px;
   margin:0 auto;
@@ -94,22 +105,21 @@ header{
   border:3px solid #fff;
   border-top:none;
 }
-.cup-logo{
+.cup-logo-badge{
   position:absolute;
-  top:35px;
+  top:40px;
   left:50%;
   transform:translateX(-50%);
-  width:32px;
-  height:32px;
   background:#d32f2f;
-  color:#ffeb3b;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  color:#fff;
+  padding:5px 12px;
+  border-radius:15px;
+  font-family:'Playfair Display',serif;
   font-weight:bold;
-  font-size:18px;
-  box-shadow:0 2px 5px rgba(0,0,0,0.2);
+  font-size:13px;
+  letter-spacing:1px;
+  box-shadow:0 3px 6px rgba(0,0,0,0.2);
+  white-space:nowrap;
 }
 .ice-cube{
   position:absolute;
@@ -118,16 +128,16 @@ header{
   border-radius:4px;
   animation: iceShake 1.5s ease-in-out infinite;
 }
-.ice1{width:22px;height:22px;bottom:20px;left:15px;transform:rotate(15deg);}
-.ice2{width:26px;height:26px;bottom:35px;right:15px;transform:rotate(-20deg);animation-delay:0.3s;}
+.ice1{width:20px;height:20px;bottom:15px;left:15px;transform:rotate(15deg);}
+.ice2{width:24px;height:24px;bottom:30px;right:15px;transform:rotate(-20deg);animation-delay:0.3s;}
 
 @keyframes cupFloat{
   0%, 100%{ transform: translateY(0); }
   50%{ transform: translateY(-8px); }
 }
 @keyframes strawMove{
-  0%, 100%{ transform: rotate(15deg) translateY(0); }
-  50%{ transform: rotate(12deg) translateY(-3px); }
+  0%, 100%{ transform: rotate(12deg) translateY(0); }
+  50%{ transform: rotate(9deg) translateY(-3px); }
 }
 @keyframes iceShake{
   0%, 100%{ transform: translateY(0) rotate(0deg); }
@@ -183,6 +193,7 @@ textarea.form-control{resize:vertical;min-height:90px;}
   align-items:center;
   gap:10px;
   margin-top:20px;
+  flex-wrap:wrap;
 }
 .refresh-btn{
   background:#fff;
@@ -200,13 +211,13 @@ textarea.form-control{resize:vertical;min-height:90px;}
   padding:12px 16px;
   border-radius:4px;
   font-weight:bold;
-  font-size:15px;
+  font-size:16px;
   text-align:center;
-  min-width:50px;
+  min-width:45px;
 }
 .captcha-plus{font-size:18px;font-weight:bold;}
 .captcha-input{
-  width:60px;
+  width:75px;
   background:#0288d1;
   border:none;
   border-radius:4px;
@@ -217,6 +228,7 @@ textarea.form-control{resize:vertical;min-height:90px;}
   padding:11px 0;
   outline:none;
 }
+.captcha-input::placeholder{color:rgba(255,255,255,0.7);font-weight:normal;}
 
 .submit-btn{
   width:100%;
@@ -311,21 +323,21 @@ footer{background:#030a12;border-top:1px solid rgba(192,161,107,.2);padding:45px
 </header>
 
 <div class="coffee-container">
-  <!-- Perfect Animated Coffee Cup with Straw & Ice/Sugar Cubes -->
+  <!-- Perfect Realistic Coffee Cup with 'Zuba' & Straw -->
   <div class="cup-wrapper">
     <div class="coffee-cup">
       <div class="cup-straw"></div>
       <div class="cup-lid"></div>
       <div class="cup-foam"></div>
       <div class="cup-body">
-        <div class="cup-logo">Z</div>
+        <div class="cup-logo-badge">Zuba</div>
         <div class="ice-cube ice1"></div>
         <div class="ice-cube ice2"></div>
       </div>
     </div>
   </div>
 
-  <form action="#" method="POST">
+  <form action="#" method="POST" onsubmit="return validateCaptcha(event)">
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Enter Name *" required>
     </div>
@@ -356,11 +368,12 @@ footer{background:#030a12;border-top:1px solid rgba(192,161,107,.2);padding:45px
     </div>
 
     <div class="captcha-row">
-      <button type="button" class="refresh-btn">Refresh</button>
-      <div class="captcha-box">35</div>
+      <button type="button" class="refresh-btn" onclick="generateCaptcha()">Refresh</button>
+      <div class="captcha-box" id="num1">3</div>
       <span class="captcha-plus">+</span>
-      <div class="captcha-box">38</div>
-      <input type="text" class="captcha-input" placeholder="=" required>
+      <div class="captcha-box" id="num2">5</div>
+      <span class="captcha-plus">=</span>
+      <input type="text" id="userAnswer" class="captcha-input" placeholder="Ans" required>
     </div>
 
     <button type="submit" class="submit-btn">Start Now</button>
@@ -394,6 +407,32 @@ footer{background:#030a12;border-top:1px solid rgba(192,161,107,.2);padding:45px
 
 <script>
 document.getElementById('menu-toggle').onclick=function(){document.getElementById('nav-menu').classList.toggle('active');};
+
+// Random Captcha Generator (1 to 9)
+let correctAnswer = 0;
+function generateCaptcha() {
+  let n1 = Math.floor(Math.random() * 9) + 1;
+  let n2 = Math.floor(Math.random() * 9) + 1;
+  correctAnswer = n1 + n2;
+  document.getElementById('num1').innerText = n1;
+  document.getElementById('num2').innerText = n2;
+  document.getElementById('userAnswer').value = '';
+}
+
+function validateCaptcha(e) {
+  let userVal = parseInt(document.getElementById('userAnswer').value);
+  if (userVal !== correctAnswer) {
+    alert('Incorrect Captcha! Please try again.');
+    e.preventDefault();
+    generateCaptcha();
+    return false;
+  }
+  alert('Thank you! Your request has been submitted successfully.');
+  return true;
+}
+
+// Initialize captcha on load
+window.onload = generateCaptcha;
 </script>
 </body>
 </html>
